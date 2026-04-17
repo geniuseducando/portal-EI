@@ -18,6 +18,12 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+// Servir archivos estáticos y la página principal
+app.use(express.static('./'));
+app.get('/', (req, res) => {
+  res.sendFile('index.html', { root: './' });
+});
+
 
 // Middleware de autenticación
 const authenticateToken = (req, res, next) => {
