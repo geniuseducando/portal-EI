@@ -1,0 +1,163 @@
+<!-- 
+CÓDIGO PARA INTEGRAR EN CANVA CODE
+Copia y pega este código en tu página de Canva Code donde quieras que aparezcan las fichas y rutinas
+-->
+
+<div style="background: linear-gradient(135deg, #05b6a8 0%, #1c5f7c 100%); padding: 40px; border-radius: 10px; margin: 20px 0; text-align: center;">
+  <h2 style="color: white; margin-bottom: 20px; font-size: 28px;">📚 Fichas y Rutinas de Estimulación</h2>
+  <p style="color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 30px;">
+    Accede a todas nuestras fichas de actividades y crea rutinas semanales personalizadas para cada niño.
+  </p>
+  
+  <!-- Botón para abrir la aplicación -->
+  <button onclick="openGeniusPortal()" style="
+    background: #f76811;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(247, 104, 17, 0.3);
+  " onmouseover="this.style.background='#e55a00'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='#f76811'; this.style.transform='scale(1)'">
+    🚀 Acceder a Fichas y Rutinas
+  </button>
+</div>
+
+<!-- Modal para mostrar la aplicación en un popup -->
+<div id="geniusPortalModal" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+">
+  <div style="
+    background: white;
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+  ">
+    <!-- Header del modal -->
+    <div style="
+      background: linear-gradient(135deg, #05b6a8 0%, #1c5f7c 100%);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    ">
+      <h2 style="margin: 0; font-size: 20px;">Genius Educa - Fichas y Rutinas</h2>
+      <button onclick="closeGeniusPortal()" style="
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: background 0.3s;
+      " onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+        ✕
+      </button>
+    </div>
+    
+    <!-- Iframe con la aplicación -->
+    <iframe 
+      id="geniusPortalIframe"
+      src="https://genius-portal-REEMPLAZA-ESTO.onrender.com/public/index.html"
+      style="
+        flex: 1;
+        border: none;
+        width: 100%;
+      "
+      allow="camera; microphone; clipboard-read; clipboard-write">
+    </iframe>
+  </div>
+</div>
+
+<!-- JavaScript para controlar el modal -->
+<script>
+function openGeniusPortal() {
+  // IMPORTANTE: Reemplaza "genius-portal-REEMPLAZA-ESTO" con tu URL real de Render
+  // Ejemplo: https://genius-portal-abc123.onrender.com
+  
+  const portalUrl = "https://genius-portal-REEMPLAZA-ESTO.onrender.com/public/index.html";
+  
+  // Verificar si la URL ha sido actualizada
+  if (portalUrl.includes("REEMPLAZA-ESTO")) {
+    alert("⚠️ IMPORTANTE: Debes reemplazar 'genius-portal-REEMPLAZA-ESTO' con tu URL real de Render.\n\nEjemplo: https://genius-portal-abc123.onrender.com");
+    return;
+  }
+  
+  document.getElementById("geniusPortalModal").style.display = "flex";
+  document.getElementById("geniusPortalIframe").src = portalUrl;
+}
+
+function closeGeniusPortal() {
+  document.getElementById("geniusPortalModal").style.display = "none";
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+document.addEventListener("click", function(event) {
+  const modal = document.getElementById("geniusPortalModal");
+  if (event.target === modal) {
+    closeGeniusPortal();
+  }
+});
+
+// Cerrar modal con tecla ESC
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeGeniusPortal();
+  }
+});
+</script>
+
+<!-- 
+INSTRUCCIONES DE USO:
+
+1. Copia TODO este código (incluyendo los estilos y scripts)
+
+2. En tu portal Canva Code:
+   - Ve a la sección donde quieras agregar las fichas
+   - Haz clic en "Agregar elemento" → "HTML personalizado" o similar
+   - Pega este código
+
+3. IMPORTANTE - Actualiza la URL:
+   - Busca: "genius-portal-REEMPLAZA-ESTO.onrender.com"
+   - Reemplaza con tu URL real de Render
+   - Ejemplo: "genius-portal-abc123xyz.onrender.com"
+
+4. Guarda los cambios
+
+5. ¡Listo! Ahora verás un botón que abre la aplicación en un popup
+
+CARACTERÍSTICAS:
+✅ Botón atractivo con colores de Genius Educa
+✅ Se abre en un popup (modal) sin salir de tu portal
+✅ Responsive (funciona en móvil y desktop)
+✅ Cierra con el botón X o presionando ESC
+✅ Integración perfecta con Canva Code
+
+SOPORTE:
+Si tienes problemas:
+1. Verifica que la URL de Render sea correcta
+2. Asegúrate de que el servicio en Render esté "Running"
+3. Limpia el cache del navegador (Ctrl+Shift+Delete)
+4. Intenta en otro navegador
+-->

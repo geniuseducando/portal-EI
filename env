@@ -1,0 +1,5 @@
+PORT=3001
+NODE_ENV=production
+JWT_SECRET=tu_clave_secreta_super_segura_aqui_cambiar_en_produccion
+DATABASE_PATH=./genius_portal.db
+CORS_ORIGIN=https://portalgeniuseduca.my.canva.site

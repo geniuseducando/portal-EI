@@ -1,0 +1,23 @@
+{
+  "name": "genius-portal-app",
+  "version": "1.0.0",
+  "description": "Portal de Genius Educa - Fichas y Rutinas de Estimulación",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["genius", "educa", "estimulacion"],
+  "author": "Genius Educa",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.1.2",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0"
+  }
+}

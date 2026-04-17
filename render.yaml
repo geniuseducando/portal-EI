@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: genius-portal
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: https://portalgeniuseduca.my.canva.site
+      - key: DATABASE_PATH
+        value: ./genius_portal.db
