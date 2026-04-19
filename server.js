@@ -25,28 +25,26 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Servir archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+// Servir archivos estáticos desde la carpeta public
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 
-// Ruta raíz
+// Ruta raíz - servir app.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Ruta para /public/index.html
-app.get('/public/index.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  const appPath = path.join(publicPath, 'app.html');
+  res.sendFile(appPath);
 });
 
 // Ruta para /app.html
 app.get('/app.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'app.html'));
+  const appPath = path.join(publicPath, 'app.html');
+  res.sendFile(appPath);
 });
 
-// Ruta para cualquier archivo en /public
-app.get('/public/:filename', (req, res) => {
-  const filename = req.params.filename;
-  res.sendFile(path.join(__dirname, 'public', filename));
+// Ruta para /index.html
+app.get('/index.html', (req, res) => {
+  const indexPath = path.join(publicPath, 'index.html');
+  res.sendFile(indexPath);
 });
 
 // Middleware de autenticación
@@ -69,30 +67,29 @@ const authenticateToken = (req, res, next) => {
 
 // ==================== RUTAS DE AUTENTICACIÓN ====================
 
-// Registro de niñera
+// Registro
 app.post('/api/auth/register', async (req, res) => {
   try {
-    const { email, password, name } = req.body;
+    const { name, email, password } = req.body;
+    const db = await getDatabase();
 
-    if (!email || !password || !name) {
+    if (!name || !email || !password) {
       return res.status(400).json({ error: 'Faltan campos requeridos' });
     }
 
-    const db = await getDatabase();
     const hashedPassword = await bcryptjs.hash(password, 10);
     const userId = uuidv4();
 
     await db.run(
-      'INSERT INTO users (id, email, password, name) VALUES (?, ?, ?, ?)',
-      [userId, email, hashedPassword, name]
+      'INSERT INTO users (id, name, email, password) VALUES (?, ?, ?, ?)',
+      [userId, name, email, hashedPassword]
     );
 
     const token = jwt.sign({ id: userId, email }, JWT_SECRET, { expiresIn: '7d' });
 
-    res.status(201).json({
-      message: 'Niñera registrada exitosamente',
+    res.json({
       token,
-      user: { id: userId, email, name }
+      user: { id: userId, name, email }
     });
   } catch (error) {
     console.error('Error en registro:', error);
@@ -100,34 +97,33 @@ app.post('/api/auth/register', async (req, res) => {
   }
 });
 
-// Login de niñera
+// Login
 app.post('/api/auth/login', async (req, res) => {
   try {
     const { email, password } = req.body;
+    const db = await getDatabase();
 
     if (!email || !password) {
       return res.status(400).json({ error: 'Email y contraseña requeridos' });
     }
 
-    const db = await getDatabase();
     const user = await db.get('SELECT * FROM users WHERE email = ?', [email]);
 
     if (!user) {
-      return res.status(401).json({ error: 'Credenciales inválidas' });
+      return res.status(401).json({ error: 'Email o contraseña incorrectos' });
     }
 
-    const validPassword = await bcryptjs.compare(password, user.password);
+    const passwordMatch = await bcryptjs.compare(password, user.password);
 
-    if (!validPassword) {
-      return res.status(401).json({ error: 'Credenciales inválidas' });
+    if (!passwordMatch) {
+      return res.status(401).json({ error: 'Email o contraseña incorrectos' });
     }
 
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '7d' });
 
     res.json({
-      message: 'Login exitoso',
       token,
-      user: { id: user.id, email: user.email, name: user.name }
+      user: { id: user.id, name: user.name, email: user.email }
     });
   } catch (error) {
     console.error('Error en login:', error);
@@ -135,19 +131,15 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
-// ==================== RUTAS DE RUTINAS SEMANALES ====================
+// ==================== RUTAS DE RUTINAS ====================
 
-// Crear nueva rutina semanal
+// Crear rutina
 app.post('/api/routines', authenticateToken, async (req, res) => {
   try {
     const { childName, ageRange, weekNumber, modelType, routineData } = req.body;
     const userId = req.user.id;
-
-    if (!childName || !ageRange || !weekNumber || !modelType) {
-      return res.status(400).json({ error: 'Faltan campos requeridos' });
-    }
-
     const db = await getDatabase();
+
     const routineId = uuidv4();
 
     await db.run(
@@ -162,25 +154,21 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
       [uuidv4(), routineId, userId, 'created']
     );
 
-    res.status(201).json({
-      message: 'Rutina creada exitosamente',
-      routine: { id: routineId, childName, ageRange, weekNumber, modelType }
-    });
+    res.json({ message: 'Rutina creada exitosamente', routineId });
   } catch (error) {
     console.error('Error al crear rutina:', error);
     res.status(500).json({ error: error.message });
   }
 });
 
-// Obtener todas las rutinas del usuario
+// Obtener rutinas del usuario
 app.get('/api/routines', authenticateToken, async (req, res) => {
   try {
     const userId = req.user.id;
     const db = await getDatabase();
 
     const routines = await db.all(
-      `SELECT id, child_name, age_range, week_number, model_type, created_at, updated_at
-       FROM weekly_routines WHERE user_id = ? ORDER BY created_at DESC`,
+      'SELECT * FROM weekly_routines WHERE user_id = ? ORDER BY created_at DESC',
       [userId]
     );
 
@@ -199,15 +187,13 @@ app.get('/api/routines/:id', authenticateToken, async (req, res) => {
     const db = await getDatabase();
 
     const routine = await db.get(
-      `SELECT * FROM weekly_routines WHERE id = ? AND user_id = ?`,
+      'SELECT * FROM weekly_routines WHERE id = ? AND user_id = ?',
       [id, userId]
     );
 
     if (!routine) {
       return res.status(404).json({ error: 'Rutina no encontrada' });
     }
-
-    routine.routine_data = JSON.parse(routine.routine_data);
 
     res.json({ routine });
   } catch (error) {
@@ -278,7 +264,7 @@ app.delete('/api/routines/:id', authenticateToken, async (req, res) => {
 
 // ==================== RUTAS DE FICHAS ====================
 
-// Obtener todas las fichas (sin autenticación, públicas)
+// Obtener todas las fichas
 app.get('/api/activities', async (req, res) => {
   try {
     const activitiesPath = path.join(__dirname, 'data', 'all_activities.json');
