@@ -1,0 +1,3100 @@
+{
+  "0–3 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "03M-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Motivar al bebé a girar mostrando un objeto llamativo a un lado",
+        "materials": "Sonajero o juguete suave",
+        "logro": "Intenta girar hacia el lado del estímulo",
+        "objective": "Estimular giro lateral inicial",
+        "frequency": "3 veces por semana",
+        "alert": "No muestra intento de giro cercano a los 3 meses"
+      },
+      {
+        "id": "03M-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Realizar tiempo boca abajo supervisado (tummy time) sobre superficie firme",
+        "materials": "Manta firme o tapete en el suelo",
+        "logro": "Levanta la cabeza brevemente y la gira hacia ambos lados",
+        "objective": "Favorecer el control inicial de cabeza en posición boca abajo",
+        "frequency": "Diario, 3–5 minutos varias veces al día",
+        "alert": "No intenta levantar la cabeza al finalizar el tercer mes"
+      },
+      {
+        "id": "03M-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Permitir juego libre boca arriba en superficie firme",
+        "materials": "Tapete seguro",
+        "logro": "Mueve brazos y piernas de forma espontánea y equilibrada",
+        "objective": "Estimular movimientos activos y simétricos de brazos y piernas",
+        "frequency": "Diario",
+        "alert": "Rigidez excesiva o flacidez marcada en extremidades"
+      },
+      {
+        "id": "03M-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Sostener al bebé en posición vertical apoyado en el pecho del adulto",
+        "materials": "Contacto directo con el cuidador",
+        "logro": "Mantiene la cabeza erguida por algunos segundos",
+        "objective": "Estimular el control cefálico en posición vertical",
+        "frequency": "Diario durante momentos de interacción",
+        "alert": "Cabeza cae constantemente sin intento de control"
+      },
+      {
+        "id": "03M-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Extender suavemente brazos y piernas durante el cambio de pañal",
+        "materials": "Superficie segura",
+        "logro": "Mayor relajación y extensión progresiva",
+        "objective": "Favorecer disminución progresiva de postura flexionada neonatal",
+        "frequency": "Durante cada cambio de pañal",
+        "alert": "Persistencia marcada de rigidez o postura asimétrica"
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "03M-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Masaje suave en palmas y dedos durante el cambio de pañal",
+        "materials": "Manos limpias del adulto",
+        "logro": "Abre las manos espontáneamente por momentos",
+        "objective": "Favorecer la apertura progresiva de las manos",
+        "frequency": "Diario",
+        "alert": "Mantiene puños cerrados rígidamente todo el tiempo"
+      },
+      {
+        "id": "03M-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Colocar el dedo del adulto en la palma del bebé",
+        "materials": "Manos limpias",
+        "logro": "Cierra la mano al sentir contacto",
+        "objective": "Estimular el reflejo de prensión palmar",
+        "frequency": "3 veces por semana",
+        "alert": "Ausencia de reflejo de prensión"
+      },
+      {
+        "id": "03M-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Mover lentamente un objeto contrastado frente al bebé",
+        "materials": "Juguete blanco y negro o sonajero",
+        "logro": "Sigue el objeto con la mirada",
+        "objective": "Estimular coordinación ojo-mano inicial",
+        "frequency": "Diario, 2–3 minutos",
+        "alert": "No fija la mirada en objetos al finalizar el tercer mes"
+      },
+      {
+        "id": "03M-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Permitir que el bebé explore sus manos libremente",
+        "materials": "Ninguno",
+        "logro": "Lleva las manos a la boca ocasionalmente",
+        "objective": "Favorecer el contacto mano-boca",
+        "frequency": "Diario",
+        "alert": "No muestra intento de contacto mano-boca"
+      },
+      {
+        "id": "03M-MF-05",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Rozar suavemente diferentes texturas en las manos del bebé",
+        "materials": "Tela suave, algodón o pañuelo limpio",
+        "logro": "2–3 veces por semana",
+        "objective": "Estimular sensibilidad táctil en manos",
+        "frequency": "2–3 veces por semana",
+        "alert": "Ausencia de reacción al estímulo táctil"
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "03M-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Hablarle suavemente al bebé durante el cambio de pañal o alimentación",
+        "materials": "Voz del adulto",
+        "logro": "Se calma o muestra atención al escuchar la voz",
+        "objective": "Favorecer la respuesta a la voz humana",
+        "frequency": "Diario",
+        "alert": "No reacciona ante sonidos fuertes o voz cercana"
+      },
+      {
+        "id": "03M-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Colocar el rostro del adulto a 20–30 cm del bebé y hablarle",
+        "materials": "Ninguno",
+        "logro": "Fija la mirada en el rostro del adulto",
+        "objective": "Estimular contacto visual durante la interacción",
+        "frequency": "Diario",
+        "alert": "No establece contacto visual cercano al tercer mes"
+      },
+      {
+        "id": "03M-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Emitir sonidos suaves desde un lado y luego del otro",
+        "materials": "Sonajero suave o voz",
+        "logro": "Gira ligeramente la cabeza hacia el sonido",
+        "objective": "Favorecer seguimiento auditivo",
+        "frequency": "2–3 veces por semana",
+        "alert": "No muestra reacción ante sonidos laterales"
+      },
+      {
+        "id": "03M-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Responder a los sonidos del bebé imitando suavemente",
+        "materials": "Voz del adulto",
+        "logro": "Emite sonidos guturales o vocales simples",
+        "objective": "Estimular vocalizaciones tempranas",
+        "frequency": "Diario",
+        "alert": "No produce ningún sonido al finalizar el tercer mes"
+      },
+      {
+        "id": "03M-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Cantar suavemente durante momentos de calma",
+        "materials": "Voz del adulto",
+        "logro": "Muestra calma o expresión facial ante la canción",
+        "objective": "Favorecer asociación entre sonido y emoción",
+        "frequency": "Diario",
+        "alert": "No muestra cambios ante estímulos auditivos constantes"
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "03M-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Realizar contacto piel con piel en momentos de calma",
+        "materials": "Contacto directo con el cuidador",
+        "logro": "Se calma al estar en contacto con el adulto",
+        "objective": "Favorecer el vínculo afectivo seguro",
+        "frequency": "Diario",
+        "alert": "Dificultad extrema para calmarse incluso con contacto cercano"
+      },
+      {
+        "id": "03M-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Mirar al bebé a corta distancia y sonreírle",
+        "materials": "Rostro del adulto",
+        "logro": "Observa el rostro y mantiene atención por algunos segundos",
+        "objective": "Estimular reconocimiento del rostro humano",
+        "frequency": "Diario",
+        "alert": "No fija la mirada en rostros cercanos"
+      },
+      {
+        "id": "03M-SP-03",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Sonreír y hablarle suavemente esperando respuesta",
+        "materials": "Voz y expresión facial",
+        "logro": "Sonríe en respuesta al adulto (aprox. hacia las 6–8 semanas)",
+        "objective": "Favorecer aparición de la sonrisa social",
+        "frequency": "Diario",
+        "alert": "No muestra sonrisa social cercana al tercer mes"
+      },
+      {
+        "id": "03M-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Identificar señales de sueño y respetar tiempos de descanso",
+        "materials": "Observación del adulto",
+        "logro": "Se calma cuando se atienden sus señales",
+        "objective": "Favorecer autorregulación básica",
+        "frequency": "Diario",
+        "alert": "Llanto inconsolable frecuente sin causa aparente"
+      },
+      {
+        "id": "03M-SP-05",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Sostener al bebé con contención corporal firme y suave",
+        "materials": "Brazos del adulto",
+        "logro": "Se relaja al ser cargado",
+        "objective": "Fortalecer sensación de seguridad",
+        "frequency": "Varias veces al día",
+        "alert": "Reacción excesiva al contacto físico"
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "03M-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Favorecer ambiente tranquilo y regulado",
+        "materials": "Ambiente organizado",
+        "logro": "El bebé muestra mayor calma en espacios regulados",
+        "objective": "Favorecer ambiente tranquilo y regulado",
+        "frequency": "Diario",
+        "alert": "Irritabilidad constante en ambientes normales"
+      },
+      {
+        "id": "03M-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Repetir una pequeña rutina antes de dormir (voz suave, luz baja)",
+        "materials": "Voz del adulto",
+        "logro": "Se relaja al iniciar la rutina",
+        "objective": "Establecer señales predecibles de sueño",
+        "frequency": "Diario",
+        "alert": "Dificultad extrema para iniciar el sueño"
+      },
+      {
+        "id": "03M-RF-03",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Incluir a la cuidadora en baño, cambio y alimentación",
+        "materials": "Rutina diaria",
+        "logro": "El bebé responde con calma ante la cuidadora",
+        "objective": "Favorecer participación activa del cuidador en momentos clave",
+        "frequency": "Diario",
+        "alert": "Rechazo persistente al contacto con el cuidador"
+      },
+      {
+        "id": "03M-RF-04",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Limitar tiempo en portabebés, sillas o mecedoras",
+        "materials": "Superficie firme y segura",
+        "logro": "Pasa tiempo libre en superficie plana",
+        "objective": "Evitar uso excesivo de dispositivos restrictivos",
+        "frequency": "Diario",
+        "alert": "Permanece gran parte del día en dispositivos"
+      },
+      {
+        "id": "03M-RF-05",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Mantener comunicación diaria sobre horarios y señales del bebé",
+        "materials": "Registro simple o cuaderno",
+        "logro": "Rutinas consistentes entre adultos",
+        "objective": "Favorecer coherencia entre padres y cuidadora",
+        "frequency": "Diario",
+        "alert": "Cambios bruscos y desorganización frecuente"
+      }
+    ]
+  },
+  "3–6 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "36-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Realizar tiempo boca abajo supervisado incrementando progresivamente el tiempo",
+        "materials": "Manta firme, superficie segura",
+        "logro": "Mantiene cabeza estable sin tambalear",
+        "objective": "Fortalecer el control cefálico y estabilidad cervical",
+        "frequency": "Diario (3–5 minutos varias veces al día)",
+        "alert": "No sostiene cabeza a los 5 meses"
+      },
+      {
+        "id": "36-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Colocar juguete llamativo hacia un costado para motivar rotación",
+        "materials": "Sonajero o juguete colorido",
+        "logro": "Rota parcialmente hacia un lado",
+        "objective": "Estimular transición hacia el volteo",
+        "frequency": "Diario",
+        "alert": "No intenta girar a los 6 meses"
+      },
+      {
+        "id": "36-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Colocar espejo o juguete frente al bebé en posición boca abajo",
+        "materials": "Espejo irrompible, manta firme",
+        "logro": "Mantiene apoyo firme en antebrazos",
+        "objective": "Fortalecer miembros superiores",
+        "frequency": "Diario",
+        "alert": "No logra apoyarse a los 6 meses"
+      },
+      {
+        "id": "36-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Sostener al bebé en posición vertical permitiendo que impulse con piernas",
+        "materials": "Ninguno",
+        "logro": "Realiza movimientos de empuje activo",
+        "objective": "Estimular fuerza en miembros inferiores",
+        "frequency": "3–4 veces por semana",
+        "alert": "No presenta apoyo plantar hacia los 6 meses"
+      },
+      {
+        "id": "36-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Sentar con cojines laterales por cortos períodos",
+        "materials": "Cojines firmes",
+        "logro": "Mantiene tronco estable con apoyo",
+        "objective": "Preparar musculatura para sedestación",
+        "frequency": "3 veces por semana",
+        "alert": "No logra control parcial a los 6 meses"
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "36-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer objetos blandos para estimular agarre",
+        "materials": "Pelota blanda o muñeco suave",
+        "logro": "Toma y suelta objetos brevemente",
+        "objective": "Estimular apertura y control voluntario de manos",
+        "frequency": "Diario",
+        "alert": "Manos siempre cerradas después de 5 meses"
+      },
+      {
+        "id": "36-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Entregar juguete liviano al centro del cuerpo",
+        "materials": "Sonajero liviano",
+        "logro": "Sujeta objeto con ambas manos",
+        "objective": "Favorecer coordinación bilateral",
+        "frequency": "Diario",
+        "alert": "No intenta agarrar objetos a los 6 meses"
+      },
+      {
+        "id": "36-MF-03",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer mordedor seguro",
+        "materials": "Mordedor certificado",
+        "logro": "Explora objetos oralmente",
+        "objective": "Estimular exploración sensorial",
+        "frequency": "Diario",
+        "alert": "No explora objetos con la boca"
+      },
+      {
+        "id": "36-MF-04",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Mover juguete lentamente de un lado a otro",
+        "materials": "Juguete contrastante",
+        "logro": "Sigue visualmente sin perder foco",
+        "objective": "Desarrollar seguimiento visual",
+        "frequency": "Diario",
+        "alert": "No sigue objetos a los 5 meses"
+      },
+      {
+        "id": "36-MF-05",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Entregar juguete que produzca sonido al golpear",
+        "materials": "Juguete resistente",
+        "logro": "Produce sonido al golpear",
+        "objective": "Estimular coordinación mano-objeto",
+        "frequency": "3 veces por semana",
+        "alert": "No manipula objetos"
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "36-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Imitar los sonidos que el bebé produce y responder como si fuera una conversación.",
+        "materials": "Ninguno (interacción directa adulto–bebé).",
+        "logro": "El bebé repite sonidos y aumenta la variedad de vocalizaciones.",
+        "objective": "Estimular el inicio de la comunicación prelingüística mediante vocalizaciones.",
+        "frequency": "Diario, 5–10 minutos distribuidos en el día.",
+        "alert": "No emite sonidos más allá del llanto a los 6 meses."
+      },
+      {
+        "id": "36-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Llamar al bebé por su nombre en tono suave y esperar respuesta antes de repetir.",
+        "materials": "Ninguno",
+        "logro": "Gira la cabeza o fija la mirada cuando escucha su nombre.",
+        "objective": "Favorecer el reconocimiento auditivo del propio nombre.",
+        "frequency": "Varias veces al día en momentos naturales.",
+        "alert": "Gira la cabeza o fija la mirada cuando escucha su nombre."
+      },
+      {
+        "id": "36-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Ríe en voz alta ante estímulos agradables.",
+        "materials": "Pañuelo liviano (opcional).",
+        "logro": "Emite risa sonora espontánea durante interacción",
+        "objective": "Estimular la expresión emocional a través del sonido.",
+        "frequency": "Diario en momentos de juego.",
+        "alert": "No sonríe ni ríe socialmente a los 5–6 meses."
+      },
+      {
+        "id": "36-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Hablar variando tono y expresión facial durante la interacción diaria.",
+        "materials": "Ninguno",
+        "logro": "Muestra expresiones distintas según el tono utilizado.",
+        "objective": "Desarrollar discriminación auditiva frente a diferentes tonos de voz.",
+        "frequency": "Diario en rutinas normales.",
+        "alert": "No responde a cambios de tono o volumen a los 6 meses."
+      },
+      {
+        "id": "36-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Cantar diariamente la misma canción corta antes de dormir o al cambiar pañal.",
+        "materials": "Canción sencilla repetitiva.",
+        "logro": "Se calma o muestra atención inmediata al escuchar la canción.",
+        "objective": "Fortalecer la memoria auditiva temprana mediante repetición de sonidos familiares.",
+        "frequency": "Diario, mismo momento del día.",
+        "alert": "No muestra reacción ante sonidos familiares a los 6 meses."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "36-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Sonríe espontáneamente al ver rostros conocidos.",
+        "materials": "Espejo seguro irrompible.",
+        "logro": "Sonríe sin necesidad de estimulación intensa.",
+        "objective": "Esperado para su edad",
+        "frequency": "Diario, 5 minutos.",
+        "alert": "No sonríe socialmente a los 5–6 meses."
+      },
+      {
+        "id": "36-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Juego “¿Dónde está?” cubriendo parcialmente el rostro con pañuelo.",
+        "materials": "Pañuelo liviano.",
+        "logro": "Mantiene atención y anticipa el juego con expresión de emoción.",
+        "objective": "Desarrollar disfrute en la interacción cara a cara.",
+        "frequency": "Diario en momentos de juego.",
+        "alert": "Mantiene atención y anticipa el juego con expresión de emoción."
+      },
+      {
+        "id": "36-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Nombrar emociones durante la interacción (“Estás feliz”, “Eso te sorprendió”).",
+        "materials": "Ninguno.",
+        "logro": "Cambia expresión facial según estímulo.",
+        "objective": "Favorecer expresión emocional diferenciada.",
+        "frequency": "Diario en situaciones reales.",
+        "alert": "No presenta variación emocional observable a los 6 meses."
+      },
+      {
+        "id": "36-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Responder inmediatamente cuando el bebé vocaliza, reforzando el intento comunicativo.",
+        "materials": "Ninguno.",
+        "logro": "Repite sonidos o movimientos para llamar atención.",
+        "objective": "Fomentar iniciativa social temprana.",
+        "frequency": "Varias veces al día.",
+        "alert": "Repite sonidos o movimientos para llamar atención."
+      },
+      {
+        "id": "36-SP-05",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Sostener al bebé mientras se le habla suavemente en momentos de incomodidad.",
+        "materials": "Ninguno.",
+        "logro": "Disminuye llanto al recibir contacto o voz familiar.",
+        "objective": "Fortalecer vínculo afectivo seguro con cuidadores principales.",
+        "frequency": "Según necesidad diaria.",
+        "alert": "No muestra diferencia entre persona conocida y desconocida a los 6 meses."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "36-RF-01",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Implementar ritual nocturno fijo (baño, masaje, canción, luz tenue).",
+        "materials": "Toalla, aceite de masaje infantil, canción suave.",
+        "logro": "Se duerme con menor resistencia y menos despertares prolongados.",
+        "objective": "Establecer patrones predecibles que favorezcan seguridad y regulación.",
+        "frequency": "Diario en horario nocturno.",
+        "alert": "Sueño completamente desorganizado después de los 6 meses."
+      },
+      {
+        "id": "36-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Manta gruesa o tapete de estimulación.",
+        "materials": "Manta gruesa o tapete de estimulación.",
+        "logro": "Aumenta tolerancia al estar en el suelo.",
+        "objective": "Favorecer exploración motora segura fuera de brazos.",
+        "frequency": "Diario, mínimo 20–30 minutos distribuidos.",
+        "alert": "Permanece casi todo el día en silla, coche o brazos."
+      },
+      {
+        "id": "36-RF-03",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Programar 10 minutos diarios de interacción enfocada sin celular ni distracciones.",
+        "materials": "Juguete sencillo o libro de tela.",
+        "logro": "Adulto puede describir actividades realizadas cada día.",
+        "objective": "Garantizar tiempo exclusivo de interacción intencional diaria.",
+        "frequency": "Diario",
+        "alert": "No existe tiempo planificado de interacción."
+      },
+      {
+        "id": "36-RF-04",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Participación activa y consistente del cuidador principal.",
+        "materials": "Guía impresa o digital simple.",
+        "logro": "Cuidador realiza actividades con seguridad y comprensión.",
+        "objective": "Promover coherencia entre adultos en prácticas de estimulación.",
+        "frequency": "Revisión semanal.",
+        "alert": "Cuidador realiza actividades con seguridad y comprensión."
+      },
+      {
+        "id": "36-RF-05",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Establecer momentos del día libres de televisión y dispositivos electrónicos.",
+        "materials": "Ninguno",
+        "logro": "El bebé muestra mayor calma y atención durante interacción.",
+        "objective": "Reducir sobreestimulación ambiental que afecte regulación.",
+        "frequency": "Diario",
+        "alert": "Exposición frecuente a pantallas antes de los 6 meses."
+      }
+    ]
+  },
+  "6–9 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "69-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Colocar juguete atractivo a los lados para motivar el giro completo.",
+        "materials": "Sonajero o juguete llamativo.",
+        "logro": "Gira de manera fluida sin asistencia.",
+        "objective": "Consolidar la capacidad de volteo independiente en ambas direcciones.",
+        "frequency": "Diario durante tiempo de juego en el suelo.",
+        "alert": "No logra girar en ninguna dirección a los 8–9 meses."
+      },
+      {
+        "id": "69-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Sentarlo en el suelo con juguetes al frente para mantener equilibrio activo.",
+        "materials": "Juguetes pequeños de fácil manipulación.",
+        "logro": "Permanece sentado sin caer hacia los lados.",
+        "objective": "Fortalecer control de tronco para sedestación independiente.",
+        "frequency": "Diario, sesiones cortas repetidas.",
+        "alert": "No logra mantenerse sentado sin apoyo a los 9 meses."
+      },
+      {
+        "id": "69-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Intenta desplazarse (arrastre, reptado o inicio de gateo).",
+        "materials": "Juguete atractivo.",
+        "logro": "Se desplaza algunos centímetros hacia el objeto.",
+        "objective": "Estimular desplazamiento autónomo inicial.",
+        "frequency": "Diario durante juego en el suelo.",
+        "alert": "No muestra intención de desplazamiento a los 9 meses."
+      },
+      {
+        "id": "69-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Ofrecer apoyo ligero en una mano para facilitar incorporación.",
+        "materials": "Superficie firme.",
+        "logro": "Inicia movimiento de incorporación activamente.",
+        "objective": "Favorecer transición entre posiciones.",
+        "frequency": "Diario en momentos de juego.",
+        "alert": "Permanece pasivo sin intentar cambiar de posición."
+      },
+      {
+        "id": "69-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Soporta peso en piernas cuando se le sostiene de pie.",
+        "materials": "Superficie firme antideslizante.",
+        "logro": "Flexiona y extiende piernas soportando peso.",
+        "objective": "Preparar musculatura para bipedestación futura.",
+        "frequency": "Varias veces por semana.",
+        "alert": "Flexiona y extiende piernas soportando peso."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "69-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer juguetes de diferentes tamaños y texturas para que los agarre.",
+        "materials": "Sonajeros, pelotas blandas, juguetes de goma.",
+        "logro": "Sostiene el objeto varios segundos sin que se caiga.",
+        "objective": "Fortalecer la prensión voluntaria y coordinación mano-objeto.",
+        "frequency": "Diario durante el juego libre.",
+        "alert": "No intenta agarrar objetos a los 8–9 meses."
+      },
+      {
+        "id": "69-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Entregar objeto en una mano y estimular a pasarlo a la otra.",
+        "materials": "Juguete pequeño y liviano.",
+        "logro": "Cambia el objeto de mano sin perderlo.",
+        "objective": "Desarrollar coordinación bilateral.",
+        "frequency": "Diario",
+        "alert": "No utiliza ambas manos para explorar a los 9 meses."
+      },
+      {
+        "id": "69-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Colocar pequeños objetos seguros sobre superficie firme para que los recoja.",
+        "materials": "Cubos grandes o galletas infantiles supervisadas.",
+        "logro": "Usa dedos para aproximarse al objeto.",
+        "objective": "Favorecer inicio de pinza inferior (palmar radial).",
+        "frequency": "Varias veces por semana bajo supervisión.",
+        "alert": "Solo golpea objetos sin intentar recogerlos con precisión."
+      },
+      {
+        "id": "69-MF-04",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Dar juguetes que produzcan sonido al ser golpeados o agitados.",
+        "materials": "Sonajeros resistentes, bloques blandos.",
+        "logro": "Repite acción para observar efecto (causa-efecto).",
+        "objective": "Estimular exploración sensorial activa.",
+        "frequency": "Diario durante juego supervisado.",
+        "alert": "No explora activamente los objetos a los 9 meses."
+      },
+      {
+        "id": "69-MF-05",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Cubrir parcialmente un juguete con tela para que intente descubrirlo.",
+        "materials": "Pañuelo liviano y juguete llamativo.",
+        "logro": "Retira la tela para alcanzar el objeto.",
+        "objective": "Desarrollar coordinación viso-manual.",
+        "frequency": "Varias veces por semana.",
+        "alert": "No muestra interés por objetos que desaparecen parcialmente."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "69-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Imitar sus sonidos y ampliar agregando una sílaba adicional.",
+        "materials": "Ninguno (interacción directa adulto–bebé).",
+        "logro": "Produce sílabas repetidas con intención comunicativa.",
+        "objective": "Consolidar el balbuceo como base del lenguaje verbal.",
+        "frequency": "Diario, en momentos de juego e interacción.",
+        "alert": "Produce sílabas repetidas con intención comunicativa."
+      },
+      {
+        "id": "69-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Llamarlo por su nombre desde diferentes posiciones del entorno.",
+        "materials": "Ninguno.",
+        "logro": "Gira la cabeza o mira al adulto cuando escucha su nombre.",
+        "objective": "Favorecer comprensión básica del lenguaje receptivo.",
+        "frequency": "Varias veces al día en contextos naturales.",
+        "alert": "No responde a su nombre a los 9 meses."
+      },
+      {
+        "id": "69-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Repetir palabras clave asociadas a acciones o personas reales.",
+        "materials": "Ninguno.",
+        "logro": "Muestra reacción diferenciada ante palabras familiares.",
+        "objective": "Desarrollar comprensión de palabras familiares.",
+        "frequency": "Diario en rutinas habituales.",
+        "alert": "No reacciona ante palabras repetidas constantemente."
+      },
+      {
+        "id": "69-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Esperar respuesta del bebé cuando vocaliza antes de anticiparse a su necesidad.",
+        "materials": "Ninguno.",
+        "logro": "Repite vocalización para obtener respuesta del adulto.",
+        "objective": "Estimular comunicación intencional no verbal.",
+        "frequency": "Diario en momentos de interacción.",
+        "alert": "Repite vocalización para obtener respuesta del adulto."
+      },
+      {
+        "id": "69-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Señalar objetos mientras se nombran (“Mira la pelota”).",
+        "materials": "Juguetes visibles en el entorno.",
+        "logro": "Dirige la mirada hacia el objeto señalado.",
+        "objective": "Estimular discriminación auditiva y atención conjunta.",
+        "frequency": "Varias veces por semana.",
+        "alert": "No sigue la dirección de la mirada o señalamiento del adulto."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "69-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Promover interacción frecuente con cuidadores principales mediante contacto visual, sonrisas y",
+        "materials": "Ninguno.",
+        "logro": "Busca activamente la cercanía de figuras conocidas.",
+        "objective": "Fortalecer el vínculo afectivo seguro con cuidadores principales.",
+        "frequency": "Diario en momentos de interacción.",
+        "alert": "No diferencia entre personas conocidas y desconocidas a los 9 meses."
+      },
+      {
+        "id": "69-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Nombrar emociones mientras el bebé las expresa (“Estás feliz”, “Te molestó eso”).",
+        "materials": "Ninguno.",
+        "logro": "Presenta expresiones faciales y corporales diferenciadas.",
+        "objective": "Desarrollar expresión emocional clara.",
+        "frequency": "Diario",
+        "alert": "Muestra muy poca expresión emocional o respuestas planas."
+      },
+      {
+        "id": "69-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Juegos breves de “me voy y regreso” para fortalecer seguridad.",
+        "materials": "Ninguno.",
+        "logro": "Muestra reacción leve pero se calma al regresar el adulto.",
+        "objective": "Estimular ansiedad de separación saludable.",
+        "frequency": "Varias veces por semana.",
+        "alert": "No reacciona ante ausencia del cuidador o presenta angustia extrema prolongada."
+      },
+      {
+        "id": "69-SP-04",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Realizar juegos repetitivos con gestos y pausas para esperar reacción.",
+        "materials": "Ninguno.",
+        "logro": "Anticipa el juego y sonríe antes de que ocurra.",
+        "objective": "Desarrollar interacción social recíproca.",
+        "frequency": "Diario",
+        "alert": "No muestra interés en juegos interactivos."
+      },
+      {
+        "id": "69-SP-05",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Exagerar gestos faciales (sonreír, sacar lengua) esperando respuesta.",
+        "materials": "Ninguno.",
+        "logro": "Reproduce gestos o sonidos del adulto.",
+        "objective": "Favorecer imitación social.",
+        "frequency": "Diario durante interacción cara a cara.",
+        "alert": "No intenta imitar gestos a los 9 meses."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "69-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "El bebé anticipa rutinas diarias (comida, baño, sueño).",
+        "materials": "Ninguno.",
+        "logro": "Se muestra más tranquilo al iniciar actividades habituales.",
+        "objective": "Establecer horarios predecibles que generen seguridad.",
+        "frequency": "Diario.",
+        "alert": "Se muestra más tranquilo al iniciar actividades habituales."
+      },
+      {
+        "id": "69-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Crear ritual previo al sueño (baño, canción suave, luz tenue).",
+        "materials": "Luz tenue, música suave opcional.",
+        "logro": "Se duerme con menor resistencia progresivamente.",
+        "objective": "Favorecer rutina de sueño saludable.",
+        "frequency": "Diario antes de dormir.",
+        "alert": "Despertares muy frecuentes sin causa aparente o dificultad severa para conciliar sueño."
+      },
+      {
+        "id": "69-RF-03",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Introducir alimentos nuevos uno a la vez con actitud calmada y paciente.",
+        "materials": "Alimentos adecuados según indicación pediátrica.",
+        "logro": "Explora y prueba alimentos con curiosidad.",
+        "objective": "Integrar alimentación complementaria de forma positiva.",
+        "frequency": "Diario según esquema de alimentación.",
+        "alert": "Rechazo persistente de toda alimentación sólida."
+      },
+      {
+        "id": "69-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Crear espacio firme y seguro donde pueda moverse libremente.",
+        "materials": "Tapete firme o alfombra antideslizante.",
+        "logro": "Pasa tiempo activo explorando entorno.",
+        "objective": "Promover tiempo diario de juego en el suelo.",
+        "frequency": "Diario mínimo 20–30 minutos acumulados.",
+        "alert": "Permanece la mayor parte del día en silla, coche o dispositivos restrictivos."
+      },
+      {
+        "id": "69-RF-05",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Narrar lo que se está haciendo (“Ahora vamos a cambiar tu pañal”).",
+        "materials": "Ninguno.",
+        "logro": "El bebé presta atención durante la narración.",
+        "objective": "Fomentar interacción verbal diaria intencional.",
+        "frequency": "Diario en cada rutina.",
+        "alert": "El bebé presta atención durante la narración."
+      }
+    ]
+  },
+  "9–12 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "912-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Colocar juguetes a los lados para estimular cambios de peso y equilibrio.",
+        "materials": "Juguetes seguros y llamativos.",
+        "logro": "Mantiene postura sentada sin caerse y rota el tronco para alcanzar objetos.",
+        "objective": "Favorecer la estabilidad en posición sentada y transiciones posturales.",
+        "frequency": "Diario, durante el tiempo de juego en el suelo.",
+        "alert": "No logra mantenerse sentado sin apoyo a los 10–11 meses."
+      },
+      {
+        "id": "912-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Colocar objetos a cierta distancia para motivar el movimiento.",
+        "materials": "Juguetes, pelotas suaves.",
+        "logro": "Se desplaza de manera coordinada usando brazos y piernas.",
+        "objective": "La estabilidad del tronco es base para el gateo y la bipedestación.",
+        "frequency": "Diario.",
+        "alert": "No intenta desplazarse ni muestra intención de moverse hacia estímulos."
+      },
+      {
+        "id": "912-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Ofrecer muebles bajos y firmes para que pueda apoyarse y levantarse.",
+        "materials": "Sofá firme, mesa baja estable.",
+        "logro": "Logra ponerse de pie de manera autónoma con apoyo.",
+        "objective": "Favorecer transición a posición de pie con apoyo.",
+        "frequency": "Diario.",
+        "alert": "No intenta ponerse de pie al acercarse al año de edad."
+      },
+      {
+        "id": "912-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Colocar juguetes a lo largo del sofá para incentivar desplazamiento lateral.",
+        "materials": "Mueble firme, juguetes atractivos.",
+        "logro": "Se desplaza lateralmente manteniendo apoyo.",
+        "objective": "Desarrollar desplazamiento lateral con apoyo.",
+        "frequency": "Varias veces por semana.",
+        "alert": "Rigidez excesiva o falta total de intento de movimiento en bipedestación."
+      },
+      {
+        "id": "912-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Avanzado",
+        "activity": "Sostener ambas manos al inicio y progresivamente ofrecer solo una.",
+        "materials": "Ninguno.",
+        "logro": "Da pasos coordinados con apoyo mínimo.",
+        "objective": "Favorecer inicio de marcha independiente.",
+        "frequency": "Diario bajo supervisión.",
+        "alert": "No soporta peso en piernas o muestra marcada asimetría."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "912-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer pequeños trozos de alimento blando o piezas grandes tipo cubos para agarrar.",
+        "materials": "Alimentos blandos seguros o bloques grandes.",
+        "logro": "Logra agarrar objetos pequeños con mayor precisión.",
+        "objective": "Desarrollar prensión en pinza inicial.",
+        "frequency": "Diario durante alimentación o juego supervisado.",
+        "alert": "Solo utiliza toda la mano sin intento de usar dedos al acercarse al año."
+      },
+      {
+        "id": "912-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer recipientes para meter y sacar objetos.",
+        "materials": "Caja plástica y bloques grandes.",
+        "logro": "Sostiene el recipiente con una mano y manipula con la otra.",
+        "objective": "Favorecer coordinación bilateral.",
+        "frequency": "Varias veces por semana.",
+        "alert": "Usa solo una mano constantemente sin intentar involucrar la otra."
+      },
+      {
+        "id": "912-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Juego de “dame y toma” colocando objetos en un recipiente.",
+        "materials": "Cubos grandes o pelotas pequeñas seguras.",
+        "logro": "Libera el objeto sin dificultad cuando se le solicita.",
+        "objective": "Estimular liberación voluntaria de objetos.",
+        "frequency": "Cubos grandes o pelotas pequeñas seguras.",
+        "alert": "Dificultad para soltar objetos o rigidez en manos."
+      },
+      {
+        "id": "912-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Ofrecer juguetes con distintas texturas.",
+        "materials": "Pelotas sensoriales, telas, juguetes con relieve.",
+        "logro": "Manipula objetos de forma variada y curiosa.",
+        "objective": "Desarrollar exploración táctil intencional.",
+        "frequency": "Diario.",
+        "alert": "Muestra poco interés en manipular objetos."
+      },
+      {
+        "id": "912-MF-05",
+        "area": "Motricidad fina",
+        "level": "Avanzado",
+        "activity": "Ofrecer juguetes con orificios grandes para insertar piezas.",
+        "materials": "Juguetes de encaje grandes.",
+        "logro": "Intenta insertar objetos con intención dirigida.",
+        "objective": "Favorecer coordinación ojo–mano más precisa.",
+        "frequency": "Varias veces por semana.",
+        "alert": "No muestra interés por manipular con precisión al acercarse a los 12 meses."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "912-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Llamarlo por su nombre desde distintas posiciones y reforzar cuando mire o responda.",
+        "materials": "Ninguno.",
+        "logro": "Voltea o dirige la mirada cuando escucha su nombre.",
+        "objective": "Estimular comprensión verbal temprana.",
+        "frequency": "Diario en diferentes momentos del día.",
+        "alert": "No responde a su nombre hacia los 11–12 meses."
+      },
+      {
+        "id": "912-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Dar indicaciones claras con apoyo gestual y reforzar positivamente cuando responde.",
+        "materials": "Juguetes familiares.",
+        "logro": "Ejecuta al menos una instrucción simple con apoyo gestual.",
+        "objective": "Favorecer comprensión de órdenes simples.",
+        "frequency": "Diario durante el juego.",
+        "alert": "No muestra comprensión de palabras frecuentes o instrucciones básicas."
+      },
+      {
+        "id": "912-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Repetir palabras funcionales en contexto diario y asociarlas a personas u objetos reales.",
+        "materials": "Objetos cotidianos.",
+        "logro": "Usa al menos una palabra con intención clara.",
+        "objective": "Estimular emisión de primeras palabras con significado.",
+        "frequency": "Diario en rutinas naturales.",
+        "alert": "No balbucea o no produce sonidos variados hacia el año."
+      },
+      {
+        "id": "912-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Modelar el gesto de señalar y reforzar cuando el bebé lo intente.",
+        "materials": "Objetos llamativos.",
+        "logro": "Señala para compartir atención o solicitar algo.",
+        "objective": "Favorecer comunicación gestual intencional.",
+        "frequency": "Diario.",
+        "alert": "No utiliza gestos comunicativos hacia los 12 meses."
+      },
+      {
+        "id": "912-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Realizar juegos de imitación vocal exagerando sonidos (“ba”, “pa”, “ta”).",
+        "materials": "Ninguno.",
+        "logro": "Intenta repetir sonidos inmediatamente después del adulto.",
+        "objective": "Desarrollar imitación sonora y prosodia.",
+        "frequency": "Diario durante interacción cara a cara.",
+        "alert": "Escasa vocalización o ausencia de intención comunicativa."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "912-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Presentar un objeto nuevo y observar si el bebé mira al adulto antes de interactuar. Reforzar con",
+        "materials": "Objeto nuevo y seguro.",
+        "logro": "Mira al adulto buscando aprobación o seguridad antes de actuar.",
+        "objective": "Fortalecer el vínculo afectivo y la referencia social.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No muestra interés en la presencia del adulto en situaciones nuevas."
+      },
+      {
+        "id": "912-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Realizar juegos repetitivos con gestos y canciones cortas.",
+        "materials": "Ninguno.",
+        "logro": "Anticipa el juego y responde con sonrisa o movimiento.",
+        "objective": "Desarrollar juego interactivo.",
+        "frequency": "Diario.",
+        "alert": "No muestra interés en juegos sociales interactivos."
+      },
+      {
+        "id": "912-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Nombrar las emociones del bebé cuando las manifiesta (“veo que estás molesto”).",
+        "materials": "Ninguno.",
+        "logro": "Muestra emociones diferenciadas ante situaciones específicas.",
+        "objective": "Favorecer expresión emocional diferenciada.",
+        "frequency": "Diario en rutinas naturales.",
+        "alert": "Muestra emociones diferenciadas ante situaciones específicas."
+      },
+      {
+        "id": "912-SP-04",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que tome pequeños trozos de comida supervisada.",
+        "materials": "Alimentos blandos adecuados para la edad.",
+        "logro": "Intenta llevar comida a la boca por sí mismo.",
+        "objective": "Fomentar autonomía inicial.",
+        "frequency": "Diario durante comidas.",
+        "alert": "Intenta llevar comida a la boca por sí mismo."
+      },
+      {
+        "id": "912-SP-05",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Practicar separaciones breves y despedidas claras.",
+        "materials": "Ninguno.",
+        "logro": "Reacciona ante la separación pero logra calmarse con apoyo.",
+        "objective": "Desarrollar conciencia de separación.",
+        "frequency": "Según rutina familiar.",
+        "alert": "Ausencia total de reacción ante separación o angustia extrema prolongada."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "912-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Crear un pequeño horario visual (mañana – siesta – comida – juego – noche).",
+        "materials": "Cartulina o imagen impresa simple.",
+        "logro": "El bebé anticipa rutinas y muestra menor irritabilidad.",
+        "objective": "Establecer estructura diaria predecible.",
+        "frequency": "Diario.",
+        "alert": "Rutinas completamente desorganizadas que afectan sueño y alimentación."
+      },
+      {
+        "id": "912-RF-02",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer rutina fija antes de dormir (baño, canción suave, luz tenue).",
+        "materials": "Luz cálida, canción tranquila.",
+        "logro": "Se duerme con menor dificultad y menos despertares frecuentes.",
+        "objective": "Favorecer hábitos de sueño saludables.",
+        "frequency": "Diario en la noche.",
+        "alert": "Despertares constantes con dificultad extrema para conciliar el sueño."
+      },
+      {
+        "id": "912-RF-03",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que manipule alimentos blandos bajo supervisión.",
+        "materials": "Alimentos adecuados para su edad.",
+        "logro": "Muestra interés y coordinación al alimentarse.",
+        "objective": "Fomentar alimentación autónoma supervisada.",
+        "frequency": "Diario en comidas principales.",
+        "alert": "Rechazo persistente a texturas o falta total de iniciativa."
+      },
+      {
+        "id": "912-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer “momento exclusivo” sin pantallas.",
+        "materials": "Juguetes simples.",
+        "logro": "El bebé busca activamente ese momento de interacción.",
+        "objective": "Promover interacción diaria significativa con el adulto.",
+        "frequency": "Diario.",
+        "alert": "Exposición prolongada a pantallas o mínima interacción directa."
+      },
+      {
+        "id": "912-RF-05",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Decir “no” con tono firme pero tranquilo y ofrecer alternativa segura.",
+        "materials": "Ninguno.",
+        "logro": "Según necesidad en la rutina diaria.",
+        "objective": "Establecer límites afectivos iniciales.",
+        "frequency": "Según necesidad en la rutina diaria.",
+        "alert": "Reacciones extremadamente intensas o ausencia total de respuesta."
+      }
+    ]
+  },
+  "13–18 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "1318-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Permitir desplazamiento libre en espacios seguros, animándolo a caminar hacia el adulto.",
+        "materials": "Espacio amplio y seguro.",
+        "logro": "Camina varios pasos sin apoyo y mantiene equilibrio.",
+        "objective": "Consolidar la marcha independiente.",
+        "frequency": "Diario.",
+        "alert": "No intenta caminar solo hacia los 18 meses."
+      },
+      {
+        "id": "1318-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Colocar juguetes en el suelo y motivarlo a recogerlos.",
+        "materials": "Juguetes pequeños y seguros.",
+        "logro": "Se agacha y se levanta sin perder estabilidad.",
+        "objective": "Mejorar equilibrio dinámico.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "Caídas constantes o dificultad marcada para incorporarse."
+      },
+      {
+        "id": "1318-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Ofrecer juguetes de arrastre o carritos para empujar.",
+        "materials": "Juguete de arrastre o empuje.",
+        "logro": "Camina mientras empuja o arrastra sin perder equilibrio.",
+        "objective": "Favorecer coordinación bilateral.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Evita desplazarse o muestra rigidez excesiva."
+      },
+      {
+        "id": "1318-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Supervisar mientras sube pequeños escalones o superficies bajas.",
+        "materials": "Escalón bajo o cojines firmes.",
+        "logro": "Intenta subir con apoyo del adulto o baranda.",
+        "objective": "Desarrollar capacidad de subir superficies.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Miedo extremo al movimiento o falta de iniciativa motora."
+      },
+      {
+        "id": "1318-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Avanzado",
+        "activity": "Juegos de persecución suaves y recorridos cortos.",
+        "materials": "Espacio seguro.",
+        "logro": "Aumenta velocidad al desplazarse sin perder equilibrio total.",
+        "objective": "Estimular coordinación y fuerza en miembros inferiores.",
+        "frequency": "Diario en juego libre.",
+        "alert": "Rigidez marcada o ausencia total de variación en la marcha."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "1318-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer pequeños trozos de comida blanda o piezas grandes tipo bloques.",
+        "materials": "Alimentos blandos o bloques grandes.",
+        "logro": "Manipula objetos pequeños con precisión.",
+        "objective": "Consolidar pinza fina funcional.",
+        "frequency": "Diario.",
+        "alert": "Usa solo la palma sin intento de pinza hacia los 18 meses."
+      },
+      {
+        "id": "1318-MF-02",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Juego de meter y sacar objetos de cajas o recipientes.",
+        "materials": "Caja plástica y objetos seguros.",
+        "logro": "Introduce y retira objetos con intención clara.",
+        "objective": "Favorecer coordinación ojo-mano.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "Falta de interés en manipular objetos."
+      },
+      {
+        "id": "1318-MF-03",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Juego simbólico simple con objetos reales.",
+        "materials": "Peine, teléfono de juguete, taza plástica.",
+        "logro": "Imita acciones cotidianas con intención.",
+        "objective": "Estimular uso funcional de objetos.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Uso repetitivo sin función aparente."
+      },
+      {
+        "id": "1318-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Ofrecer juguetes que requieran abrir, cerrar o girar tapas grandes.",
+        "materials": "Envases plásticos grandes con tapa.",
+        "logro": "Utiliza ambas manos con intención coordinada.",
+        "objective": "Desarrollar coordinación bilateral.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Uso exclusivo de una sola mano sin alternancia."
+      },
+      {
+        "id": "1318-MF-05",
+        "area": "Motricidad fina",
+        "level": "Avanzado",
+        "activity": "Ofrecer hoja grande y crayones gruesos bajo supervisión.",
+        "materials": "Papel grande y crayones gruesos no tóxicos.",
+        "logro": "Hace marcas intencionales sobre el papel.",
+        "objective": "Iniciar trazos espontáneos.",
+        "frequency": "2 veces por semana.",
+        "alert": "Hace marcas intencionales sobre el papel."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "1318-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Nombrar constantemente objetos y personas en contexto real.",
+        "materials": "Objetos cotidianos.",
+        "logro": "Usa palabras para pedir o señalar algo específico.",
+        "objective": "Consolidar primeras palabras funcionales.",
+        "frequency": "Diario en rutinas naturales.",
+        "alert": "No produce ninguna palabra significativa hacia los 18 meses."
+      },
+      {
+        "id": "1318-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Comprende instrucciones simples sin necesidad de gesto.",
+        "materials": "Juguetes familiares.",
+        "logro": "Ejecuta la instrucción correctamente.",
+        "objective": "Favorecer comprensión verbal compleja.",
+        "frequency": "Diario.",
+        "alert": "No responde a indicaciones verbales simples."
+      },
+      {
+        "id": "1318-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Modelar frases cortas como “más agua” mientras se señala.",
+        "materials": "Objetos de interés del niño.",
+        "logro": "Combina gesto y palabra con intención clara.",
+        "objective": "Estimular combinación inicial de palabra + gesto.",
+        "frequency": "Diario.",
+        "alert": "Se comunica únicamente llorando sin usar gestos o palabras."
+      },
+      {
+        "id": "1318-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Juegos de repetición sencilla (“di mamá”, “di pelota”).",
+        "materials": "Ninguno.",
+        "logro": "Intenta imitar sonidos o palabras nuevas.",
+        "objective": "Favorecer imitación verbal espontánea.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "Escasa vocalización o ausencia de intención comunicativa."
+      },
+      {
+        "id": "1318-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Avanzado",
+        "activity": "Modelar frases cortas de dos palabras en contexto natural.",
+        "materials": "Situaciones cotidianas.",
+        "logro": "Produce espontáneamente combinaciones de dos palabras.",
+        "objective": "Iniciar combinación de dos palabras.",
+        "frequency": "Diario.",
+        "alert": "No muestra aumento progresivo del vocabulario."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "1318-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que participe activamente en pequeñas tareas cotidianas.",
+        "materials": "Objetos de uso diario.",
+        "logro": "Muestra iniciativa para realizar acciones sin ayuda.",
+        "objective": "Fortalecer autonomía inicial.",
+        "frequency": "Diario.",
+        "alert": "Dependencia total sin intento de participación."
+      },
+      {
+        "id": "1318-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Juegos frente al espejo nombrando partes del cuerpo.",
+        "materials": "Espejo seguro.",
+        "logro": "Señala partes del cuerpo al ser nombradas.",
+        "objective": "Desarrollar conciencia del “yo”.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No muestra interés por su reflejo."
+      },
+      {
+        "id": "1318-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Nombrar emociones y ofrecer alternativas (“sé que estás molesto”).",
+        "materials": "Ninguno.",
+        "logro": "Puede calmarse con ayuda del adulto.",
+        "objective": "Favorecer expresión emocional regulada.",
+        "frequency": "Diario en situaciones reales.",
+        "alert": "Rabietas extremadamente intensas y prolongadas sin regulación."
+      },
+      {
+        "id": "1318-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Espacios de juego compartido supervisado.",
+        "materials": "Juguetes duplicados para evitar conflicto.",
+        "logro": "Muestra interés en la presencia de otros niños.",
+        "objective": "Estimular interacción social con pares.",
+        "frequency": "1–2 veces por semana.",
+        "alert": "Evita completamente contacto visual o interacción."
+      },
+      {
+        "id": "1318-SP-05",
+        "area": "Social-personal",
+        "level": "Avanzado",
+        "activity": "Ofrecer muñecos o utensilios para juego de imitación.",
+        "materials": "Muñeco, taza, cuchara plástica.",
+        "logro": "Realiza acciones simbólicas con intención clara.",
+        "objective": "Iniciar juego simbólico básico.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Uso repetitivo de objetos sin función simbólica."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "1318-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Diseñar rutina visual simple (mañana – juego – comida – siesta – tarde – noche).",
+        "materials": "Cartel visual sencillo con imágenes.",
+        "logro": "El niño anticipa actividades y presenta menos resistencia en transiciones.",
+        "objective": "Consolidar estructura diaria estable.",
+        "frequency": "Diario.",
+        "alert": "Cambios constantes de horario que afectan comportamiento."
+      },
+      {
+        "id": "1318-RF-02",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Permitir que intente alimentarse solo aunque se ensucie.",
+        "materials": "Cuchara infantil, alimentos adecuados.",
+        "logro": "Participa activamente en su alimentación.",
+        "objective": "Fomentar autonomía en alimentación.",
+        "frequency": "Diario en comidas principales.",
+        "alert": "Dependencia total sin intento de participación."
+      },
+      {
+        "id": "1318-RF-03",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Decir “no” con tono firme y ofrecer alternativa segura inmediatamente.",
+        "materials": "Ninguno.",
+        "logro": "Disminuye conducta tras redirección constante.",
+        "objective": "Establecer límites afectivos coherentes.",
+        "frequency": "Según necesidad diaria.",
+        "alert": "Falta total de respuesta ante límites o reacciones desproporcionadas constantes."
+      },
+      {
+        "id": "1318-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer mínimo 30 minutos de juego intencional sin dispositivos.",
+        "materials": "Juguetes simples y libros.",
+        "logro": "Muestra interés activo en interacción directa.",
+        "objective": "Promover tiempo de calidad sin pantallas.",
+        "frequency": "Diario.",
+        "alert": "Uso frecuente de pantallas para calmar o entretener."
+      },
+      {
+        "id": "1318-RF-05",
+        "area": "Rutina familiar",
+        "level": "Avanzado",
+        "activity": "Cantar canción corta mientras guardan juntos los juguetes.",
+        "materials": "Caja organizadora accesible.",
+        "logro": "Coloca objetos en su lugar con guía.",
+        "objective": "Iniciar hábitos básicos de orden y participación.",
+        "frequency": "Diario al finalizar el juego.",
+        "alert": "Rechazo persistente a cualquier rutina estructurada."
+      }
+    ]
+  },
+  "19–24 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "1924-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Permitir caminar sobre césped, alfombra y piso liso bajo supervisión.",
+        "materials": "Espacios seguros con distintas superficies.",
+        "logro": "Camina sin caídas frecuentes y mantiene equilibrio.",
+        "objective": "Consolidar marcha estable y segura.",
+        "frequency": "Diario.",
+        "alert": "Caídas constantes o marcha muy inestable hacia los 24 meses."
+      },
+      {
+        "id": "1924-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Practicar subir escaleras con apoyo de baranda o mano del adulto.",
+        "materials": "Escalera segura.",
+        "logro": "Alterna pies con apoyo o sube de forma coordinada.",
+        "objective": "Mejorar coordinación al subir y bajar.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Evita subir escalones o muestra gran inseguridad."
+      },
+      {
+        "id": "1924-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Juegos de persecución suave en espacios amplios.",
+        "materials": "Espacio libre y seguro.",
+        "logro": "Aumenta velocidad sin perder completamente el equilibrio.",
+        "objective": "Desarrollar habilidad de carrera inicial.",
+        "frequency": "Diario en juego libre.",
+        "alert": "No intenta correr o presenta rigidez marcada."
+      },
+      {
+        "id": "1924-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Colocar una pelota grande frente al niño y animarlo a patear.",
+        "materials": "Pelota mediana o grande.",
+        "logro": "Logra impulsar la pelota hacia adelante.",
+        "objective": "Favorecer coordinación al patear objetos.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Falta de coordinación evidente o evita el movimiento."
+      },
+      {
+        "id": "1924-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Avanzado",
+        "activity": "Juegos donde intente saltar sobre líneas dibujadas en el piso.",
+        "materials": "Cinta adhesiva en el suelo o línea marcada.",
+        "logro": "Flexiona rodillas e intenta despegar ambos pies.",
+        "objective": "Desarrollar habilidad de salto inicial.",
+        "frequency": "2 veces por semana.",
+        "alert": "No muestra intención de movimientos más complejos hacia los 24 meses."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "1924-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer bloques grandes y animarlo a apilarlos uno sobre otro.",
+        "materials": "Bloques grandes de construcción.",
+        "logro": "Apila al menos 3 bloques sin que se caigan inmediatamente.",
+        "objective": "Consolidar coordinación ojo-mano.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "No logra apilar dos bloques hacia los 24 meses."
+      },
+      {
+        "id": "1924-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que se alimente solo con cuchara pequeña infantil.",
+        "materials": "Cuchara infantil y recipiente adecuado.",
+        "logro": "Lleva comida a la boca con menor derrame progresivamente.",
+        "objective": "Desarrollar uso funcional de utensilios.",
+        "frequency": "Diario en comidas principales.",
+        "alert": "No muestra intento de usar utensilios."
+      },
+      {
+        "id": "1924-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Ofrecer hojas grandes y crayones gruesos no tóxicos.",
+        "materials": "Papel grande y crayones gruesos.",
+        "logro": "Hace trazos repetitivos con intención visible.",
+        "objective": "Estimular trazos intencionales.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No muestra interés por actividades gráficas."
+      },
+      {
+        "id": "1924-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Juegos con envases plásticos grandes de tapa rosca o presión.",
+        "materials": "Envases plásticos seguros.",
+        "logro": "Manipula tapa y recipiente usando ambas manos coordinadamente.",
+        "objective": "Fortalecer coordinación bilateral.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Dificultad marcada para manipular objetos cotidianos."
+      },
+      {
+        "id": "1924-MF-05",
+        "area": "Motricidad fina",
+        "level": "Avanzado",
+        "activity": "Dibujar líneas simples y animarlo a imitarlas.",
+        "materials": "Papel y crayones gruesos.",
+        "logro": "Intenta copiar una línea simple con intención.",
+        "objective": "Iniciar uso de herramientas gráficas con mayor precisión.",
+        "frequency": "2 veces por semana.",
+        "alert": "Falta total de coordinación manual progresiva."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "1924-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Nombrar constantemente objetos, acciones y personas en contexto real.",
+        "materials": "Objetos cotidianos y libros ilustrados simples.",
+        "logro": "Usa palabras para pedir, señalar o describir algo.",
+        "objective": "Ampliar vocabulario expresivo.",
+        "frequency": "Diario en rutinas naturales.",
+        "alert": "Dice menos de 10 palabras hacia los 24 meses."
+      },
+      {
+        "id": "1924-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Modelar frases cortas durante el juego y la rutina diaria.",
+        "materials": "Situaciones cotidianas.",
+        "logro": "Produce combinaciones espontáneas de dos palabras.",
+        "objective": "Consolidar combinación de dos palabras.",
+        "frequency": "Diario.",
+        "alert": "No combina palabras hacia los 24 meses."
+      },
+      {
+        "id": "1924-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Dar indicaciones sencillas que impliquen dos acciones consecutivas.",
+        "materials": "Juguetes familiares.",
+        "logro": "Ejecuta ambas acciones sin necesidad de gesto.",
+        "objective": "Mejorar comprensión verbal compleja.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "No responde a instrucciones simples verbales."
+      },
+      {
+        "id": "1924-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Juegos frente al espejo señalando partes del cuerpo.",
+        "materials": "Espejo seguro o muñeco.",
+        "logro": "Señala correctamente partes del cuerpo nombradas.",
+        "objective": "Estimular identificación de partes del cuerpo.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No responde al nombrar partes del cuerpo conocidas."
+      },
+      {
+        "id": "1924-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Avanzado",
+        "activity": "Expandir frases del niño agregando una palabra adicional.",
+        "materials": "Situaciones cotidianas.",
+        "logro": "Utiliza frases de tres palabras con intención comunicativa.",
+        "objective": "Iniciar uso de frases de tres palabras.",
+        "frequency": "Diario.",
+        "alert": "No muestra aumento progresivo del lenguaje expresivo."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "1924-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que intente quitarse zapatos o ponerse prendas simples.",
+        "materials": "Ropa fácil de manipular.",
+        "logro": "Participa activamente en el proceso de vestirse.",
+        "objective": "Consolidar autonomía en actividades básicas.",
+        "frequency": "Diario en rutina de vestir.",
+        "alert": "Dependencia total sin intento de participación."
+      },
+      {
+        "id": "1924-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer muñecos y utensilios para juego de imitación.",
+        "materials": "Muñeco, taza, cuchara plástica.",
+        "logro": "Realiza acciones simbólicas con intención clara.",
+        "objective": "Fortalecer juego simbólico.",
+        "frequency": "3 veces por semana.",
+        "alert": "Uso repetitivo de objetos sin función simbólica."
+      },
+      {
+        "id": "1924-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Nombrar emociones y modelar frases simples (“estás molesto”).",
+        "materials": "Ninguno.",
+        "logro": "Busca al adulto para regularse.",
+        "objective": "Favorecer regulación emocional inicial.",
+        "frequency": "Diario en situaciones reales.",
+        "alert": "Rabietas extremadamente intensas y prolongadas sin posibilidad de regulación."
+      },
+      {
+        "id": "1924-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Espacios de juego compartido con supervisión.",
+        "materials": "Juguetes duplicados para evitar conflicto.",
+        "logro": "Tolera presencia de otros niños sin angustia.",
+        "objective": "Estimular interacción con pares.",
+        "frequency": "1–2 veces por semana.",
+        "alert": "Evita completamente contacto visual o interacción social."
+      },
+      {
+        "id": "1924-SP-05",
+        "area": "Social-personal",
+        "level": "Avanzado",
+        "activity": "Juegos donde identifique objetos propios y de otros.",
+        "materials": "Objetos personales del niño.",
+        "logro": "Diferencia objetos propios de ajenos.",
+        "objective": "Desarrollar conciencia de pertenencia.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No muestra interés por pertenencia ni interacción social."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "1924-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Mantener horarios estables y anunciar anticipadamente los cambios.",
+        "materials": "Apoyo visual simple (imágenes de rutina opcional).",
+        "logro": "Presenta menor resistencia en transiciones.",
+        "objective": "Consolidar rutina diaria estructurada.",
+        "frequency": "Diario.",
+        "alert": "Cambios constantes de humor ante cualquier transición mínima."
+      },
+      {
+        "id": "1924-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que se alimente de forma independiente con supervisión.",
+        "materials": "Cuchara infantil y recipiente estable.",
+        "logro": "Disminuye progresivamente el derrame.",
+        "objective": "Fomentar autonomía en alimentación.",
+        "frequency": "Diario en comidas principales.",
+        "alert": "Dependencia total sin intento de autonomía."
+      },
+      {
+        "id": "1924-RF-03",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer pocas reglas claras y repetirlas con coherencia.",
+        "materials": "Ninguno.",
+        "logro": "Reduce conductas inadecuadas tras redirección consistente.",
+        "objective": "Establecer límites claros y consistentes.",
+        "frequency": "Diario según situaciones.",
+        "alert": "Ausencia total de respuesta ante límites repetidos."
+      },
+      {
+        "id": "1924-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Crear rutina de recogida con canción corta o señal específica.",
+        "materials": "Caja organizadora accesible.",
+        "logro": "Participa activamente en recoger con guía.",
+        "objective": "Promover hábitos básicos de orden.",
+        "frequency": "Diario al finalizar juego.",
+        "alert": "Rechazo constante a cualquier estructura o guía."
+      },
+      {
+        "id": "1924-RF-05",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Participa activamente en juego libre sin depender de dispositivos electrónicos.",
+        "materials": "Juguetes simples, libros, bloques.",
+        "logro": "Mantiene interés en actividades no digitales.",
+        "objective": "Reducir uso excesivo de pantallas.",
+        "frequency": "Diario.",
+        "alert": "Uso frecuente de pantallas para regular emociones"
+      }
+    ]
+  },
+  "25–36 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "2536-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Juegos de persecución suave con cambios de dirección.",
+        "materials": "Espacio amplio y seguro.",
+        "logro": "Corre, gira y se detiene sin perder equilibrio.",
+        "objective": "Consolidar carrera coordinada.",
+        "frequency": "Diario en juego libre.",
+        "alert": "Movimientos rígidos o caídas frecuentes al correr hacia los 3 años."
+      },
+      {
+        "id": "2536-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Saltar sobre líneas marcadas en el piso o pequeños obstáculos.",
+        "materials": "Cinta adhesiva o colchoneta.",
+        "logro": "Despega ambos pies simultáneamente.",
+        "objective": "Desarrollar salto coordinado.",
+        "frequency": "3 veces por semana.",
+        "alert": "No logra despegar ambos pies hacia los 3 años."
+      },
+      {
+        "id": "2536-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Juego de “retroceder como cangrejo” o caminar siguiendo línea hacia atrás.",
+        "materials": "Línea marcada en el suelo.",
+        "logro": "Da al menos 4–5 pasos hacia atrás con estabilidad.",
+        "objective": "Mejorar equilibrio dinámico.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Dificultad marcada para mantener equilibrio básico."
+      },
+      {
+        "id": "2536-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Practicar escaleras con supervisión directa.",
+        "materials": "Escalera segura con baranda.",
+        "logro": "Alterna pies al subir o bajar con estabilidad.",
+        "objective": "Desarrollar coordinación en escaleras.",
+        "frequency": "2 veces por semana.",
+        "alert": "Evita escaleras o requiere ayuda total hacia los 3 años."
+      },
+      {
+        "id": "2536-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Avanzado",
+        "activity": "Lanza una pelota hacia adelante con intención.",
+        "materials": "Pelota mediana.",
+        "logro": "Lanza con dirección definida y coordinación brazo-tronco.",
+        "objective": "Mejorar coordinación bilateral en movimientos amplios.",
+        "frequency": "3 veces por semana.",
+        "alert": "No intenta lanzar objetos o presenta torpeza marcada persistente."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "2536-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Ofrecer bloques pequeños para apilar progresivamente.",
+        "materials": "Bloques de construcción medianos o pequeños.",
+        "logro": "Apila 6 bloques sin que se caigan inmediatamente.",
+        "objective": "Consolidar coordinación ojo-mano en construcción.",
+        "frequency": "3–4 veces por semana",
+        "alert": "No logra apilar más de 3 bloques hacia los 3 años."
+      },
+      {
+        "id": "2536-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Dibujar líneas simples y animarlo a copiarlas",
+        "materials": "Papel y crayones gruesos.",
+        "logro": "Copia al menos una línea con intención clara.",
+        "objective": "Desarrollar trazos dirigidos.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No muestra intención de imitar trazos simples."
+      },
+      {
+        "id": "2536-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Insertar cuentas grandes en cordón grueso.",
+        "materials": "Cuentas grandes y cordón grueso.",
+        "logro": "Inserta al menos 2–3 cuentas con apoyo mínimo.",
+        "objective": "Mejorar coordinación bilateral fina.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad marcada para coordinar ambas manos."
+      },
+      {
+        "id": "2536-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Cortar tiras de papel previamente marcadas.",
+        "materials": "Tijeras de seguridad y papel.",
+        "logro": "Realiza cortes simples con guía.",
+        "objective": "Desarrollar uso funcional de herramientas.",
+        "frequency": "1–2 veces por semana.",
+        "alert": "Incapacidad para coordinar apertura y cierre con supervisión."
+      },
+      {
+        "id": "2536-MF-05",
+        "area": "Motricidad fina",
+        "level": "Avanzado",
+        "activity": "Mostrar cómo hacer un círculo y animarlo a imitarlo.",
+        "materials": "Papel y crayones gruesos.",
+        "logro": "Intenta cerrar el trazo formando figura circular.",
+        "objective": "Mejorar precisión gráfica.",
+        "frequency": "2 veces por semana.",
+        "alert": "Falta de progresión en control gráfico hacia los 3 años."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "2536-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Conversaciones constantes durante rutinas diarias, ampliando vocabulario.",
+        "materials": "Libros ilustrados, objetos cotidianos.",
+        "logro": "Usa palabras variadas para expresar necesidades y deseos.",
+        "objective": "Ampliar vocabulario expresivo.",
+        "frequency": "Diario.",
+        "alert": "Vocabulario muy limitado (menos de 50 palabras hacia los 3 años)."
+      },
+      {
+        "id": "2536-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Modelar frases completas y expandir lo que el niño dice.",
+        "materials": "Situaciones cotidianas.",
+        "logro": "Produce frases claras con intención comunicativa.",
+        "objective": "Consolidar frases estructuradas.",
+        "frequency": "Diario.",
+        "alert": "No combina más de dos palabras hacia los 3 años."
+      },
+      {
+        "id": "2536-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Juegos donde deba realizar acciones secuenciales (“toma el libro, siéntate y dámelo”).",
+        "materials": "Objetos familiares.",
+        "logro": "Ejecuta correctamente la secuencia sin ayuda gestual.",
+        "objective": "Mejorar comprensión verbal compleja.",
+        "frequency": "3 veces por semana.",
+        "alert": "No comprende indicaciones simples."
+      },
+      {
+        "id": "2536-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Leer cuentos y hacer pausas para incentivar preguntas.",
+        "materials": "Libros ilustrados apropiados para su edad.",
+        "logro": "Formula preguntas espontáneamente.",
+        "objective": "Estimular uso de preguntas.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "No muestra intención comunicativa para obtener información."
+      },
+      {
+        "id": "2536-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Avanzado",
+        "activity": "Pedirle que cuente qué hizo durante el día usando preguntas guía.",
+        "materials": "Fotografías o recuerdos recientes.",
+        "logro": "Relata eventos simples con secuencia básica.",
+        "objective": "Iniciar narración simple.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No intenta comunicar experiencias vividas."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "2536-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Establecer rutina donde el niño realice pasos simples de higiene con supervisión.",
+        "materials": "Banco pequeño, jabón infantil, toalla accesible.",
+        "logro": "Realiza acciones básicas de autocuidado con guía verbal.",
+        "objective": "Consolidar autonomía en autocuidado.",
+        "frequency": "Diario.",
+        "alert": "No muestra interés por participar en rutinas básicas."
+      },
+      {
+        "id": "2536-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Proveer materiales de juego simbólico y acompañar inicialmente.",
+        "materials": "Cocina de juguete, muñecos, utensilios plásticos.",
+        "logro": "Crea pequeñas secuencias de juego con intención.",
+        "objective": "Desarrollar juego simbólico complejo.",
+        "frequency": "3 veces por semana.",
+        "alert": "Uso repetitivo de objetos sin intención simbólica."
+      },
+      {
+        "id": "2536-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Nombrar emociones y ofrecer alternativas (“estás triste, vamos a respirar”).",
+        "materials": "Tarjetas visuales de emociones (opcional).",
+        "logro": "Utiliza palabras para expresar cómo se siente.",
+        "objective": "Mejorar regulación emocional.",
+        "frequency": "Diario en situaciones reales.",
+        "alert": "Rabietas extremadamente intensas sin progreso en regulación."
+      },
+      {
+        "id": "2536-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Juegos estructurados con reglas básicas de turno.",
+        "materials": "Pelota o juego simple de mesa.",
+        "logro": "Espera turno brevemente con apoyo del adulto.",
+        "objective": "Favorecer interacción con pares.",
+        "frequency": "2 veces por semana.",
+        "alert": "Evita sistemáticamente interacción con otros niños."
+      },
+      {
+        "id": "2536-SP-05",
+        "area": "Social-personal",
+        "level": "Avanzado",
+        "activity": "Leer cuentos sobre emociones y conversar sobre ellas.",
+        "materials": "Libros infantiles sobre emociones.",
+        "logro": "Responde con gestos o palabras ante emociones de otros.",
+        "objective": "Desarrollar empatía inicial.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Falta persistente de respuesta emocional hacia otros."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "2536-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Implementar rutina visual clara (mañana – juego – comida – descanso – noche).",
+        "materials": "Cartel visual con imágenes.",
+        "logro": "Anticipa actividades y reduce oposición en transiciones.",
+        "objective": "Consolidar rutina estructurada diaria.",
+        "frequency": "Diario.",
+        "alert": "Desorganización constante que afecta sueño y conducta."
+      },
+      {
+        "id": "2536-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Rutina diaria de higiene guiada con pasos simples y repetitivos.",
+        "materials": "Cepillo infantil, jabón suave, banco pequeño.",
+        "logro": "Realiza varios pasos con guía verbal mínima.",
+        "objective": "Fortalecer hábitos de higiene.",
+        "frequency": "Diario.",
+        "alert": "Resistencia extrema o falta de participación constante."
+      },
+      {
+        "id": "2536-RF-03",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Aplicar límites claros, breves y consistentes entre todos los adultos.",
+        "materials": "Ninguno.",
+        "logro": "Disminuye conducta inadecuada con repetición consistente.",
+        "objective": "Establecer límites coherentes y disciplina positiva.",
+        "frequency": "Diario según necesidad.",
+        "alert": "Inconsistencia entre adultos que aumenta conductas desafiantes."
+      },
+      {
+        "id": "2536-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer horario limitado de pantallas y priorizar juego activo.",
+        "materials": "Juegos físicos y libros.",
+        "logro": "Mantiene interés en juego libre sin necesidad de pantalla.",
+        "objective": "Regular uso de pantallas.",
+        "frequency": "Diario.",
+        "alert": "Uso excesivo de pantallas para regular emociones o conducta."
+      },
+      {
+        "id": "2536-RF-05",
+        "area": "Rutina familiar",
+        "level": "Avanzado",
+        "activity": "Rutina diaria de orden acompañada de canción o señal clara.",
+        "materials": "Caja organizadora accesible.",
+        "logro": "Guarda objetos con supervisión mínima.",
+        "objective": "Fomentar responsabilidad inicial.",
+        "frequency": "Diario al finalizar el juego.",
+        "alert": "Rechazo persistente a cualquier participación estructurada."
+      }
+    ],
+    "Disposición para el aprendizaje": [
+      {
+        "id": "2536-DA-01",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Actividad estructurada breve (encaje o clasificación simple)",
+        "materials": "Material de mesa",
+        "logro": "Finaliza actividad con guía mínima",
+        "objective": "Sostener atención en actividad dirigida 4–5 min",
+        "frequency": "3 veces/semana",
+        "alert": "No supera 1 minuto de atención constante"
+      },
+      {
+        "id": "2536-DA-02",
+        "area": "Disposición para el aprendizaje",
+        "level": "Refuerzo",
+        "activity": "Juego “toma y guarda”",
+        "materials": "Objetos cotidianos",
+        "logro": "esponde a indicación directa",
+        "objective": "Responder consistentemente a una instrucción",
+        "frequency": "Diario.",
+        "alert": "Ignora instrucciones repetidas"
+      },
+      {
+        "id": "2536-DA-03",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Rompecabezas simple",
+        "materials": "Puzzle 3–4 piezas",
+        "logro": "Intenta al menos 1 vez más antes de abandonar",
+        "objective": "Intentar nuevamente ante dificultad leve",
+        "frequency": "3 veces/semana",
+        "alert": "Abandona inmediatamente ante error"
+      },
+      {
+        "id": "2536-DA-04",
+        "area": "Disposición para el aprendizaje",
+        "level": "Refuerzo",
+        "activity": "Juego de pausa",
+        "materials": "Ninguno",
+        "logro": "Se detiene ante señal clara",
+        "objective": "Detener acción cuando se indica",
+        "frequency": "Diario.",
+        "alert": "No responde a indicación de pausa"
+      },
+      {
+        "id": "2536-DA-05",
+        "area": "Disposición para el aprendizaje",
+        "level": "Avanzado",
+        "activity": "Actividad estructurada",
+        "materials": "Caja organizadora",
+        "logro": "Completa y recoge sin indicación constante",
+        "objective": "Inicia y finaliza actividad de forma autónoma",
+        "frequency": "3 veces/semana",
+        "alert": "Abandona sin cerrar actividad"
+      }
+    ]
+  },
+  "37–48 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "3748-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Juegos de persecución con obstáculos suaves.",
+        "materials": "Conos pequeños o almohadas.",
+        "logro": "Cambia de dirección manteniendo equilibrio.",
+        "objective": "Consolidar carrera coordinada con control postural.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "Caídas frecuentes o torpeza marcada al correr."
+      },
+      {
+        "id": "3748-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Juego de “estatua” o equilibrio como flamenco.",
+        "materials": "Espacio seguro.",
+        "logro": "Sostiene equilibrio sin apoyo.",
+        "objective": "Desarrollar equilibrio estático.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Incapacidad para mantener equilibrio básico."
+      },
+      {
+        "id": "3748-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Salta hacia adelante con ambos pies y cae con estabilidad.",
+        "materials": "Cinta adhesiva o colchoneta.",
+        "logro": "Logra impulso y caída controlada.",
+        "objective": "Mejorar coordinación en salto.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad para despegar ambos pies o pérdida frecuente de equilibrio."
+      },
+      {
+        "id": "3748-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Juego de patear hacia una meta pequeña.",
+        "materials": "Pelota mediana y arco improvisado.",
+        "logro": "Dirige la pelota hacia objetivo.",
+        "objective": "Fortalecer coordinación ojo-pie.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Falta de coordinación persistente al patear."
+      },
+      {
+        "id": "3748-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Avanzado",
+        "activity": "Pedalea triciclo o bicicleta pequeña con apoyo.",
+        "materials": "Triciclo o bicicleta con ruedas de apoyo.",
+        "logro": "Pedalea coordinadamente varios metros.",
+        "objective": "Desarrollar coordinación motora compleja.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad marcada para coordinar piernas en pedaleo."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "3748-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Actividades de dibujo libre con crayones cortos para favorecer agarre adecuado.",
+        "materials": "Crayones cortos y hojas blancas.",
+        "logro": "Sostiene el crayón con mayor control usando dedos.",
+        "objective": "Consolidar agarre funcional del lápiz.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "Agarre completamente palmar persistente sin progreso."
+      },
+      {
+        "id": "3748-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Presentar modelos simples y pedir imitación.",
+        "materials": "Papel y lápices gruesos.",
+        "logro": "Reproduce figura reconocible con intención.",
+        "objective": "Mejorar precisión gráfica.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Incapacidad para imitar formas básicas hacia los 4 años."
+      },
+      {
+        "id": "3748-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Ofrecer hojas con líneas gruesas marcadas para recortar.",
+        "materials": "Tijeras de seguridad y papel.",
+        "logro": "Sigue línea recta con supervisión mínima.",
+        "objective": "Desarrollar coordinación bilateral avanzada.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad marcada para coordinar apertura y cierre."
+      },
+      {
+        "id": "3748-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Crear collares simples con cuentas de tamaño medio.",
+        "materials": "Cuentas medianas y cordón.",
+        "logro": "Inserta múltiples cuentas sin asistencia constante.",
+        "objective": "Fortalecer destreza manual.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Torpeza marcada en coordinación manual fin"
+      },
+      {
+        "id": "3748-MF-05",
+        "area": "Motricidad fina",
+        "level": "Avanzado",
+        "activity": "Pedir que dibuje una persona después de observar modelo básico.",
+        "materials": "Papel y lápices de colores.",
+        "logro": "Incluye al menos cabeza y dos extremidades.",
+        "objective": "Desarrollar representación gráfica más estructurada.",
+        "frequency": "1–2 veces por semana.",
+        "alert": "Ausencia total de intención representativa."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "3748-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Conversaciones guiadas sobre experiencias diarias ampliando respuestas del niño.",
+        "materials": "Fotografías familiares o experiencias recientes.",
+        "logro": "Produce oraciones completas con sujeto y verbo.",
+        "objective": "Consolidar frases estructuradas complejas.",
+        "frequency": "Diario.",
+        "alert": "Uso limitado a frases muy cortas hacia los 4 años."
+      },
+      {
+        "id": "3748-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Juegos secuenciales (“toma el libro, ponlo en la mesa y siéntate”).",
+        "materials": "Objetos del entorno.",
+        "logro": "Ejecuta secuencias correctamente.",
+        "objective": "Mejorar comprensión verbal compleja.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad persistente para comprender indicaciones simples."
+      },
+      {
+        "id": "3748-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Pedir que cuente lo que hizo en el día usando preguntas guía.",
+        "materials": "Libro de imágenes o recuerdos recientes.",
+        "logro": "Organiza ideas con cierta secuencia temporal.",
+        "objective": "Estimular narración estructurada.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Incapacidad para relatar hechos simples."
+      },
+      {
+        "id": "3748-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Juegos de sonidos (“¿con qué sonido empieza mamá?”).",
+        "materials": "Tarjetas ilustradas con palabras simples.",
+        "logro": "Reconoce sonidos iniciales con apoyo.",
+        "objective": "Desarrollar conciencia fonológica inicial.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad persistente para discriminar sonidos básicos."
+      },
+      {
+        "id": "3748-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Avanzado",
+        "activity": "Juegos de repetición de palabras y trabalenguas simples adaptados.",
+        "materials": "Imágenes con palabras estructuradas.",
+        "logro": "Habla inteligible en la mayoría de contextos.",
+        "objective": "Mejorar pronunciación y claridad del habla.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad severa de articulación que impide comprensión."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "3748-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que elija su ropa y complete el proceso con guía verbal.",
+        "materials": "Ropa accesible y fácil de manipular.",
+        "logro": "Realiza la mayoría de pasos sin ayuda física.",
+        "objective": "Fortalecer autonomía en autocuidado.",
+        "frequency": "Diario.",
+        "alert": "Dependencia total persistente en actividades básicas."
+      },
+      {
+        "id": "3748-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Juegos de mesa simples o dinámicas grupales con turnos.",
+        "materials": "Juegos básicos de turno (memoria simple, pelota).",
+        "logro": "Espera turno con mínima intervención.",
+        "objective": "Desarrollar juego cooperativo inicial.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Dificultad persistente para interactuar con pares."
+      },
+      {
+        "id": "3748-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Conversaciones guiadas sobre emociones y uso de cuentos temáticos.",
+        "materials": "Tarjetas o libros sobre emociones.",
+        "logro": "Expresa verbalmente cómo se siente.",
+        "objective": "Mejorar regulación emocional.",
+        "frequency": "3 veces por semana.",
+        "alert": "Reacciones emocionales intensas sin progresiva autorregulación."
+      },
+      {
+        "id": "3748-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Juegos de roles donde se representen situaciones emocionales.",
+        "materials": "Muñecos o cuentos ilustrados.",
+        "logro": "Ofrece consuelo o verbaliza preocupación.",
+        "objective": "Desarrollar empatía funcional.",
+        "frequency": "2 veces por semana.",
+        "alert": "Ausencia persistente de respuesta emocional hacia otros."
+      },
+      {
+        "id": "3748-SP-05",
+        "area": "Social-personal",
+        "level": "Avanzado",
+        "activity": "Asignar pequeñas responsabilidades (guardar juguetes, llevar plato).",
+        "materials": "Objetos cotidianos.",
+        "logro": "Cumple tarea asignada con guía verbal mínima.",
+        "objective": "Fomentar responsabilidad social inicial.",
+        "frequency": "Diario.",
+        "alert": "Rechazo total persistente ante cualquier responsabilidad."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "3748-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Implementar rutina visual con horarios definidos (mañana, comida, juego, descanso, noche).",
+        "materials": "Calendario o cartel visual con imágenes.",
+        "logro": "Realiza transiciones con menor resistencia.",
+        "objective": "Consolidar rutina diaria estructurada y estable.",
+        "frequency": "Diario.",
+        "alert": "Desorganización constante que afecta conducta y sueño."
+      },
+      {
+        "id": "3748-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Rutina estructurada con pasos visuales en baño.",
+        "materials": "Cepillo infantil, pasta adecuada y cartel de pasos.",
+        "logro": "Realiza la mayoría de pasos sin ayuda física.",
+        "objective": "Fortalecer hábitos de higiene autónomos.",
+        "frequency": "Diario.",
+        "alert": "Resistencia constante o falta de progreso en autonomía."
+      },
+      {
+        "id": "3748-RF-03",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Definir reglas cortas y visibles (ej. “guardamos después de jugar”).",
+        "materials": "Cartel de normas simples ilustradas.",
+        "logro": "Respeta normas con recordatorio verbal mínimo.",
+        "objective": "Establecer normas claras y consistentes.",
+        "frequency": "Diario según situaciones.",
+        "alert": "Conductas desafiantes persistentes sin respuesta a límites coherentes."
+      },
+      {
+        "id": "3748-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer horario fijo y reemplazar pantalla por actividad activa.",
+        "materials": "Juegos físicos, libros, materiales creativos.",
+        "logro": "Acepta finalización de pantalla con mínima resistencia.",
+        "objective": "Regular uso saludable de pantallas.",
+        "frequency": "Diario.",
+        "alert": "Dependencia emocional del dispositivo."
+      },
+      {
+        "id": "3748-RF-05",
+        "area": "Rutina familiar",
+        "level": "Avanzado",
+        "activity": "Asignar tarea fija (ordenar juguetes, llevar servilletas a la mesa).",
+        "materials": "Objetos cotidianos.",
+        "logro": "Realiza tarea asignada con autonomía creciente.",
+        "objective": "Fomentar responsabilidad estructurada.",
+        "frequency": "Diario.",
+        "alert": "Rechazo sistemático a cualquier colaboración."
+      }
+    ],
+    "Disposición para el aprendizaje": [
+      {
+        "id": "3748-DA-01",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "",
+        "materials": "Material manipulativo de mesa",
+        "logro": "Finaliza actividad con máximo 2 redirecciones",
+        "objective": "Sostener atención 8–10 minutos en actividad estructurada",
+        "frequency": "3 veces/semana",
+        "alert": "No supera 3–4 minutos de atención constante"
+      },
+      {
+        "id": "3748-DA-02",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Juego “haz esto y luego aquello”",
+        "materials": "Apoyos visuales opcionales",
+        "logro": "Cumple 3 pasos en orden correcto",
+        "objective": "Seguir 3 instrucciones consecutivas sin repetición constante",
+        "frequency": "3 veces/semana",
+        "alert": "Confunde orden frecuentemente o requiere repetición continua"
+      },
+      {
+        "id": "3748-DA-03",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Rompecabezas 6–8 piezas o actividad secuencial",
+        "materials": "Puzzle o material estructurado",
+        "logro": "Intenta nuevamente sin crisis emocional",
+        "objective": "Mantener esfuerzo ante dificultad moderada",
+        "frequency": "3 veces/semana",
+        "alert": "Abandona inmediatamente ante error leve"
+      },
+      {
+        "id": "3748-DA-04",
+        "area": "Disposición para el aprendizaje",
+        "level": "Refuerzo",
+        "activity": "Juego por turnos con regla clara",
+        "materials": "Cartas o dado simple",
+        "logro": "Espera 2 rondas sin interrumpir",
+        "objective": "Registrar reacción emocional",
+        "frequency": "2–3 veces/semana",
+        "alert": "Impulsividad constante que interfiere en dinámica"
+      },
+      {
+        "id": "3748-DA-05",
+        "area": "Disposición para el aprendizaje",
+        "level": "Avanzado",
+        "activity": "Actividad de mesa con cierre estructurado",
+        "materials": "Caja organizadora",
+        "logro": "Guarda materiales tras finalizar sin indicación directa",
+        "objective": "Iniciar y cerrar actividad organizando materiales de forma autónoma",
+        "frequency": "3 veces/semana",
+        "alert": "Abandona actividad sin cierre"
+      }
+    ]
+  },
+  "49–60 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "4960-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Caminar sobre una línea marcada en el suelo simulando “equilibrio de cuerda”.",
+        "materials": "Cinta adhesiva en el piso.",
+        "logro": "Mantiene equilibrio sin salir de la línea en varios pasos consecutivos.",
+        "objective": "Consolidar equilibrio dinámico avanzado.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad marcada para mantener equilibrio básico."
+      },
+      {
+        "id": "4960-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Juegos de “rayuela” adaptada o saltos alternando pies.",
+        "materials": "Cinta o tiza para marcar el suelo.",
+        "logro": "Mantiene equilibrio en un pie durante al menos 5 segundos.",
+        "objective": "Mejorar coordinación bilateral en salto.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No logra sostener equilibrio en un pie hacia los 5 años."
+      },
+      {
+        "id": "4960-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Lanzar pelota suave a corta distancia aumentando gradualmente la dificultad.",
+        "materials": "Pelota mediana de espuma.",
+        "logro": "Atrapa la pelota sin que rebote en el pecho.",
+        "objective": "Fortalecer coordinación ojo-mano avanzada.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad persistente para coordinar recepción."
+      },
+      {
+        "id": "4960-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Juego de fútbol adaptado con arco pequeño.",
+        "materials": "Pelota y meta pequeña.",
+        "logro": "Dirige la pelota con intención hacia el objetivo.",
+        "objective": "Mejorar coordinación ojo-pie.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Falta de control persistente en movimientos coordinados."
+      },
+      {
+        "id": "4960-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Avanzado",
+        "activity": "Crear circuito motor con estaciones (correr, saltar, girar, gatear).",
+        "materials": "Conos, colchonetas y aros.",
+        "logro": "Ejecuta secuencia completa sin perder coordinación.",
+        "objective": "Desarrollar coordinación motora compleja en secuencia.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad marcada para integrar movimientos combinados."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "4960-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Actividades de dibujo estructurado con crayones cortos o lápices triangulares.",
+        "materials": "Lápices triangulares, hojas con guías simples.",
+        "logro": "Mantiene agarre correcto sin fatiga rápida.",
+        "objective": "Consolidar agarre trípode funcional.",
+        "frequency": "3–4 veces por semana.",
+        "alert": "Agarre inmaduro persistente (palmar o puño cerrado)."
+      },
+      {
+        "id": "4960-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Presentar figuras geométricas y letras mayúsculas para imitación.",
+        "materials": "Hojas con modelos, lápices.",
+        "logro": "Reproduce figura cerrada con proporción reconocible.",
+        "objective": "Mejorar precisión gráfica estructurada.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Dificultad persistente para copiar formas básicas."
+      },
+      {
+        "id": "4960-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Ofrecer plantillas con líneas curvas y figuras básicas.",
+        "materials": "Tijeras de seguridad, hojas impresas.",
+        "logro": "Sigue línea con control y precisión moderada.",
+        "objective": "Desarrollar coordinación bilateral avanzada.",
+        "frequency": "2 veces por semana.",
+        "alert": "Incapacidad para coordinar apertura y cierre de tijeras."
+      },
+      {
+        "id": "4960-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Juegos de práctica con prendas o paneles de botones.",
+        "materials": "Camisas o panel didáctico de botones.",
+        "logro": "Abrocha y desabrocha con coordinación adecuada.",
+        "objective": "Fortalecer destreza manual fina.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad marcada para manipular objetos pequeños."
+      },
+      {
+        "id": "4960-MF-05",
+        "area": "Motricidad fina",
+        "level": "Avanzado",
+        "activity": "Practicar escritura del nombre con guía visual progresiva.",
+        "materials": "Tarjeta con su nombre, lápiz y papel.",
+        "logro": "Reproduce varias letras en orden correcto.",
+        "objective": "Desarrollar escritura inicial funcional.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No muestra interés ni progreso en trazos estructurados hacia los 5 años."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "4960-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Conversaciones guiadas donde se incentive explicar causas (“¿por qué pasó eso?”).",
+        "materials": "Cuentos ilustrados o situaciones cotidianas.",
+        "logro": "Produce frases estructuradas con sentido lógico.",
+        "objective": "Consolidar lenguaje estructurado complejo.",
+        "frequency": "Diario.",
+        "alert": "Dificultad marcada para organizar ideas verbalmente."
+      },
+      {
+        "id": "4960-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Pedir que cuente un cuento visto o una experiencia reciente con guía mínima.",
+        "materials": "Libro de cuentos o secuencia de imágenes.",
+        "logro": "Mantiene secuencia lógica en el relato.",
+        "objective": "Desarrollar narración organizada.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Incapacidad para organizar eventos básicos."
+      },
+      {
+        "id": "4960-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Juegos de segmentación sonora (“¿con qué sonido empieza sol?”).",
+        "materials": "Tarjetas ilustradas con palabras familiares.",
+        "logro": "Reconoce sonidos iniciales con precisión creciente.",
+        "objective": "Fortalecer conciencia fonológica.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad persistente para discriminar sonidos básicos."
+      },
+      {
+        "id": "4960-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Juegos de repetición de palabras y trabalenguas infantiles simples.",
+        "materials": "Tarjetas con palabras estructuradas.",
+        "logro": "Es comprendido claramente por personas fuera del entorno familiar.",
+        "objective": "Mejorar articulación clara de fonemas complejos.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad severa de pronunciación que limita comprensión."
+      },
+      {
+        "id": "4960-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Avanzado",
+        "activity": "Juegos con tarjetas de letras vinculadas a imágenes conocidas.",
+        "materials": "Abecedario visual ilustrado.",
+        "logro": "Identifica correctamente varias letras y su sonido correspondiente.",
+        "objective": "Iniciar asociación sonido-letra.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "No muestra interés ni reconocimiento básico de letras hacia los 5 años."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "4960-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Permitir que elija y organice su ropa diaria con supervisión mínima.",
+        "materials": "Ropa accesible y organizada.",
+        "logro": "Completa proceso de vestirse sin ayuda física.",
+        "objective": "Consolidar autonomía personal.",
+        "frequency": "Diario.",
+        "alert": "Dependencia persistente para tareas básicas de autocuidado."
+      },
+      {
+        "id": "4960-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Juegos de mesa simples con reglas claras y turnos definidos.",
+        "materials": "Juegos de memoria, dominó infantil o cartas simples.",
+        "logro": "Respeta turnos y reglas básicas sin frustración excesiva.",
+        "objective": "Desarrollar juego cooperativo estructurado.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Incapacidad persistente para aceptar límites sociales."
+      },
+      {
+        "id": "4960-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Enseñar técnicas básicas de respiración y pausa emocional.",
+        "materials": "Tarjetas visuales de emociones o rincón de calma.",
+        "logro": "Aplica estrategia con recordatorio mínimo.",
+        "objective": "Fortalecer autorregulación emocional.",
+        "frequency": "Diario según situaciones.",
+        "alert": "Explosiones emocionales intensas sin mejora progresiva."
+      },
+      {
+        "id": "4960-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Juegos de rol sobre resolución de conflictos simples.",
+        "materials": "Muñecos o situaciones dramatizadas.",
+        "logro": "Usa palabras en lugar de agresión para resolver desacuerdos.",
+        "objective": "Desarrollar empatía funcional y resolución básica de conflictos.",
+        "frequency": "2 veces por semana.",
+        "alert": "Conductas agresivas persistentes sin respuesta a intervención."
+      },
+      {
+        "id": "4960-SP-05",
+        "area": "Social-personal",
+        "level": "Avanzado",
+        "activity": "Asignar tareas diarias específicas (ordenar habitación, alimentar mascota).",
+        "materials": "Elementos cotidianos del hogar.",
+        "logro": "Cumple tarea sin recordatorio constante.",
+        "objective": "Fomentar responsabilidad social estructurada.",
+        "frequency": "Diario.",
+        "alert": "Rechazo sistemático a colaborar o asumir responsabilidades."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "4960-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Uso de calendario visual semanal con responsabilidades asignadas.",
+        "materials": "Calendario ilustrado o pizarra magnética.",
+        "logro": "Cumple secuencia del día con recordatorio verbal mínimo.",
+        "objective": "Consolidar organización diaria estructurada.",
+        "frequency": "Diario.",
+        "alert": "Desorganización constante que afecta cumplimiento de actividades."
+      },
+      {
+        "id": "4960-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Establecer checklist visual en baño con pasos definidos.",
+        "materials": "Lista ilustrada de pasos de higiene.",
+        "logro": "Completa la mayoría de pasos sin ayuda física.",
+        "objective": "Favorece autonomía y seguridad.",
+        "frequency": "Diario.",
+        "alert": "Falta persistente de autonomía en autocuidado."
+      },
+      {
+        "id": "4960-RF-03",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Tiempo diario de actividad dirigida (dibujo, lectura guiada, escritura inicial).",
+        "materials": "Libro, cuaderno o material gráfico.",
+        "logro": "Mantiene atención en actividad asignada.",
+        "objective": "Establecer hábitos de responsabilidad académica inicial.",
+        "frequency": "Diario.",
+        "alert": "Dificultad extrema para mantener atención mínima."
+      },
+      {
+        "id": "4960-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer horario fijo y reemplazar pantalla por actividad activa o creativa.",
+        "materials": "Juegos físicos, libros, materiales de arte.",
+        "logro": "Finaliza uso digital cuando se le indica.",
+        "objective": "Regular uso equilibrado de pantallas.",
+        "frequency": "Diario.",
+        "alert": "Dependencia marcada del dispositivo para regular emociones."
+      },
+      {
+        "id": "4960-RF-05",
+        "area": "Rutina familiar",
+        "level": "Avanzado",
+        "activity": "Asignar tareas diarias fijas (ordenar habitación, preparar mochila, alimentar mascota).",
+        "materials": "Elementos cotidianos del hogar.",
+        "logro": "Cumple responsabilidades sin recordatorio constante.",
+        "objective": "Fomentar responsabilidad estructurada constante.",
+        "frequency": "Diario.",
+        "alert": "Rechazo sistemático a cualquier responsabilidad estructurada."
+      }
+    ],
+    "Disposición para el aprendizaje": [
+      {
+        "id": "4960-DA-01",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Actividad estructurada con inicio-desarrollo-cierre",
+        "materials": "Material académico inicial",
+        "logro": "Finaliza tarea con máximo 1 redirección",
+        "objective": "Mantener atención 12–15 minutos en actividad estructurada",
+        "frequency": "3 veces/semana",
+        "alert": "No supera 5–6 minutos de atención"
+      },
+      {
+        "id": "4960-DA-02",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Juego de consignas encadenadas",
+        "materials": "Apoyo visual opcional",
+        "logro": "Cumple 4 pasos sin repetición constante",
+        "objective": "Seguir 4 instrucciones consecutivas",
+        "frequency": "3 veces/semana",
+        "alert": "Pierde secuencia frecuentemente"
+      },
+      {
+        "id": "4960-DA-03",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Actividad de preescritura o secuencia lógica",
+        "materials": "Hoja estructurada / lápiz",
+        "logro": "Completa tarea sin abandonar ante error leve",
+        "objective": "Mantener esfuerzo hasta completar tarea con dificultad moderada",
+        "frequency": "3 veces/semana",
+        "alert": "Frustración inmediata ante equivocación"
+      },
+      {
+        "id": "4960-DA-04",
+        "area": "Disposición para el aprendizaje",
+        "level": "Refuerzo",
+        "activity": "Rutina previa a tarea",
+        "materials": "Lista visual simple",
+        "logro": "Reúne materiales con guía verbal",
+        "objective": "Organizar materiales antes de iniciar actividad",
+        "frequency": "2–3 veces/semana",
+        "alert": "Inicia actividad sin preparación constante"
+      },
+      {
+        "id": "4960-DA-05",
+        "area": "Disposición para el aprendizaje",
+        "level": "Avanzado",
+        "activity": "Actividad estructurada completa",
+        "materials": "Caja organizadora",
+        "logro": "Completa ciclo completo autónomamente",
+        "objective": "Iniciar y finalizar actividad sin indicación directa",
+        "frequency": "3 veces/semana",
+        "alert": "Dependencia constante para iniciar o cerrar"
+      }
+    ]
+  },
+  "61–72 meses": {
+    "Motricidad gruesa": [
+      {
+        "id": "6172-MG-01",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Juegos de equilibrio sobre línea marcada o barra baja.",
+        "materials": "Cinta adhesiva o banco bajo seguro.",
+        "logro": "Mantiene estabilidad durante al menos 8–10 pasos consecutivos.",
+        "objective": "Consolidar equilibrio dinámico avanzado.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad persistente para mantener equilibrio básico."
+      },
+      {
+        "id": "6172-MG-02",
+        "area": "Motricidad gruesa",
+        "level": "Esperado para su edad",
+        "activity": "Juegos de rayuela o circuitos con saltos alternos.",
+        "materials": "Tiza o cinta para marcar suelo.",
+        "logro": "Coordina movimientos alternos sin perder ritmo.",
+        "objective": "Mejorar coordinación bilateral alternada.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Movimientos rígidos o dificultad para alternar piernas."
+      },
+      {
+        "id": "6172-MG-03",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Lanzamientos progresivos aumentando distancia y velocidad.",
+        "materials": "Pelota pequeña de espuma.",
+        "logro": "Atrapa con manos sin apoyo del cuerpo.",
+        "objective": "Fortalecer coordinación ojo-mano avanzada.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad marcada para coordinar recepción visual-manual."
+      },
+      {
+        "id": "6172-MG-04",
+        "area": "Motricidad gruesa",
+        "level": "Refuerzo",
+        "activity": "Circuito con correr, saltar, gatear, lanzar y girar.",
+        "materials": "Conos, colchonetas, aros.",
+        "logro": "Ejecuta secuencia completa manteniendo control corporal.",
+        "objective": "Desarrollar resistencia y coordinación en secuencia.",
+        "frequency": "2 veces por semana.",
+        "alert": "Fatiga excesiva o torpeza marcada en integración de movimientos."
+      },
+      {
+        "id": "6172-MG-05",
+        "area": "Motricidad gruesa",
+        "level": "Avanzado",
+        "activity": "Juegos dirigidos tipo mini-deporte (mini fútbol, mini baloncesto adaptado).",
+        "materials": "Pelota, meta pequeña o aro bajo.",
+        "logro": "Dirige movimiento hacia objetivo con control corporal.",
+        "objective": "Consolidar habilidades predeportivas estructuradas.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Dificultad persistente para coordinar secuencias motoras complejas."
+      }
+    ],
+    "Motricidad fina": [
+      {
+        "id": "6172-MF-01",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Actividades de escritura guiada y dibujo estructurado.",
+        "materials": "Lápiz triangular, hojas con líneas guía.",
+        "logro": "Mantiene agarre correcto durante actividad de 10–15 minutos.",
+        "objective": "Consolidar agarre trípode maduro y estable.",
+        "frequency": "4–5 veces por semana.",
+        "alert": "Fatiga rápida o agarre inmaduro persistente."
+      },
+      {
+        "id": "6172-MF-02",
+        "area": "Motricidad fina",
+        "level": "Esperado para su edad",
+        "activity": "Presentar modelos de figuras geométricas para reproducción.",
+        "materials": "Hojas con modelos, lápices.",
+        "logro": "Reproduce figura cerrada con buena orientación espacial.",
+        "objective": "Mejorar precisión gráfica avanzada.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Dificultad persistente para copiar figuras básicas hacia los 6 años."
+      },
+      {
+        "id": "6172-MF-03",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Ofrecer plantillas con figuras más detalladas para recortar.",
+        "materials": "Tijeras de seguridad, hojas impresas.",
+        "logro": "Mantiene línea de corte con precisión creciente.",
+        "objective": "Consolidar recorte preciso.",
+        "frequency": "2 veces por semana.",
+        "alert": "Torpeza marcada en coordinación bilateral."
+      },
+      {
+        "id": "6172-MF-04",
+        "area": "Motricidad fina",
+        "level": "Refuerzo",
+        "activity": "Práctica estructurada de escritura de nombre y palabras simples.",
+        "materials": "Cuaderno con líneas, lápiz.",
+        "logro": "Escribe nombre completo con secuencia correcta.",
+        "objective": "Desarrollar escritura funcional inicial.",
+        "frequency": "3 veces por semana.",
+        "alert": "No reconoce ni intenta escribir su nombre hacia los 6 años."
+      },
+      {
+        "id": "6172-MF-05",
+        "area": "Motricidad fina",
+        "level": "Avanzado",
+        "activity": "Solicitar dibujo libre de persona y observar nivel de detalle.",
+        "materials": "Papel y colores.",
+        "logro": "Incluye al menos 6–8 partes corporales diferenciadas.",
+        "objective": "Integrar coordinación visomotora compleja.",
+        "frequency": "1–2 veces por semana.",
+        "alert": "Dibujo extremadamente inmaduro para la edad."
+      }
+    ],
+    "Lenguaje y audición": [
+      {
+        "id": "6172-LA-01",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Conversaciones guiadas donde explique causas y consecuencias.",
+        "materials": "Cuentos ilustrados o experiencias vividas.",
+        "logro": "Expresa ideas con secuencia lógica y coherente.",
+        "objective": "Consolidar lenguaje estructurado complejo.",
+        "frequency": "Diario.",
+        "alert": "Dificultad marcada para organizar discurso verbal."
+      },
+      {
+        "id": "6172-LA-02",
+        "area": "Lenguaje y audición",
+        "level": "Esperado para su edad",
+        "activity": "Secuencias de imágenes para ordenar y narrar historia.",
+        "materials": "Tarjetas secuenciales ilustradas.",
+        "logro": "Mantiene coherencia narrativa sin perder hilo central.",
+        "objective": "Desarrollar narración estructurada completa.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Incapacidad para organizar eventos básicos hacia los 6 años."
+      },
+      {
+        "id": "6172-LA-03",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Juegos de palmas por sílabas y segmentación de palabras simples.",
+        "materials": "Tarjetas con palabras familiares.",
+        "logro": "Identifica sílabas y sonidos con precisión creciente.",
+        "objective": "Consolidar conciencia fonológica avanzada.",
+        "frequency": "3 veces por semana.",
+        "alert": "Dificultad persistente para discriminar sonidos básicos."
+      },
+      {
+        "id": "6172-LA-04",
+        "area": "Lenguaje y audición",
+        "level": "Refuerzo",
+        "activity": "Ejercicios de repetición, rimas y trabalenguas simples.",
+        "materials": "Tarjetas con palabras estructuradas y rimas infantiles.",
+        "logro": "Habla claramente comprensible para cualquier adulto.",
+        "objective": "Mejorar articulación clara y precisa.",
+        "frequency": "2 veces por semana.",
+        "alert": "Dificultad significativa de pronunciación que afecta comunicación."
+      },
+      {
+        "id": "6172-LA-05",
+        "area": "Lenguaje y audición",
+        "level": "Avanzado",
+        "activity": "Juegos de lectura inicial con tarjetas de letras y palabras simples.",
+        "materials": "Abecedario ilustrado, tarjetas fonéticas.",
+        "logro": "Identifica y produce sonido correcto de varias letras.",
+        "objective": "Integrar asociación sonido–letra funcional.",
+        "frequency": "3 veces por semana.",
+        "alert": "No reconoce letras básicas hacia los 6 años."
+      }
+    ],
+    "Social-personal": [
+      {
+        "id": "6172-SP-01",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Rutina diaria donde organice mochila, uniforme y materiales escolares.",
+        "materials": "Mochila y útiles personales.",
+        "logro": "Prepara sus objetos personales con mínima guía verbal.",
+        "objective": "Consolidar autonomía personal completa.",
+        "frequency": "Diario.",
+        "alert": "Dependencia excesiva para tareas que ya debería realizar solo."
+      },
+      {
+        "id": "6172-SP-02",
+        "area": "Social-personal",
+        "level": "Esperado para su edad",
+        "activity": "Juegos grupales con normas claras y roles definidos.",
+        "materials": "Juegos de mesa infantiles o dinámicas grupales.",
+        "logro": "Respeta reglas sin intervención constante.",
+        "objective": "Fortalecer interacción social madura.",
+        "frequency": "2–3 veces por semana.",
+        "alert": "Dificultad persistente para interactuar adecuadamente con pares."
+      },
+      {
+        "id": "6172-SP-03",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Enseñar y practicar técnicas de respiración, pausa y diálogo interno positivo.",
+        "materials": "Tarjetas de emociones o rincón de calma.",
+        "logro": "Se calma con mínima intervención adulta.",
+        "objective": "Consolidar autorregulación emocional autónoma.",
+        "frequency": "Según necesidad, reforzar semanalmente.",
+        "alert": "Explosiones emocionales frecuentes sin progreso en regulación."
+      },
+      {
+        "id": "6172-SP-04",
+        "area": "Social-personal",
+        "level": "Refuerzo",
+        "activity": "Juegos de rol sobre situaciones conflictivas comunes (compartir, turnos).",
+        "materials": "Muñecos o dramatizaciones guiadas.",
+        "logro": "Propone soluciones simples ante desacuerdo.",
+        "objective": "Desarrollar resolución básica de conflictos.",
+        "frequency": "1–2 veces por semana.",
+        "alert": "Conductas agresivas persistentes sin mejora."
+      },
+      {
+        "id": "6172-SP-05",
+        "area": "Social-personal",
+        "level": "Avanzado",
+        "activity": "Asignar tareas fijas diarias y responsabilidades semanales.",
+        "materials": "Lista visible de tareas.",
+        "logro": "Realiza tareas sin recordatorio frecuente.",
+        "objective": "Fomentar responsabilidad social constante.",
+        "frequency": "Diario.",
+        "alert": "Resistencia continua a asumir responsabilidades."
+      }
+    ],
+    "Rutina familiar": [
+      {
+        "id": "6172-RF-01",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Uso de agenda visual o checklist diaria (mañana – tarde – noche).",
+        "materials": "Agenda infantil o pizarra con lista de tareas.",
+        "logro": "Cumple actividades en orden con mínima guía verbal.",
+        "objective": "Consolidar organización autónoma diaria.",
+        "frequency": "Diario.",
+        "alert": "Desorganización constante que afecta desempeño escolar."
+      },
+      {
+        "id": "6172-RF-02",
+        "area": "Rutina familiar",
+        "level": "Esperado para su edad",
+        "activity": "Checklist visual en baño y habitación.",
+        "materials": "Lista ilustrada de pasos.",
+        "logro": "Completa rutina sin intervención directa.",
+        "objective": "Fortalecer autonomía completa en higiene y autocuidado.",
+        "frequency": "Diario.",
+        "alert": "Dependencia persistente en actividades básicas hacia los 6 años."
+      },
+      {
+        "id": "6172-RF-03",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Tiempo diario de lectura guiada o actividad escrita breve.",
+        "materials": "Libro infantil, cuaderno y lápiz.",
+        "logro": "Mantiene atención con mínima redirección.",
+        "objective": "Desarrollar hábitos académicos estructurados.",
+        "frequency": "Diario.",
+        "alert": "Incapacidad persistente para mantener atención mínima estructurada."
+      },
+      {
+        "id": "6172-RF-04",
+        "area": "Rutina familiar",
+        "level": "Refuerzo",
+        "activity": "Establecer horario claro y consistente para uso de dispositivos.",
+        "materials": "Cronómetro visual o temporizador.",
+        "logro": "Finaliza uso digital cuando se le indica.",
+        "objective": "Regular uso equilibrado de tecnología.",
+        "frequency": "Diario.",
+        "alert": "Dependencia marcada del dispositivo para regular emociones."
+      },
+      {
+        "id": "6172-RF-05",
+        "area": "Rutina familiar",
+        "level": "Avanzado",
+        "activity": "Asignar tareas semanales fijas (ordenar habitación, preparar uniforme, alimentar mascota).",
+        "materials": "Lista visible de responsabilidades.",
+        "logro": "Realiza tareas sin recordatorio frecuente.",
+        "objective": "Fomentar responsabilidad estructurada constante.",
+        "frequency": "Diario.",
+        "alert": "Rechazo persistente a asumir responsabilidades acordes a su edad."
+      }
+    ],
+    "Disposición para el aprendizaje": [
+      {
+        "id": "6172-DA-01",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Actividad de prelectura, secuencia lógica o preescritura",
+        "materials": "Hoja estructurada y lápiz",
+        "logro": "Finaliza tarea con mínima redirección",
+        "objective": "Mantener atención 18–20 minutos en actividad estructurada",
+        "frequency": "3 veces/semana",
+        "alert": "No supera 8–10 minutos de atención sostenida"
+      },
+      {
+        "id": "6172-DA-02",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Juego de consignas múltiples",
+        "materials": "Lista verbal o visual",
+        "logro": "Cumple secuencia completa con máximo 1 recordatorio",
+        "objective": "Seguir 5 instrucciones consecutivas en orden correcto",
+        "frequency": "3 veces/semana",
+        "alert": "Confunde orden frecuentemente"
+      },
+      {
+        "id": "6172-DA-03",
+        "area": "Disposición para el aprendizaje",
+        "level": "Esperado para su edad",
+        "activity": "Actividad académica con revisión",
+        "materials": "Hoja estructurada",
+        "logro": "Acepta corrección y ajusta trabajo",
+        "objective": "Corregir error tras indicación sin frustración desproporcionada",
+        "frequency": "3 veces/semana",
+        "alert": "Rechazo intenso ante corrección"
+      },
+      {
+        "id": "6172-DA-04",
+        "area": "Disposición para el aprendizaje",
+        "level": "Refuerzo",
+        "activity": "Rutina “plan antes de empezar”",
+        "materials": "Lista visual",
+        "logro": "Explica secuencia básica antes de iniciar",
+        "objective": "Organizar pasos antes de iniciar actividad",
+        "frequency": "2–3 veces/semana",
+        "alert": "Inicia impulsivamente sin plan"
+      },
+      {
+        "id": "6172-DA-05",
+        "area": "Disposición para el aprendizaje",
+        "level": "Avanzado",
+        "activity": "Actividad académica estructurada completa",
+        "materials": "Material escolar básico",
+        "logro": "Completa ciclo completo de trabajo con autonomía",
+        "objective": "Gestionar inicio, desarrollo y cierre de actividad sin supervisión constante",
+        "frequency": "3 veces/semana",
+        "alert": "Dependencia constante para sostener tarea"
+      }
+    ]
+  }
+}

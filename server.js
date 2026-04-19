@@ -5,6 +5,12 @@ import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
 import { initializeDatabase, getDatabase } from './database.js';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -251,14 +257,39 @@ app.delete('/api/routines/:id', authenticateToken, async (req, res) => {
 // Obtener todas las fichas (sin autenticación, públicas)
 app.get('/api/activities', async (req, res) => {
   try {
-    // Aquí retornaremos las fichas que ya tenemos en JSON
+    const activitiesPath = path.join(__dirname, 'data', 'all_activities.json');
+    const activitiesData = fs.readFileSync(activitiesPath, 'utf-8');
+    const activities = JSON.parse(activitiesData);
+    
     res.json({
       message: 'Fichas de estimulación disponibles',
-      note: 'Las fichas se cargan desde el frontend'
+      data: activities
     });
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: error.message });
+    console.error('Error al cargar fichas:', error);
+    res.status(500).json({ error: 'Error al cargar las fichas' });
+  }
+});
+
+// Obtener fichas por rango de edad
+app.get('/api/activities/:ageRange', async (req, res) => {
+  try {
+    const { ageRange } = req.params;
+    const activitiesPath = path.join(__dirname, 'data', 'all_activities.json');
+    const activitiesData = fs.readFileSync(activitiesPath, 'utf-8');
+    const activities = JSON.parse(activitiesData);
+    
+    if (!activities[ageRange]) {
+      return res.status(404).json({ error: 'Rango de edad no encontrado' });
+    }
+    
+    res.json({
+      ageRange,
+      data: activities[ageRange]
+    });
+  } catch (error) {
+    console.error('Error al cargar fichas:', error);
+    res.status(500).json({ error: 'Error al cargar las fichas' });
   }
 });
 
