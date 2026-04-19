@@ -25,6 +25,19 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Servir archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta raíz
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Ruta para /public/index.html
+app.get('/public/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Middleware de autenticación
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
