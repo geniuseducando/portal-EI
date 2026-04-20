@@ -179,14 +179,16 @@ app.get('/api/routines', authenticateToken, async (req, res) => {
     const userId = req.user.id;
     const db = await getDatabase();
 
+    console.log('📋 Obteniendo rutinas para usuario:', userId);
     const routines = await db.all(
       'SELECT * FROM weekly_routines WHERE user_id = ? ORDER BY created_at DESC',
       [userId]
     );
 
+    console.log('✅ Rutinas encontradas:', routines.length, routines);
     res.json({ routines });
   } catch (error) {
-    console.error('Error al obtener rutinas:', error);
+    console.error('❌ Error al obtener rutinas:', error);
     res.status(500).json({ error: error.message });
   }
 });
