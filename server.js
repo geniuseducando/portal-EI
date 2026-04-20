@@ -87,6 +87,12 @@ app.post('/api/auth/register', async (req, res) => {
       [userId, name, email, hashedPassword]
     );
 
+    const savedUser = await db.get('SELECT id FROM users WHERE id = ?', [userId]);
+    if (!savedUser) {
+      console.error('❌ Usuario no se guardó correctamente:', userId);
+      throw new Error('Usuario no se guardó en la base de datos');
+    }
+
     const token = jwt.sign({ id: userId, email }, JWT_SECRET, { expiresIn: '7d' });
 
     console.log('✅ Usuario registrado exitosamente:', userId);
@@ -96,7 +102,23 @@ app.post('/api/auth/register', async (req, res) => {
       user: { id: userId, name, email }
     });
   } catch (error) {
-    console.error('Error en registro:', error);
+    console.error('❌ Error en registro:', error.message);
+    res.status(500).json({ error: error.message || 'Error al registrar usuario' });
+  }
+});
+
+// Verificar usuario (endpoint de prueba)
+app.get('/api/auth/verify/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const db = await getDatabase();
+    const user = await db.get('SELECT id, email, name FROM users WHERE id = ?', [userId]);
+    if (user) {
+      res.json({ found: true, user });
+    } else {
+      res.json({ found: false, userId });
+    }
+  } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
