@@ -393,6 +393,7 @@
                 });
 
                 const data = await response.json();
+                console.log('Login response:', { status: response.status, data });
 
                 if (response.ok && data.token) {
                     token = data.token;
@@ -430,6 +431,7 @@
                 });
 
                 const data = await response.json();
+                console.log('Register response:', { status: response.status, data });
 
                 if (response.ok && data.token) {
                     token = data.token;
