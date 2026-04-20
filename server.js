@@ -80,12 +80,16 @@ app.post('/api/auth/register', async (req, res) => {
     const hashedPassword = await bcryptjs.hash(password, 10);
     const userId = uuidv4();
 
+    console.log('📝 Registrando usuario:', { userId, email, name });
+
     await db.run(
       'INSERT INTO users (id, name, email, password) VALUES (?, ?, ?, ?)',
       [userId, name, email, hashedPassword]
     );
 
     const token = jwt.sign({ id: userId, email }, JWT_SECRET, { expiresIn: '7d' });
+
+    console.log('✅ Usuario registrado exitosamente:', userId);
 
     res.json({
       token,
@@ -140,10 +144,13 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
     const userId = req.user.id;
     const db = await getDatabase();
 
+    console.log('🔍 Verificando usuario:', userId);
     const user = await db.get('SELECT id FROM users WHERE id = ?', [userId]);
     if (!user) {
+      console.log('❌ Usuario no encontrado en BD:', userId);
       return res.status(401).json({ error: 'Usuario no encontrado' });
     }
+    console.log('✅ Usuario encontrado:', user);
 
     const routineId = uuidv4();
 
