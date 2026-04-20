@@ -51,6 +51,8 @@
         .btn-secondary { background: #1c5f7c; }
         .btn-secondary:hover { background: #153d52; }
         
+        .btn-small { padding: 8px 12px; font-size: 12px; margin: 3px; }
+        
         .content { 
             background: white; 
             padding: 20px; 
@@ -118,6 +120,7 @@
         
         .card h4 { color: #05b6a8; margin-bottom: 10px; }
         .card p { color: #666; margin: 5px 0; font-size: 14px; }
+        .card-buttons { margin-top: 10px; }
         
         .modal { 
             display: none; 
@@ -130,6 +133,7 @@
             z-index: 1000; 
             align-items: center; 
             justify-content: center; 
+            overflow-y: auto;
         }
         
         .modal.active { display: flex; }
@@ -138,9 +142,10 @@
             background: white; 
             padding: 30px; 
             border-radius: 8px; 
-            max-width: 600px; 
-            max-height: 80vh; 
+            max-width: 800px; 
+            max-height: 90vh; 
             overflow-y: auto; 
+            margin: 20px;
         }
         
         .close { 
@@ -210,6 +215,25 @@
         }
 
         .hidden { display: none; }
+        
+        .activity-checkbox { 
+            margin: 10px 0; 
+            padding: 10px; 
+            background: #f9f9f9; 
+            border-radius: 5px; 
+            border: 1px solid #ddd;
+        }
+        
+        .activity-checkbox input { 
+            margin-right: 10px; 
+            cursor: pointer;
+        }
+        
+        .activity-checkbox label { 
+            cursor: pointer; 
+            display: inline;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -288,7 +312,7 @@
         </div>
     </div>
 
-    <!-- Modal para crear rutina -->
+    <!-- Modal para crear rutina (paso 1) -->
     <div id="createRoutineModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeCreateRoutineModal()">&times;</span>
@@ -329,8 +353,24 @@
                 </select>
             </div>
             
-            <button class="btn" onclick="createRoutine()" style="width: 100%; margin-top: 20px;">Crear Rutina</button>
+            <button class="btn" onclick="proceedToEditRoutine()" style="width: 100%; margin-top: 20px;">Siguiente: Construir Rutina</button>
             <div id="routineError"></div>
+        </div>
+    </div>
+
+    <!-- Modal para editar/construir rutina (paso 2) -->
+    <div id="editRoutineModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditRoutineModal()">&times;</span>
+            <h2 style="margin-bottom: 20px;">Construir Rutina - <span id="routineTitle"></span></h2>
+            
+            <p style="margin-bottom: 15px; color: #666;">Selecciona las actividades que deseas incluir en la rutina:</p>
+            
+            <div id="activitiesContainer" style="max-height: 60vh; overflow-y: auto; margin-bottom: 20px;"></div>
+            
+            <button class="btn" onclick="saveRoutineActivities()" style="width: 100%; margin-bottom: 10px;">Guardar Rutina</button>
+            <button class="btn btn-secondary" onclick="closeEditRoutineModal()" style="width: 100%;">Cancelar</button>
+            <div id="editRoutineError"></div>
         </div>
     </div>
 
@@ -338,6 +378,9 @@
         const API_URL = 'https://portal-ei.onrender.com/api';
         let token = localStorage.getItem('token');
         let currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+        let allActivities = {};
+        let currentRoutineId = null;
+        let currentRoutineData = {};
 
         function updateAuthState() {
             token = localStorage.getItem('token');
@@ -345,7 +388,6 @@
             console.log('Estado actualizado. Token:', !!token, 'Usuario:', currentUser.name);
         }
 
-        // Inicializar
         window.addEventListener('load', function() {
             updateAuthState();
             console.log('Página cargada. Token:', !!token, 'Usuario:', currentUser.name);
@@ -407,7 +449,7 @@
                     errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error en login') + '</div>';
                 }
             } catch (error) {
-                console.error('❌ Error de conexión en registro:', error);
+                console.error('❌ Error de conexión en login:', error);
                 errorDiv.innerHTML = '<div class="error">Error de conexión: ' + error.message + '</div>';
             }
         }
@@ -480,6 +522,8 @@
             try {
                 const response = await fetch(API_URL + '/activities');
                 const data = await response.json();
+
+                allActivities = data.data || {};
 
                 if (data.data && typeof data.data === 'object') {
                     let html = '';
@@ -580,7 +624,12 @@
             document.getElementById('routineError').innerHTML = '';
         }
 
-        async function createRoutine() {
+        function closeEditRoutineModal() {
+            document.getElementById('editRoutineModal').classList.remove('active');
+            document.getElementById('editRoutineError').innerHTML = '';
+        }
+
+        async function proceedToEditRoutine() {
             const childName = document.getElementById('childName').value.trim();
             const ageRange = document.getElementById('ageRange').value;
             const weekNumber = document.getElementById('weekNumber').value;
@@ -592,6 +641,63 @@
                 return;
             }
 
+            currentRoutineData = {
+                childName,
+                ageRange,
+                weekNumber: parseInt(weekNumber),
+                modelType,
+                activities: {}
+            };
+
+            document.getElementById('routineTitle').textContent = childName + ' (' + ageRange + ')';
+            loadActivitiesForConstruction(ageRange);
+            
+            document.getElementById('createRoutineModal').classList.remove('active');
+            document.getElementById('editRoutineModal').classList.add('active');
+        }
+
+        function loadActivitiesForConstruction(ageRange) {
+            const container = document.getElementById('activitiesContainer');
+            container.innerHTML = '';
+
+            if (!allActivities[ageRange]) {
+                container.innerHTML = '<div class="error">No hay actividades disponibles para este rango de edad</div>';
+                return;
+            }
+
+            const areas = allActivities[ageRange];
+            let html = '';
+
+            Object.keys(areas).forEach(area => {
+                html += '<div class="area-title">' + area + '</div>';
+                const activities = areas[area];
+
+                if (Array.isArray(activities)) {
+                    activities.forEach((act, index) => {
+                        const actId = area + '_' + index;
+                        html += '<div class="activity-checkbox">';
+                        html += '<input type="checkbox" id="' + actId + '" value="' + actId + '" onchange="updateActivitySelection()">';
+                        html += '<label for="' + actId + '"><strong>' + (act.activity || 'Sin nombre') + '</strong></label>';
+                        html += '<small style="display: block; margin-left: 25px; color: #999;">Duración: ' + (act.frequency || 'No especificada') + ' | Materiales: ' + (act.materials || 'Ninguno') + '</small>';
+                        html += '</div>';
+                    });
+                }
+            });
+
+            container.innerHTML = html;
+        }
+
+        function updateActivitySelection() {
+            const checkboxes = document.querySelectorAll('.activity-checkbox input[type="checkbox"]:checked');
+            currentRoutineData.activities = {};
+            checkboxes.forEach(cb => {
+                currentRoutineData.activities[cb.value] = true;
+            });
+        }
+
+        async function saveRoutineActivities() {
+            const errorDiv = document.getElementById('editRoutineError');
+
             try {
                 const response = await fetch(API_URL + '/routines', {
                     method: 'POST',
@@ -600,11 +706,11 @@
                         'Authorization': 'Bearer ' + token
                     },
                     body: JSON.stringify({
-                        childName,
-                        ageRange,
-                        weekNumber: parseInt(weekNumber),
-                        modelType,
-                        routineData: {}
+                        childName: currentRoutineData.childName,
+                        ageRange: currentRoutineData.ageRange,
+                        weekNumber: currentRoutineData.weekNumber,
+                        modelType: currentRoutineData.modelType,
+                        routineData: currentRoutineData.activities
                     })
                 });
 
@@ -613,7 +719,7 @@
                 if (response.ok) {
                     errorDiv.innerHTML = '<div class="success">✓ Rutina creada exitosamente</div>';
                     setTimeout(() => {
-                        closeCreateRoutineModal();
+                        closeEditRoutineModal();
                         loadRoutines();
                     }, 1000);
                 } else {
@@ -650,7 +756,11 @@
                         html += '<h4>' + routine.child_name + '</h4>';
                         html += '<p><strong>Edad:</strong> ' + routine.age_range + '</p>';
                         html += '<p><strong>Semana:</strong> ' + routine.week_number + ' | <strong>Modelo:</strong> ' + (routine.model_type === 'home' ? 'Casa' : 'Escuela') + '</p>';
-                        html += '<button class="btn btn-danger" onclick="deleteRoutine(\'' + routine.id + '\')">Eliminar</button>';
+                        html += '<div class="card-buttons">';
+                        html += '<button class="btn btn-small" onclick="editRoutine(\'' + routine.id + '\')">✏️ Editar</button>';
+                        html += '<button class="btn btn-secondary btn-small" onclick="downloadRoutinePDF(\'' + routine.id + '\')">📄 Descargar PDF</button>';
+                        html += '<button class="btn btn-danger btn-small" onclick="deleteRoutine(\'' + routine.id + '\')">🗑️ Eliminar</button>';
+                        html += '</div>';
                         html += '</div>';
                     });
                     list.innerHTML = html;
@@ -661,6 +771,14 @@
                 console.error('❌ Error al cargar rutinas:', error);
                 list.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
             }
+        }
+
+        function editRoutine(id) {
+            alert('Funcionalidad de edición en desarrollo');
+        }
+
+        function downloadRoutinePDF(id) {
+            alert('Funcionalidad de descarga de PDF en desarrollo');
         }
 
         async function deleteRoutine(id) {
@@ -685,9 +803,13 @@
         }
 
         window.onclick = function(event) {
-            const modal = document.getElementById('createRoutineModal');
-            if (event.target === modal) {
-                modal.classList.remove('active');
+            const createModal = document.getElementById('createRoutineModal');
+            const editModal = document.getElementById('editRoutineModal');
+            if (event.target === createModal) {
+                createModal.classList.remove('active');
+            }
+            if (event.target === editModal) {
+                editModal.classList.remove('active');
             }
         }
     </script>
