@@ -36,7 +36,22 @@ app.use((req, res, next) => {
 });
 app.use(express.static(publicPath));
 
-// Las rutas estáticas se sirven con el middleware anterior
+// Ruta raíz - servir portal.html
+app.get('/', (req, res) => {
+  const portalPath = path.join(publicPath, 'portal.html');
+  res.sendFile(portalPath);
+});
+
+// Ruta para /portal.html
+app.get('/portal.html', (req, res) => {
+  const portalPath = path.join(publicPath, 'portal.html');
+  res.sendFile(portalPath);
+});
+
+// Ruta para /app.html (redirigir a portal.html)
+app.get('/app.html', (req, res) => {
+  res.redirect('/portal.html');
+});
 
 // Middleware de autenticación
 const authenticateToken = (req, res, next) => {
