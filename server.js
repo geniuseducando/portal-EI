@@ -31,12 +31,14 @@ app.use(express.static(publicPath));
 
 // Ruta raíz - servir app.html
 app.get('/', (req, res) => {
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
   const appPath = path.join(publicPath, 'app.html');
   res.sendFile(appPath);
 });
 
 // Ruta para /app.html
 app.get('/app.html', (req, res) => {
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
   const appPath = path.join(publicPath, 'app.html');
   res.sendFile(appPath);
 });
