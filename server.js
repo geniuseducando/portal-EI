@@ -140,6 +140,11 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
     const userId = req.user.id;
     const db = await getDatabase();
 
+    const user = await db.get('SELECT id FROM users WHERE id = ?', [userId]);
+    if (!user) {
+      return res.status(401).json({ error: 'Usuario no encontrado' });
+    }
+
     const routineId = uuidv4();
 
     await db.run(
