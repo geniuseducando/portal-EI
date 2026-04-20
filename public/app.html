@@ -399,12 +399,14 @@
                     currentUser = data.user || { name: email };
                     localStorage.setItem('token', token);
                     localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    console.log('✅ Login exitoso. Token guardado:', token);
+                    updateAuthState();
                     showMainScreen();
                 } else {
                     errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error en login') + '</div>';
                 }
             } catch (error) {
-                console.error('Error:', error);
+                console.error('❌ Error de conexión en registro:', error);
                 errorDiv.innerHTML = '<div class="error">Error de conexión: ' + error.message + '</div>';
             }
         }
@@ -434,8 +436,11 @@
                     currentUser = data.user || { name };
                     localStorage.setItem('token', token);
                     localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    console.log('✅ Registro exitoso. Token guardado:', token);
+                    updateAuthState();
                     showMainScreen();
                 } else {
+                    console.error('❌ Error en registro:', data);
                     errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error en registro') + '</div>';
                 }
             } catch (error) {
@@ -622,6 +627,13 @@
             const list = document.getElementById('routinesList');
             list.innerHTML = '<div class="loading">Cargando rutinas...</div>';
 
+            console.log('📋 loadRoutines - Token actual:', token);
+            if (!token) {
+                console.error('❌ No hay token disponible');
+                list.innerHTML = '<div class="error">Error: No hay sesión activa. Por favor, inicia sesión.</div>';
+                return;
+            }
+
             try {
                 const response = await fetch(API_URL + '/routines', {
                     headers: { 'Authorization': 'Bearer ' + token }
@@ -644,7 +656,7 @@
                     list.innerHTML = '<p>No tienes rutinas creadas aún. <button class="btn" onclick="openCreateRoutineModal()">Crear una ahora</button></p>';
                 }
             } catch (error) {
-                console.error('Error:', error);
+                console.error('❌ Error al cargar rutinas:', error);
                 list.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
             }
         }
