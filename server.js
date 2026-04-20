@@ -27,27 +27,16 @@ app.use(express.json());
 
 // Servir archivos estáticos desde la carpeta public
 const publicPath = path.join(__dirname, 'public');
+// Usar middleware personalizado para no-cache en lugar de express.static
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
+});
 app.use(express.static(publicPath));
 
-// Ruta raíz - servir app.html
-app.get('/', (req, res) => {
-  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
-  const appPath = path.join(publicPath, 'app.html');
-  res.sendFile(appPath);
-});
-
-// Ruta para /app.html
-app.get('/app.html', (req, res) => {
-  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
-  const appPath = path.join(publicPath, 'app.html');
-  res.sendFile(appPath);
-});
-
-// Ruta para /index.html
-app.get('/index.html', (req, res) => {
-  const indexPath = path.join(publicPath, 'index.html');
-  res.sendFile(indexPath);
-});
+// Las rutas estáticas se sirven con el middleware anterior
 
 // Middleware de autenticación
 const authenticateToken = (req, res, next) => {
