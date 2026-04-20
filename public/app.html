@@ -339,8 +339,15 @@
         let token = localStorage.getItem('token');
         let currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
 
+        function updateAuthState() {
+            token = localStorage.getItem('token');
+            currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+            console.log('Estado actualizado. Token:', !!token, 'Usuario:', currentUser.name);
+        }
+
         // Inicializar
         window.addEventListener('load', function() {
+            updateAuthState();
             console.log('Página cargada. Token:', !!token, 'Usuario:', currentUser.name);
             if (token && currentUser.name) {
                 showMainScreen();
@@ -440,11 +447,15 @@
         function logout() {
             localStorage.removeItem('token');
             localStorage.removeItem('currentUser');
-            token = null;
-            currentUser = {};
+            updateAuthState();
             showAuthScreen();
             document.getElementById('loginEmail').value = '';
             document.getElementById('loginPassword').value = '';
+            document.getElementById('registerName').value = '';
+            document.getElementById('registerEmail').value = '';
+            document.getElementById('registerPassword').value = '';
+            document.getElementById('loginError').innerHTML = '';
+            document.getElementById('registerError').innerHTML = '';
         }
 
         function switchTab(tabName, event) {
