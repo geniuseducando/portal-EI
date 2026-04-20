@@ -20,8 +20,8 @@ const JWT_SECRET = process.env.JWT_SECRET || 'secret_key_change_in_production';
 
 // Middleware
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || '*',
-  credentials: true
+  origin: '*',
+  credentials: false
 }));
 app.use(express.json());
 
@@ -69,6 +69,7 @@ const authenticateToken = (req, res, next) => {
 
 // Registro
 app.post('/api/auth/register', async (req, res) => {
+  console.log('📝 POST /api/auth/register - Body:', req.body);
   try {
     const { name, email, password } = req.body;
     const db = await getDatabase();
@@ -80,7 +81,7 @@ app.post('/api/auth/register', async (req, res) => {
     const hashedPassword = await bcryptjs.hash(password, 10);
     const userId = uuidv4();
 
-    console.log('📝 Registrando usuario:', { userId, email, name });
+    console.log('📝 Registrando usuario en BD:', { userId, email, name });
 
     await db.run(
       'INSERT INTO users (id, name, email, password) VALUES (?, ?, ?, ?)',
@@ -102,7 +103,7 @@ app.post('/api/auth/register', async (req, res) => {
       user: { id: userId, name, email }
     });
   } catch (error) {
-    console.error('❌ Error en registro:', error.message);
+    console.error('❌ Error en registro:', error.message, error.stack);
     res.status(500).json({ error: error.message || 'Error al registrar usuario' });
   }
 });
@@ -125,6 +126,7 @@ app.get('/api/auth/verify/:userId', async (req, res) => {
 
 // Login
 app.post('/api/auth/login', async (req, res) => {
+  console.log('🔐 POST /api/auth/login - Body:', req.body);
   try {
     const { email, password } = req.body;
     const db = await getDatabase();
@@ -152,7 +154,7 @@ app.post('/api/auth/login', async (req, res) => {
       user: { id: user.id, name: user.name, email: user.email }
     });
   } catch (error) {
-    console.error('Error en login:', error);
+    console.error('❌ Error en login:', error.message);
     res.status(500).json({ error: error.message });
   }
 });
