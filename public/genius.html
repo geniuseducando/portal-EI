@@ -711,10 +711,22 @@
 
         async function saveRoutineActivities() {
             const errorDiv = document.getElementById('editRoutineError');
+            const routineId = document.getElementById('editRoutineId').value;
+            const isEditing = !!routineId && window.currentEditingRoutineId;
 
             try {
-                const response = await fetch(API_URL + '/routines', {
-                    method: 'POST',
+                let url = API_URL + '/routines';
+                let method = 'POST';
+                let successMessage = '✓ Rutina creada exitosamente';
+
+                if (isEditing) {
+                    url = API_URL + '/routines/' + routineId;
+                    method = 'PUT';
+                    successMessage = '✓ Rutina actualizada exitosamente';
+                }
+
+                const response = await fetch(url, {
+                    method: method,
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer ' + token
@@ -731,13 +743,13 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    errorDiv.innerHTML = '<div class="success">✓ Rutina creada exitosamente</div>';
+                    errorDiv.innerHTML = '<div class="success">' + successMessage + '</div>';
                     setTimeout(() => {
                         closeEditRoutineModal();
                         loadRoutines();
                     }, 1000);
                 } else {
-                    errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error al crear rutina') + '</div>';
+                    errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error al guardar rutina') + '</div>';
                 }
             } catch (error) {
                 console.error('Error:', error);
