@@ -628,9 +628,19 @@
         }
 
         function closeEditRoutineModal() {
-            document.getElementById('editRoutineModal').classList.remove('active');
+            const modal = document.getElementById('editRoutineModal');
+            modal.style.display = 'none';
+            modal.classList.remove('active');
             document.getElementById('editRoutineError').innerHTML = '';
         }
+        
+        // Cerrar modal al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('editRoutineModal');
+            if (event.target === modal) {
+                closeEditRoutineModal();
+            }
+        });
 
         async function proceedToEditRoutine() {
             const childName = document.getElementById('childName').value.trim();
