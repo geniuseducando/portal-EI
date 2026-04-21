@@ -796,8 +796,9 @@
             pdfContent += 'ACTIVIDADES:\n';
             pdfContent += '-------------------------------------\n';
 
-            Object.keys(routine.routine_data || {}).forEach(key => {
-                const activity = routine.routine_data[key];
+            const routineData = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data) : routine.routine_data;
+            Object.keys(routineData || {}).forEach(key => {
+                const activity = routineData[key];
                 pdfContent += '\n' + activity.name + '\n';
                 pdfContent += 'Duración: ' + activity.frequency + '\n';
                 pdfContent += 'Materiales: ' + activity.materials + '\n';
