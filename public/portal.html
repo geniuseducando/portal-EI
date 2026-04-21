@@ -750,6 +750,7 @@
                 const data = await response.json();
 
                 if (data.routines && Array.isArray(data.routines) && data.routines.length > 0) {
+                    window.currentRoutines = data.routines;
                     let html = '';
                     data.routines.forEach(routine => {
                         html += '<div class="card">';
@@ -774,11 +775,60 @@
         }
 
         function editRoutine(id) {
-            alert('Funcionalidad de edición en desarrollo');
+            // Buscar la rutina en la lista
+            const routine = window.currentRoutines.find(r => r.id === id);
+            if (!routine) {
+                alert('Rutina no encontrada');
+                return;
+            }
+            
+            // Mostrar el modal de edición
+            const modal = document.getElementById('editRoutineModal');
+            document.getElementById('editRoutineId').value = id;
+            document.getElementById('editRoutineTitle').textContent = 'Editar Rutina: ' + routine.child_name;
+            
+            // Cargar las actividades disponibles
+            loadActivitiesForConstruction(routine.age_range);
+            
+            modal.style.display = 'block';
         }
 
         function downloadRoutinePDF(id) {
-            alert('Funcionalidad de descarga de PDF en desarrollo');
+            // Buscar la rutina en la lista
+            const routine = window.currentRoutines.find(r => r.id === id);
+            if (!routine) {
+                alert('Rutina no encontrada');
+                return;
+            }
+            
+            // Crear contenido del PDF
+            let content = 'RUTINA DE ' + routine.child_name.toUpperCase() + '\n';
+            content += 'Edad: ' + routine.age_range + '\n';
+            content += 'Semana: ' + routine.week_number + '\n';
+            content += 'Modelo: ' + (routine.model_type === 'home' ? 'Casa' : 'Escuela') + '\n\n';
+            
+            if (routine.routine_data && routine.routine_data !== '{}') {
+                const activities = JSON.parse(routine.routine_data);
+                content += 'ACTIVIDADES SELECCIONADAS:\n';
+                Object.entries(activities).forEach(([key, value]) => {
+                    if (value) {
+                        content += '- ' + key + '\n';
+                    }
+                });
+            } else {
+                content += 'No hay actividades seleccionadas aún.\n';
+            }
+            
+            // Descargar como archivo de texto
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'rutina_' + routine.child_name.toLowerCase().replace(/\s+/g, '_') + '.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
         }
 
         async function deleteRoutine(id) {
