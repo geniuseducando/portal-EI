@@ -731,6 +731,7 @@
                 const data = await response.json();
 
                 if (response.ok && data.routines) {
+                    window.currentRoutines = data.routines;
                     console.log('✅ Rutinas encontradas:', data.routines.length, data.routines);
                     let html = '';
                     data.routines.forEach(routine => {
