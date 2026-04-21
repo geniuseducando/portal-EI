@@ -11,7 +11,7 @@ export async function initializeDatabase() {
   if (db) return db;
 
   db = await open({
-    filename: path.join(__dirname, 'genius_portal.db'),
+    filename: path.join(__dirname, 'database.db'),
     driver: sqlite3.Database
   });
 
