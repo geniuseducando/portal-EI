@@ -208,7 +208,7 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
     );
 
     console.log('📄 Respuesta enviada:', { message: 'Rutina creada exitosamente', routineId });
-    res.json({ message: 'Rutina creada exitosamente', routineId });}
+    res.json({ message: 'Rutina creada exitosamente', routineId });
   } catch (error) {
     console.error('Error al crear rutina:', error);
     res.status(500).json({ error: error.message });
