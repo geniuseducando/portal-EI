@@ -758,13 +758,15 @@
             }
         }
 
-        function editRoutine(id) {
+        async function editRoutine(id) {
+            console.log('editRoutine llamado con id:', id);
             const routine = window.currentRoutines && window.currentRoutines.find(r => r.id === id);
             if (!routine) {
                 alert('Rutina no encontrada');
                 return;
             }
             
+            console.log('Rutina encontrada:', routine);
             const activities = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data || '{}') : (routine.routine_data || {});
             currentRoutineData = {
                 childName: routine.child_name,
@@ -778,7 +780,21 @@
             document.getElementById('editRoutineTitle').textContent = routine.child_name + ' (' + routine.age_range + ')';
             window.currentEditingRoutineId = id;
             
+            // Cargar actividades si no están disponibles
+            if (!allActivities[routine.age_range]) {
+                console.log('Cargando actividades para:', routine.age_range);
+                try {
+                    const response = await fetch(API_URL + '/activities');
+                    const data = await response.json();
+                    allActivities = data.data || {};
+                    console.log('Actividades cargadas:', allActivities);
+                } catch (error) {
+                    console.error('Error cargando actividades:', error);
+                }
+            }
+            
             loadActivitiesForConstruction(routine.age_range);
+            console.log('Abriendo modal de edición');
             document.getElementById('editRoutineModal').classList.add('active');
         }
 
