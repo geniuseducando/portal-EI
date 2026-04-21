@@ -1,4 +1,3 @@
-<!-- Versión actualizada: 2026-04-20 21:15 - Nueva vista de calendario/horario -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Genius Educa - Portal de Niñeras</title>
         <!-- Timestamp: 2026-04-21T15:00:00Z -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -118,11 +118,10 @@
         .close:hover { color: #333; }
         
         .error { color: #f76811; padding: 10px; background: #fff3e0; border-radius: 5px; margin: 10px 0; }
-        .success { color: #4caf50; padding: 10px; background: #e8f5e9; border-radius: 5px; margin: 10px 0; }
+        .success { color: #05b6a8; padding: 10px; background: #e0f7f6; border-radius: 5px; margin: 10px 0; }
+        .loading { color: #666; padding: 20px; text-align: center; }
         
-        .loading { text-align: center; padding: 20px; color: #999; }
-        
-        .routine-item { 
+        .routine-card { 
             background: white; 
             padding: 15px; 
             margin: 10px 0; 
@@ -130,129 +129,183 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
-        .routine-item h3 { color: #05b6a8; margin-bottom: 5px; }
-        .routine-item p { color: #666; font-size: 13px; margin: 3px 0; }
+        .routine-card p { margin: 5px 0; font-size: 14px; }
         
-        .schedule-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-        .schedule-table th, .schedule-table td { border: 1px solid #ddd; padding: 8px; }
-        .schedule-table th { background: #f0f0f0; font-weight: bold; }
-        .schedule-cell { min-height: 80px; background: white; cursor: pointer; vertical-align: top; position: relative; }
-        .schedule-cell:hover { background: #f9f9f9; }
-        .schedule-cell.filled { background: #e8f5e9; }
-        
-        .activity-item { 
-            padding: 8px; 
-            margin: 5px 0; 
-            background: white; 
-            border: 1px solid #ddd; 
-            border-radius: 3px; 
-            cursor: move;
-            font-size: 12px;
+        .schedule-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px;
         }
         
-        .activity-item:hover { background: #f0f0f0; }
+        .schedule-table th, .schedule-table td { 
+            border: 1px solid #ddd; 
+            padding: 10px; 
+            text-align: left;
+        }
+        
+        .schedule-table th { 
+            background: #05b6a8; 
+            color: white; 
+            font-weight: bold;
+        }
+        
+        .schedule-cell { 
+            min-height: 60px; 
+            background: #f9f9f9; 
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .schedule-cell:hover { background: #f0f0f0; }
+        
+        .activity-item { 
+            background: #e8f5f4; 
+            padding: 8px; 
+            margin: 5px 0; 
+            border-left: 3px solid #05b6a8; 
+            cursor: grab;
+            border-radius: 3px;
+        }
+        
+        .activity-item:active { cursor: grabbing; }
+        
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+        
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+            color: #333;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            font-size: 14px;
+        }
+        
+        .form-group textarea { 
+            resize: vertical; 
+            min-height: 80px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div>
-                <h1>🧒 Genius Educa - Portal de Niñeras</h1>
-                <p>Crea y gestiona rutinas personalizadas para los niños</p>
-            </div>
-            <div class="user-section">
-                <p id="userName">Hola, Niñera</p>
-                <button class="btn btn-danger" onclick="logout()">Cerrar Sesión</button>
-            </div>
-        </header>
-
-        <!-- Pantalla de Autenticación -->
-        <div id="authScreen" style="display: none;">
-            <div style="max-width: 400px; margin: 50px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <div id="authScreen" style="display: none;">
+        <div class="container" style="max-width: 400px; margin-top: 50px;">
+            <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <h1 style="color: #05b6a8; text-align: center; margin-bottom: 30px;">Genius Educa</h1>
+                
                 <div id="loginSection">
-                    <h2 style="color: #05b6a8; margin-bottom: 20px;">Inicia Sesión</h2>
-                    <input type="email" id="loginEmail" placeholder="Email" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
-                    <input type="password" id="loginPassword" placeholder="Contraseña" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
-                    <button class="btn" onclick="login()" style="width: 100%;">Iniciar Sesión</button>
-                    <p style="text-align: center; margin-top: 15px; color: #666;">¿No tienes cuenta? <button style="background: none; border: none; color: #05b6a8; cursor: pointer; text-decoration: underline;" onclick="toggleAuth()">Regístrate</button></p>
-                    <div id="loginError"></div>
+                    <h2 style="margin-bottom: 20px; font-size: 18px;">Inicia Sesión</h2>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" id="loginEmail" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña:</label>
+                        <input type="password" id="loginPassword" placeholder="Tu contraseña">
+                    </div>
+                    <button class="btn" onclick="login()" style="width: 100%; margin-bottom: 10px;">Inicia Sesión</button>
+                    <button class="btn btn-secondary" onclick="toggleAuth()" style="width: 100%;">¿No tienes cuenta? Regístrate</button>
                 </div>
-
+                
                 <div id="registerSection" style="display: none;">
-                    <h2 style="color: #05b6a8; margin-bottom: 20px;">Regístrate</h2>
-                    <input type="text" id="registerName" placeholder="Nombre" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
-                    <input type="email" id="registerEmail" placeholder="Email" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
-                    <input type="password" id="registerPassword" placeholder="Contraseña" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
-                    <button class="btn" onclick="register()" style="width: 100%;">Registrarse</button>
-                    <p style="text-align: center; margin-top: 15px; color: #666;">¿Ya tienes cuenta? <button style="background: none; border: none; color: #05b6a8; cursor: pointer; text-decoration: underline;" onclick="toggleAuth()">Inicia sesión</button></p>
-                    <div id="registerError"></div>
+                    <h2 style="margin-bottom: 20px; font-size: 18px;">Crea una Cuenta</h2>
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" id="registerName" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" id="registerEmail" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña:</label>
+                        <input type="password" id="registerPassword" placeholder="Tu contraseña">
+                    </div>
+                    <button class="btn" onclick="register()" style="width: 100%; margin-bottom: 10px;">Registrarse</button>
+                    <button class="btn btn-secondary" onclick="toggleAuth()" style="width: 100%;">¿Ya tienes cuenta? Inicia Sesión</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Pantalla Principal -->
-        <div id="mainScreen" style="display: none;">
-            <!-- Tabs -->
+    <div id="mainScreen" style="display: none;">
+        <div class="container">
+            <header>
+                <div>
+                    <h1>Genius Educa</h1>
+                    <p>Portal de Niñeras - Gestión de Rutinas</p>
+                </div>
+                <div class="user-section">
+                    <p id="userName">Hola, Niñera</p>
+                    <button class="btn btn-secondary" onclick="logout()">Cerrar Sesión</button>
+                </div>
+            </header>
+
             <div class="tabs">
-                <button class="tab-btn active" onclick="switchTab('fichas')">📋 Fichas de Actividades</button>
-                <button class="tab-btn" onclick="switchTab('routines')">📅 Mis Rutinas</button>
+                <button class="tab-btn active" onclick="switchTab('fichas')">📚 Fichas Pedagógicas</button>
+                <button class="tab-btn" onclick="switchTab('routines')">📋 Mis Rutinas</button>
+                <button class="tab-btn" onclick="switchTab('create')">➕ Crear Rutina</button>
             </div>
 
-            <!-- Tab: Fichas -->
             <div id="fichas" class="tab-content active">
-                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                    <button class="btn" onclick="loadFichas()">Ver Fichas</button>
-                    <button class="btn" onclick="downloadAllPDF()">Descargar PDF Completo</button>
-                </div>
+                <h2 style="margin-bottom: 20px;">Fichas Pedagógicas</h2>
+                <button class="btn" onclick="downloadAllPDF()" style="margin-bottom: 20px;">📥 Descargar Todas las Fichas</button>
                 <div id="fichasContent"></div>
             </div>
 
-            <!-- Tab: Rutinas -->
             <div id="routines" class="tab-content">
-                <button class="btn" onclick="openCreateRoutineModal()" style="margin-bottom: 20px;">+ Crear Nueva Rutina</button>
+                <h2 style="margin-bottom: 20px;">Mis Rutinas</h2>
                 <div id="routinesList"></div>
+            </div>
+
+            <div id="create" class="tab-content">
+                <h2 style="margin-bottom: 20px;">Crear Nueva Rutina</h2>
+                <div style="background: white; padding: 20px; border-radius: 8px;">
+                    <div class="form-group">
+                        <label>Nombre del Niño/a:</label>
+                        <input type="text" id="childName" placeholder="Ej: María">
+                    </div>
+                    <div class="form-group">
+                        <label>Rango de Edad:</label>
+                        <select id="ageRange">
+                            <option value="">Selecciona un rango</option>
+                            <option value="0–3 meses">0–3 meses</option>
+                            <option value="3–6 meses">3–6 meses</option>
+                            <option value="6–12 meses">6–12 meses</option>
+                            <option value="12–18 meses">12–18 meses</option>
+                            <option value="18–24 meses">18–24 meses</option>
+                            <option value="25–36 meses">25–36 meses</option>
+                            <option value="3–4 años">3–4 años</option>
+                            <option value="4–5 años">4–5 años</option>
+                            <option value="5–6 años">5–6 años</option>
+                            <option value="6–7 años">6–7 años</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Semana:</label>
+                        <input type="number" id="weekNumber" placeholder="1" min="1" max="52">
+                    </div>
+                    <div class="form-group">
+                        <label>Modelo:</label>
+                        <select id="modelType">
+                            <option value="home">Casa</option>
+                            <option value="school">Escuela</option>
+                        </select>
+                    </div>
+                    <button class="btn" onclick="createRoutine()" style="width: 100%;">Crear Rutina</button>
+                    <div id="createError"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal para crear rutina (paso 1) -->
-    <div id="createRoutineModal" class="modal">
-        <div class="modal-content" style="max-width: 500px;">
-            <span class="close" onclick="closeCreateRoutineModal()">&times;</span>
-            <h2 style="margin-bottom: 20px; color: #05b6a8;">Crear Nueva Rutina</h2>
-            
-            <label style="display: block; margin-bottom: 10px;">Nombre del Niño:</label>
-            <input type="text" id="childName" placeholder="Ej: Juan" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
-            
-            <label style="display: block; margin-bottom: 10px;">Rango de Edad:</label>
-            <select id="ageRange" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
-                <option value="">Selecciona un rango</option>
-                <option value="0–3 meses">0–3 meses</option>
-                <option value="4–6 meses">4–6 meses</option>
-                <option value="7–9 meses">7–9 meses</option>
-                <option value="10–12 meses">10–12 meses</option>
-                <option value="1–2 años">1–2 años</option>
-                <option value="2–3 años">2–3 años</option>
-            </select>
-            
-            <label style="display: block; margin-bottom: 10px;">Semana:</label>
-            <input type="number" id="weekNumber" placeholder="Ej: 1" min="1" max="52" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
-            
-            <label style="display: block; margin-bottom: 10px;">Tipo de Rutina:</label>
-            <select id="modelType" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
-                <option value="home">Casa</option>
-                <option value="school">Escuela</option>
-                <option value="park">Parque</option>
-            </select>
-            
-            <button class="btn" onclick="proceedToEditRoutine()" style="width: 100%; margin-bottom: 10px;">Siguiente: Construir Rutina</button>
-            <button class="btn btn-secondary" onclick="closeCreateRoutineModal()" style="width: 100%;">Cancelar</button>
-            <div id="routineError"></div>
-        </div>
-    </div>
-
-    <!-- Modal para editar/construir rutina (paso 2) -->
     <div id="editRoutineModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeEditRoutineModal()">&times;</span>
@@ -323,10 +376,49 @@
             registerSection.style.display = registerSection.style.display === 'none' ? 'block' : 'none';
         }
 
+        async function register() {
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+
+            if (!name || !email || !password) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+
+            try {
+                const response = await fetch(API_URL + '/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                console.log('Register response:', response);
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('✅ Registro exitoso. Token guardado:', data.token);
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('currentUser', JSON.stringify(data.user));
+                    updateAuthState();
+                    showMainScreen();
+                } else {
+                    alert('Error: ' + (data.error || 'Error al registrar'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error: ' + error.message);
+            }
+        }
+
         async function login() {
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
-            const errorDiv = document.getElementById('loginError');
+
+            if (!email || !password) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
 
             try {
                 const response = await fetch(API_URL + '/auth/login', {
@@ -336,57 +428,25 @@
                 });
 
                 const data = await response.json();
-                console.log('Login response:', data);
 
-                if (response.ok && data.token) {
+                if (response.ok) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('currentUser', JSON.stringify(data.user));
                     updateAuthState();
                     showMainScreen();
                 } else {
-                    errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error en login') + '</div>';
+                    alert('Error: ' + (data.error || 'Error al iniciar sesión'));
                 }
             } catch (error) {
                 console.error('Error:', error);
-                errorDiv.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
-            }
-        }
-
-        async function register() {
-            const name = document.getElementById('registerName').value;
-            const email = document.getElementById('registerEmail').value;
-            const password = document.getElementById('registerPassword').value;
-            const errorDiv = document.getElementById('registerError');
-
-            try {
-                const response = await fetch(API_URL + '/auth/register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, password })
-                });
-
-                const data = await response.json();
-                console.log('Register response:', data);
-
-                if (response.ok && data.token) {
-                    console.log('✅ Registro exitoso. Token guardado:', data.token);
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('currentUser', JSON.stringify(data.user));
-                    updateAuthState();
-                    showMainScreen();
-                } else {
-                    errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error en registro') + '</div>';
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                errorDiv.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
+                alert('Error: ' + error.message);
             }
         }
 
         function logout() {
-            localStorage.clear();
-            token = null;
-            currentUser = {};
+            localStorage.removeItem('token');
+            localStorage.removeItem('currentUser');
+            updateAuthState();
             showAuthScreen();
         }
 
@@ -449,83 +509,192 @@
                 const response = await fetch(API_URL + '/activities');
                 const data = await response.json();
 
-                let pdfContent = 'FICHAS DE ACTIVIDADES - GENIUS EDUCA\n';
-                pdfContent += '=====================================\n\n';
+                if (!data.data) {
+                    alert('No hay fichas disponibles');
+                    return;
+                }
 
-                Object.keys(data.data || {}).forEach(ageRange => {
-                    pdfContent += '\n' + ageRange + '\n';
-                    pdfContent += '-'.repeat(ageRange.length) + '\n';
+                let htmlContent = '<div style="font-family: Arial, sans-serif; padding: 20px;">';
+                htmlContent += '<h1 style="color: #05b6a8; text-align: center;">FICHAS PEDAGÓGICAS GENIUS EDUCA</h1>';
+                htmlContent += '<hr style="border: 1px solid #05b6a8; margin: 20px 0;">';
+
+                const ageRanges = Object.keys(data.data);
+                ageRanges.forEach(ageRange => {
                     const areas = data.data[ageRange];
+                    htmlContent += '<h2 style="color: #333; margin-top: 30px; page-break-before: always;">' + ageRange + '</h2>';
                     
                     Object.keys(areas).forEach(area => {
-                        pdfContent += '\n' + area + ':\n';
+                        htmlContent += '<h3 style="color: #05b6a8; margin-top: 20px;">' + area + '</h3>';
                         const activities = areas[area];
                         
                         if (Array.isArray(activities)) {
                             activities.forEach(act => {
-                                pdfContent += '  • ' + (act.activity || 'Sin nombre') + '\n';
-                                pdfContent += '    Duración: ' + (act.frequency || 'No especificada') + '\n';
-                                pdfContent += '    Materiales: ' + (act.materials || 'Ninguno') + '\n';
-                                if (act.alert) pdfContent += '    Alerta: ' + act.alert + '\n';
-                                pdfContent += '\n';
+                                htmlContent += '<div style="margin: 15px 0; padding: 10px; border-left: 4px solid #05b6a8; background: #f9f9f9;">';
+                                htmlContent += '<strong>' + (act.activity || 'Sin nombre') + '</strong>';
+                                htmlContent += '<p style="margin: 5px 0; font-size: 12px;">📌 Frecuencia: ' + (act.frequency || 'No especificada') + '</p>';
+                                htmlContent += '<p style="margin: 5px 0; font-size: 12px;">🔧 Materiales: ' + (act.materials || 'Ninguno') + '</p>';
+                                if (act.alert) {
+                                    htmlContent += '<p style="margin: 5px 0; font-size: 12px; color: #f76811;">⚠️ Alerta: ' + act.alert + '</p>';
+                                }
+                                htmlContent += '</div>';
                             });
                         }
                     });
                 });
 
-                const blob = new Blob([pdfContent], { type: 'text/plain' });
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'fichas-actividades.txt';
-                a.click();
-                window.URL.revokeObjectURL(url);
+                htmlContent += '</div>';
+
+                const element = document.createElement('div');
+                element.innerHTML = htmlContent;
+
+                const opt = {
+                    margin: 10,
+                    filename: 'fichas-pedagógicas.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                };
+
+                html2pdf().set(opt).from(element).save();
             } catch (error) {
                 console.error('Error:', error);
-                alert('Error al descargar PDF: ' + error.message);
+                alert('Error al descargar: ' + error.message);
             }
         }
 
-        function openCreateRoutineModal() {
-            document.getElementById('createRoutineModal').classList.add('active');
-        }
-
-        function closeCreateRoutineModal() {
-            document.getElementById('createRoutineModal').style.display = 'none';
-            document.getElementById('createRoutineModal').classList.remove('active');
-            document.getElementById('childName').value = '';
-            document.getElementById('ageRange').value = '';
-            document.getElementById('weekNumber').value = '';
-            document.getElementById('modelType').value = 'home';
-            document.getElementById('routineError').innerHTML = '';
-        }
-
-        async function proceedToEditRoutine() {
-            const childName = document.getElementById('childName').value.trim();
+        async function createRoutine() {
+            const childName = document.getElementById('childName').value;
             const ageRange = document.getElementById('ageRange').value;
             const weekNumber = document.getElementById('weekNumber').value;
             const modelType = document.getElementById('modelType').value;
-            const errorDiv = document.getElementById('routineError');
+            const errorDiv = document.getElementById('createError');
 
             if (!childName || !ageRange || !weekNumber) {
                 errorDiv.innerHTML = '<div class="error">Por favor completa todos los campos</div>';
                 return;
             }
 
+            try {
+                const response = await fetch(API_URL + '/routines', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token
+                    },
+                    body: JSON.stringify({
+                        childName,
+                        ageRange,
+                        weekNumber: parseInt(weekNumber),
+                        modelType,
+                        routineData: {}
+                    })
+                });
+
+                if (response.ok) {
+                    errorDiv.innerHTML = '<div class="success">✅ Rutina creada exitosamente</div>';
+                    document.getElementById('childName').value = '';
+                    document.getElementById('ageRange').value = '';
+                    document.getElementById('weekNumber').value = '';
+                    switchTab('routines');
+                    loadRoutines();
+                } else {
+                    const data = await response.json();
+                    errorDiv.innerHTML = '<div class="error">Error: ' + (data.error || 'Error al crear rutina') + '</div>';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                errorDiv.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+
+        let window.currentRoutines = [];
+
+        async function loadRoutines() {
+            const list = document.getElementById('routinesList');
+            list.innerHTML = '<div class="loading">Cargando rutinas...</div>';
+
+            try {
+                console.log('📋 loadRoutines - Token actual:', token);
+                const response = await fetch(API_URL + '/routines', {
+                    headers: { 'Authorization': 'Bearer ' + token }
+                });
+
+                const data = await response.json();
+                window.currentRoutines = data.routines || [];
+
+                if (response.ok && data.routines && data.routines.length > 0) {
+                    console.log('✅ Rutinas encontradas:', data.routines.length, data.routines);
+                    let html = '';
+                    data.routines.forEach(routine => {
+                        html += '<div class="routine-card">';
+                        html += '<p><strong>' + routine.child_name + '</strong></p>';
+                        html += '<p>Edad: ' + routine.age_range + '</p>';
+                        html += '<p>Semana: ' + routine.week_number + '</p>';
+                        html += '<p>Modelo: ' + routine.model_type + '</p>';
+                        html += '<div style="margin-top: 10px;">';
+                        html += '<button class="btn btn-small" onclick="editRoutine(\'' + routine.id + '\')">✏️ Editar</button>';
+                        html += '<button class="btn btn-small" onclick="downloadRoutinePDF(\'' + routine.id + '\')">📄 Descargar PDF</button>';
+                        html += '<button class="btn btn-small btn-danger" onclick="deleteRoutine(\'' + routine.id + '\')">🗑️ Eliminar</button>';
+                        html += '</div>';
+                        html += '</div>';
+                    });
+                    list.innerHTML = html || '<div class="error">No hay rutinas creadas</div>';
+                } else {
+                    list.innerHTML = '<div class="error">No hay rutinas creadas</div>';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                list.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+
+        async function editRoutine(id) {
+            console.log('editRoutine llamado con id:', id);
+            const routine = window.currentRoutines && window.currentRoutines.find(r => r.id === id);
+            if (!routine) {
+                alert('Rutina no encontrada');
+                return;
+            }
+            
+            console.log('Rutina encontrada:', routine);
+            const activities = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data || '{}') : (routine.routine_data || {});
             currentRoutineData = {
-                childName,
-                ageRange,
-                weekNumber: parseInt(weekNumber),
-                modelType,
-                activities: {}
+                childName: routine.child_name,
+                ageRange: routine.age_range,
+                weekNumber: routine.week_number,
+                modelType: routine.model_type,
+                activities: activities
             };
 
-            document.getElementById('editRoutineTitle').textContent = childName + ' (' + ageRange + ')';
-            window.currentEditingRoutineId = null;
-            loadActivitiesForConstruction(ageRange);
+            document.getElementById('editRoutineId').value = id;
+            document.getElementById('editRoutineTitle').textContent = routine.child_name + ' (' + routine.age_range + ')';
+            window.currentEditingRoutineId = id;
             
-            document.getElementById('createRoutineModal').classList.remove('active');
-            document.getElementById('editRoutineModal').classList.add('active');
+            // Cargar actividades si no están disponibles
+            if (!allActivities[routine.age_range]) {
+                console.log('Cargando actividades para:', routine.age_range);
+                try {
+                    const response = await fetch(API_URL + '/activities');
+                    const data = await response.json();
+                    allActivities = data.data || {};
+                    console.log('Actividades cargadas:', allActivities);
+                } catch (error) {
+                    console.error('Error cargando actividades:', error);
+                }
+            }
+            
+            loadActivitiesForConstruction(routine.age_range);
+            console.log('Abriendo modal de edición');
+            const modal = document.getElementById('editRoutineModal');
+            console.log('Modal elemento:', modal);
+            if (modal) {
+                console.log('Modal antes:', modal.className);
+                modal.classList.add('active');
+                console.log('Modal después:', modal.className);
+                console.log('Modal display:', window.getComputedStyle(modal).display);
+            } else {
+                console.error('Modal no encontrado en el DOM');
+            }
         }
 
         function loadActivitiesForConstruction(ageRange) {
@@ -604,55 +773,39 @@
             event.preventDefault();
             const actId = event.dataTransfer.getData('actId');
             const activity = window_allActivitiesFlat.find(a => a.id === actId);
+            
             if (activity) {
-                assignActivityToCell(cellId, activity);
+                const cell = document.getElementById(cellId);
+                cell.innerHTML = '<div style="font-size: 12px; padding: 5px;">' + activity.name + '</div>';
+                currentRoutineData.activities[cellId] = {
+                    id: actId,
+                    name: activity.name,
+                    frequency: activity.frequency,
+                    materials: activity.materials
+                };
             }
         }
 
-        function assignActivityToCell(cellId, activity) {
-            const cell = document.getElementById(cellId);
-            const day = cell.dataset.day;
-            const time = cell.dataset.time;
-            const key = 'day_' + day + '_time_' + time;
-            
-            currentRoutineData.activities[key] = activity;
-            
-            cell.innerHTML = '<div style="background: #e8f5e9; padding: 5px; border-radius: 3px; font-size: 11px;"><strong>' + activity.name + '</strong><br><small>' + activity.frequency + '</small><br><button onclick="removeActivityFromCell(\'' + cellId + '\')" style="margin-top: 3px; padding: 2px 5px; font-size: 10px; background: #f76811; color: white; border: none; border-radius: 2px; cursor: pointer;">Eliminar</button></div>';
-            cell.classList.add('filled');
-        }
-
-        function removeActivityFromCell(cellId) {
-            const cell = document.getElementById(cellId);
-            const day = cell.dataset.day;
-            const time = cell.dataset.time;
-            const key = 'day_' + day + '_time_' + time;
-            
-            delete currentRoutineData.activities[key];
-            cell.innerHTML = '';
-            cell.classList.remove('filled');
-        }
-
         function selectActivityForCell(cellId) {
-            const activities = window_allActivitiesFlat;
-            let options = '<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border: 2px solid #05b6a8; padding: 20px; border-radius: 8px; z-index: 2000; max-height: 400px; overflow-y: auto; max-width: 400px;">';
-            options += '<h3>Selecciona una actividad:</h3>';
-            activities.forEach(act => {
-                options += '<div style="padding: 8px; margin: 5px 0; background: #f0f0f0; border-radius: 3px; cursor: pointer;" onclick="assignActivityToCell(\'' + cellId + '\', {name: \'' + act.name.replace(/'/g, "\\'") + '\', frequency: \'' + act.frequency.replace(/'/g, "\\'") + '\', materials: \'' + act.materials.replace(/'/g, "\\'") + '\', id: \'' + act.id + '\'}); this.closest(\'div\').remove();">' + act.name + '</div>';
-            });
-            options += '<button onclick="this.parentElement.remove()" style="width: 100%; margin-top: 10px; padding: 8px; background: #999; color: white; border: none; border-radius: 3px; cursor: pointer;">Cerrar</button>';
-            options += '</div>';
-            document.body.insertAdjacentHTML('beforeend', options);
+            const activity = window_allActivitiesFlat[0];
+            if (activity) {
+                const cell = document.getElementById(cellId);
+                cell.innerHTML = '<div style="font-size: 12px; padding: 5px;">' + activity.name + '</div>';
+                currentRoutineData.activities[cellId] = {
+                    id: activity.id,
+                    name: activity.name,
+                    frequency: activity.frequency,
+                    materials: activity.materials
+                };
+            }
         }
 
         function loadSavedSchedule() {
-            Object.keys(currentRoutineData.activities).forEach(key => {
-                if (key.startsWith('day_')) {
-                    const parts = key.split('_');
-                    const day = parts[1];
-                    const time = parts[3];
-                    const cellId = 'cell_' + day + '_' + time;
-                    const activity = currentRoutineData.activities[key];
-                    assignActivityToCell(cellId, activity);
+            Object.keys(currentRoutineData.activities).forEach(cellId => {
+                const activity = currentRoutineData.activities[cellId];
+                const cell = document.getElementById(cellId);
+                if (cell) {
+                    cell.innerHTML = '<div style="font-size: 12px; padding: 5px;">' + activity.name + '</div>';
                 }
             });
         }
@@ -672,138 +825,34 @@
         });
 
         async function saveRoutineActivities() {
-            const errorDiv = document.getElementById('editRoutineError');
             const routineId = document.getElementById('editRoutineId').value;
-            const isEditing = !!routineId && window.currentEditingRoutineId;
+            const errorDiv = document.getElementById('editRoutineError');
 
             try {
-                let url = API_URL + '/routines';
-                let method = 'POST';
-                let successMessage = '✓ Rutina creada exitosamente';
-
-                if (isEditing) {
-                    url = API_URL + '/routines/' + routineId;
-                    method = 'PUT';
-                    successMessage = '✓ Rutina actualizada exitosamente';
-                }
-
-                const response = await fetch(url, {
-                    method: method,
+                const response = await fetch(API_URL + '/routines/' + routineId, {
+                    method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer ' + token
                     },
                     body: JSON.stringify({
-                        childName: currentRoutineData.childName,
-                        ageRange: currentRoutineData.ageRange,
-                        weekNumber: currentRoutineData.weekNumber,
-                        modelType: currentRoutineData.modelType,
                         routineData: currentRoutineData.activities
                     })
                 });
 
-                const data = await response.json();
-
                 if (response.ok) {
-                    errorDiv.innerHTML = '<div class="success">' + successMessage + '</div>';
+                    errorDiv.innerHTML = '<div class="success">✅ Rutina guardada exitosamente</div>';
                     setTimeout(() => {
                         closeEditRoutineModal();
                         loadRoutines();
                     }, 1000);
                 } else {
-                    errorDiv.innerHTML = '<div class="error">' + (data.error || 'Error al guardar rutina') + '</div>';
+                    const data = await response.json();
+                    errorDiv.innerHTML = '<div class="error">Error: ' + (data.error || 'Error al guardar') + '</div>';
                 }
             } catch (error) {
                 console.error('Error:', error);
                 errorDiv.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
-            }
-        }
-
-        async function loadRoutines() {
-            console.log('📋 loadRoutines - Token actual:', token);
-            const list = document.getElementById('routinesList');
-            list.innerHTML = '<div class="loading">Cargando rutinas...</div>';
-
-            try {
-                const response = await fetch(API_URL + '/routines', {
-                    headers: { 'Authorization': 'Bearer ' + token }
-                });
-
-                const data = await response.json();
-
-                if (response.ok && data.routines) {
-                    window.currentRoutines = data.routines;
-                    console.log('✅ Rutinas encontradas:', data.routines.length, data.routines);
-                    let html = '';
-                    data.routines.forEach(routine => {
-                        html += '<div class="routine-item">';
-                        html += '<h3>' + routine.child_name + '</h3>';
-                        html += '<p>Edad: ' + routine.age_range + '</p>';
-                        html += '<p>Semana: ' + routine.week_number + '</p>';
-                        html += '<p>Modelo: ' + routine.model_type + '</p>';
-                        html += '<div style="margin-top: 10px;">';
-                        html += '<button class="btn btn-small" onclick="editRoutine(\'' + routine.id + '\')">✏️ Editar</button>';
-                        html += '<button class="btn btn-small" onclick="downloadRoutinePDF(\'' + routine.id + '\')">📄 Descargar PDF</button>';
-                        html += '<button class="btn btn-small btn-danger" onclick="deleteRoutine(\'' + routine.id + '\')">🗑️ Eliminar</button>';
-                        html += '</div>';
-                        html += '</div>';
-                    });
-                    list.innerHTML = html || '<div class="error">No hay rutinas creadas</div>';
-                } else {
-                    list.innerHTML = '<div class="error">Error al cargar rutinas</div>';
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                list.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
-            }
-        }
-
-        async function editRoutine(id) {
-            console.log('editRoutine llamado con id:', id);
-            const routine = window.currentRoutines && window.currentRoutines.find(r => r.id === id);
-            if (!routine) {
-                alert('Rutina no encontrada');
-                return;
-            }
-            
-            console.log('Rutina encontrada:', routine);
-            const activities = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data || '{}') : (routine.routine_data || {});
-            currentRoutineData = {
-                childName: routine.child_name,
-                ageRange: routine.age_range,
-                weekNumber: routine.week_number,
-                modelType: routine.model_type,
-                activities: activities
-            };
-
-            document.getElementById('editRoutineId').value = id;
-            document.getElementById('editRoutineTitle').textContent = routine.child_name + ' (' + routine.age_range + ')';
-            window.currentEditingRoutineId = id;
-            
-            // Cargar actividades si no están disponibles
-            if (!allActivities[routine.age_range]) {
-                console.log('Cargando actividades para:', routine.age_range);
-                try {
-                    const response = await fetch(API_URL + '/activities');
-                    const data = await response.json();
-                    allActivities = data.data || {};
-                    console.log('Actividades cargadas:', allActivities);
-                } catch (error) {
-                    console.error('Error cargando actividades:', error);
-                }
-            }
-            
-            loadActivitiesForConstruction(routine.age_range);
-            console.log('Abriendo modal de edición');
-            const modal = document.getElementById('editRoutineModal');
-            console.log('Modal elemento:', modal);
-            if (modal) {
-                console.log('Modal antes:', modal.className);
-                modal.classList.add('active');
-                console.log('Modal después:', modal.className);
-                console.log('Modal display:', window.getComputedStyle(modal).display);
-            } else {
-                console.error('Modal no encontrado en el DOM');
             }
         }
 
@@ -814,29 +863,55 @@
                 return;
             }
 
-            let pdfContent = 'RUTINA - ' + routine.child_name + '\n';
-            pdfContent += '=====================================\n\n';
-            pdfContent += 'Edad: ' + routine.age_range + '\n';
-            pdfContent += 'Semana: ' + routine.week_number + '\n';
-            pdfContent += 'Modelo: ' + routine.model_type + '\n\n';
-            pdfContent += 'ACTIVIDADES:\n';
-            pdfContent += '-------------------------------------\n';
-
             const routineData = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data) : routine.routine_data;
+            
+            // Crear HTML para el PDF
+            let htmlContent = '<div style="font-family: Arial, sans-serif; padding: 20px;">';
+            htmlContent += '<h1 style="color: #05b6a8; text-align: center;">RUTINA SEMANAL DE ESTIMULACIÓN</h1>';
+            htmlContent += '<hr style="border: 1px solid #05b6a8;">';
+            htmlContent += '<div style="margin: 20px 0;">';
+            htmlContent += '<p><strong>Niño/a:</strong> ' + routine.child_name + '</p>';
+            htmlContent += '<p><strong>Rango de edad:</strong> ' + routine.age_range + '</p>';
+            htmlContent += '<p><strong>Semana:</strong> ' + routine.week_number + '</p>';
+            htmlContent += '<p><strong>Modelo:</strong> ' + (routine.model_type === 'home' ? 'Casa' : 'Escuela') + '</p>';
+            htmlContent += '</div>';
+            htmlContent += '<h2 style="color: #333; margin-top: 30px;">ACTIVIDADES PROGRAMADAS</h2>';
+            htmlContent += '<table style="width: 100%; border-collapse: collapse; margin-top: 15px;">';
+            htmlContent += '<tr style="background-color: #05b6a8; color: white;">';
+            htmlContent += '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Actividad</th>';
+            htmlContent += '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Frecuencia</th>';
+            htmlContent += '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Materiales</th>';
+            htmlContent += '</tr>';
+            
             Object.keys(routineData || {}).forEach(key => {
                 const activity = routineData[key];
-                pdfContent += '\n' + activity.name + '\n';
-                pdfContent += 'Duración: ' + activity.frequency + '\n';
-                pdfContent += 'Materiales: ' + activity.materials + '\n';
+                htmlContent += '<tr>';
+                htmlContent += '<td style="padding: 10px; border: 1px solid #ddd;">' + (activity.name || 'Sin nombre') + '</td>';
+                htmlContent += '<td style="padding: 10px; border: 1px solid #ddd;">' + (activity.frequency || 'No especificada') + '</td>';
+                htmlContent += '<td style="padding: 10px; border: 1px solid #ddd;">' + (activity.materials || 'Ninguno') + '</td>';
+                htmlContent += '</tr>';
             });
-
-            const blob = new Blob([pdfContent], { type: 'text/plain' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'rutina-' + routine.child_name + '.txt';
-            a.click();
-            window.URL.revokeObjectURL(url);
+            
+            htmlContent += '</table>';
+            htmlContent += '<div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #666;">';
+            htmlContent += '<p>Generado por Genius Educa - Portal de Niñeras</p>';
+            htmlContent += '<p>Fecha: ' + new Date().toLocaleDateString('es-ES') + '</p>';
+            htmlContent += '</div>';
+            htmlContent += '</div>';
+            
+            // Usar html2pdf para generar el PDF
+            const element = document.createElement('div');
+            element.innerHTML = htmlContent;
+            
+            const opt = {
+                margin: 10,
+                filename: 'rutina-' + routine.child_name + '.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
         }
 
         async function deleteRoutine(id) {
@@ -858,26 +933,6 @@
                 alert('Error: ' + error.message);
             }
         }
-
-        // Guardar rutinas en window para acceso desde funciones
-        async function loadRoutinesForEdit() {
-            try {
-                const response = await fetch(API_URL + '/routines', {
-                    headers: { 'Authorization': 'Bearer ' + token }
-                });
-                const data = await response.json();
-                window.currentRoutines = data.routines || [];
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-
-        // Cargar rutinas cuando se abre el modal de edición
-        document.addEventListener('click', function(event) {
-            if (event.target.textContent.includes('✏️')) {
-                loadRoutinesForEdit();
-            }
-        });
     </script>
 </body>
 </html>
