@@ -410,6 +410,7 @@
             document.getElementById('mainScreen').style.display = 'block';
             document.getElementById('userName').textContent = 'Hola, ' + (currentUser.name || 'Niñera');
             loadRoutines();
+            loadFichas(); // Cargar actividades para construcción de rutinas
         }
 
         function toggleAuth() {
