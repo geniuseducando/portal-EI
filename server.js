@@ -36,15 +36,20 @@ app.use((req, res, next) => {
 });
 app.use(express.static(publicPath));
 
-// Ruta raíz - servir portal.html
+// Ruta raíz - servir portal-v2.html
 app.get('/', (req, res) => {
-  res.redirect('/genius.html');
+  res.redirect('/portal-v2.html');
 });
 
-// Ruta para /genius.html
+// Ruta para /portal-v2.html
+app.get('/portal-v2.html', (req, res) => {
+  const portalPath = path.join(publicPath, 'portal-v2.html');
+  res.sendFile(portalPath);
+});
+
+// Ruta antigua para /genius.html (redirigir a portal-v2.html)
 app.get('/genius.html', (req, res) => {
-  const geniusPath = path.join(publicPath, 'genius.html');
-  res.sendFile(geniusPath);
+  res.redirect('/portal-v2.html');
 });
 
 // Rutas antiguas - redirigir
