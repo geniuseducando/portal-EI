@@ -765,12 +765,13 @@
                 return;
             }
             
+            const activities = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data || '{}') : (routine.routine_data || {});
             currentRoutineData = {
                 childName: routine.child_name,
                 ageRange: routine.age_range,
                 weekNumber: routine.week_number,
                 modelType: routine.model_type,
-                activities: routine.routine_data || {}
+                activities: activities
             };
 
             document.getElementById('editRoutineId').value = id;
