@@ -38,8 +38,7 @@ app.use(express.static(publicPath));
 
 // Ruta raíz - servir portal.html
 app.get('/', (req, res) => {
-  const geniusPath = path.join(publicPath, 'genius.html');
-  res.sendFile(geniusPath);
+  res.redirect('/genius.html');
 });
 
 // Ruta para /genius.html
