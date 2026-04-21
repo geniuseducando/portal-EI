@@ -795,7 +795,16 @@
             
             loadActivitiesForConstruction(routine.age_range);
             console.log('Abriendo modal de edición');
-            document.getElementById('editRoutineModal').classList.add('active');
+            const modal = document.getElementById('editRoutineModal');
+            console.log('Modal elemento:', modal);
+            if (modal) {
+                console.log('Modal antes:', modal.className);
+                modal.classList.add('active');
+                console.log('Modal después:', modal.className);
+                console.log('Modal display:', window.getComputedStyle(modal).display);
+            } else {
+                console.error('Modal no encontrado en el DOM');
+            }
         }
 
         function downloadRoutinePDF(id) {
