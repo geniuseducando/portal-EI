@@ -38,19 +38,23 @@ app.use(express.static(publicPath));
 
 // Ruta raíz - servir portal.html
 app.get('/', (req, res) => {
-  const portalPath = path.join(publicPath, 'portal.html');
-  res.sendFile(portalPath);
+  const dashboardPath = path.join(publicPath, 'dashboard.html');
+  res.sendFile(dashboardPath);
 });
 
-// Ruta para /portal.html
-app.get('/portal.html', (req, res) => {
-  const portalPath = path.join(publicPath, 'portal.html');
-  res.sendFile(portalPath);
+// Ruta para /dashboard.html
+app.get('/dashboard.html', (req, res) => {
+  const dashboardPath = path.join(publicPath, 'dashboard.html');
+  res.sendFile(dashboardPath);
 });
 
-// Ruta para /app.html (redirigir a portal.html)
+// Rutas antiguas - redirigir
 app.get('/app.html', (req, res) => {
-  res.redirect('/portal.html');
+  res.redirect('/dashboard.html');
+});
+
+app.get('/portal.html', (req, res) => {
+  res.redirect('/dashboard.html');
 });
 
 // Middleware de autenticación
