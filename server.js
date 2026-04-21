@@ -38,23 +38,27 @@ app.use(express.static(publicPath));
 
 // Ruta raíz - servir portal.html
 app.get('/', (req, res) => {
-  const dashboardPath = path.join(publicPath, 'dashboard.html');
-  res.sendFile(dashboardPath);
+  const geniusPath = path.join(publicPath, 'genius.html');
+  res.sendFile(geniusPath);
 });
 
-// Ruta para /dashboard.html
-app.get('/dashboard.html', (req, res) => {
-  const dashboardPath = path.join(publicPath, 'dashboard.html');
-  res.sendFile(dashboardPath);
+// Ruta para /genius.html
+app.get('/genius.html', (req, res) => {
+  const geniusPath = path.join(publicPath, 'genius.html');
+  res.sendFile(geniusPath);
 });
 
 // Rutas antiguas - redirigir
 app.get('/app.html', (req, res) => {
-  res.redirect('/dashboard.html');
+  res.redirect('/genius.html');
 });
 
 app.get('/portal.html', (req, res) => {
-  res.redirect('/dashboard.html');
+  res.redirect('/genius.html');
+});
+
+app.get('/dashboard.html', (req, res) => {
+  res.redirect('/genius.html');
 });
 
 // Middleware de autenticación
