@@ -181,6 +181,7 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
     const userId = req.user.id;
     const db = await getDatabase();
 
+    console.log('📝 POST /api/routines - Body:', { childName, ageRange, weekNumber, modelType });
     console.log('🔍 Verificando usuario:', userId);
     const user = await db.get('SELECT id FROM users WHERE id = ?', [userId]);
     if (!user) {
@@ -190,20 +191,24 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
     console.log('✅ Usuario encontrado:', user);
 
     const routineId = uuidv4();
+    console.log('🆔 ID de rutina generado:', routineId);
 
+    console.log('💾 Insertando rutina en BD...');
     await db.run(
       `INSERT INTO weekly_routines (id, user_id, child_name, age_range, week_number, model_type, routine_data)
        VALUES (?, ?, ?, ?, ?, ?, ?)`,
       [routineId, userId, childName, ageRange, weekNumber, modelType, JSON.stringify(routineData)]
     );
 
+    console.log('✅ Rutina insertada exitosamente');
     // Registrar en historial
     await db.run(
       'INSERT INTO routine_history (id, routine_id, user_id, action) VALUES (?, ?, ?, ?)',
       [uuidv4(), routineId, userId, 'created']
     );
 
-    res.json({ message: 'Rutina creada exitosamente', routineId });
+    console.log('📄 Respuesta enviada:', { message: 'Rutina creada exitosamente', routineId });
+    res.json({ message: 'Rutina creada exitosamente', routineId });}
   } catch (error) {
     console.error('Error al crear rutina:', error);
     res.status(500).json({ error: error.message });
