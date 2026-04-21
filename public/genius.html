@@ -651,7 +651,8 @@
                 activities: {}
             };
 
-            document.getElementById('routineTitle').textContent = childName + ' (' + ageRange + ')';
+            document.getElementById('editRoutineTitle').textContent = childName + ' (' + ageRange + ')';
+            window.currentEditingRoutineId = null; // No estamos editando, estamos creando
             loadActivitiesForConstruction(ageRange);
             
             document.getElementById('createRoutineModal').classList.remove('active');
