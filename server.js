@@ -182,11 +182,16 @@ app.post('/api/auth/login', async (req, res) => {
 // Crear rutina
 app.post('/api/routines', authenticateToken, async (req, res) => {
   try {
-    const { childName, ageRange, weekNumber, modelType, routineData } = req.body;
+    const { childName, child_name, ageRange, age_range, weekNumber, week_number, modelType, model_type, routineData, routine_data } = req.body;
+    const finalChildName = childName || child_name;
+    const finalAgeRange = ageRange || age_range;
+    const finalWeekNumber = weekNumber || week_number;
+    const finalModelType = modelType || model_type;
+    const finalRoutineData = routineData || routine_data || {};
     const userId = req.user.id;
     const db = await getDatabase();
 
-    console.log('📝 POST /api/routines - Body:', { childName, ageRange, weekNumber, modelType });
+    console.log('📝 POST /api/routines - Body:', { finalChildName, finalAgeRange, finalWeekNumber, finalModelType });
     console.log('🔍 Verificando usuario:', userId);
     const user = await db.get('SELECT id FROM users WHERE id = ?', [userId]);
     if (!user) {
@@ -202,7 +207,7 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
     await db.run(
       `INSERT INTO weekly_routines (id, user_id, child_name, age_range, week_number, model_type, routine_data)
        VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [routineId, userId, childName, ageRange, weekNumber, modelType, JSON.stringify(routineData)]
+      [routineId, userId, finalChildName, finalAgeRange, finalWeekNumber, finalModelType, JSON.stringify(finalRoutineData)]
     );
 
     console.log('✅ Rutina insertada exitosamente');
