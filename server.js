@@ -238,7 +238,7 @@ app.get('/api/routines', authenticateToken, async (req, res) => {
     );
 
     console.log('✅ Rutinas encontradas:', routines.length, routines);
-    res.json({ routines });
+    res.json({ data: routines });
   } catch (error) {
     console.error('❌ Error al obtener rutinas:', error);
     res.status(500).json({ error: error.message });
