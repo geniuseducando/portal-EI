@@ -276,16 +276,16 @@
                         <label>Rango de Edad:</label>
                         <select id="ageRange">
                             <option value="">Selecciona un rango</option>
-                            <option value="0–3 meses">0–3 meses</option>
-                            <option value="3–6 meses">3–6 meses</option>
-                            <option value="6–9 meses">6–9 meses</option>
-                            <option value="9–12 meses">9–12 meses</option>
-                            <option value="13–18 meses">13–18 meses</option>
-                            <option value="19–24 meses">19–24 meses</option>
-                            <option value="25–36 meses">25–36 meses</option>
-                            <option value="37–48 meses">37–48 meses (3–4 años)</option>
-                            <option value="49–60 meses">49–60 meses (4–5 años)</option>
-                            <option value="61–72 meses">61–72 meses (5–6 años)</option>
+                            <option value="0-3 meses">0-3 meses</option>
+                            <option value="3-6 meses">3-6 meses</option>
+                            <option value="6-9 meses">6-9 meses</option>
+                            <option value="9-12 meses">9-12 meses</option>
+                            <option value="13-18 meses">13-18 meses</option>
+                            <option value="19-24 meses">19-24 meses</option>
+                            <option value="25-36 meses">25-36 meses</option>
+                            <option value="37-48 meses">37-48 meses</option>
+                            <option value="49-60 meses">49-60 meses</option>
+                            <option value="61-72 meses">61-72 meses</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -786,7 +786,12 @@
             
             if (activity) {
                 const cell = document.getElementById(cellId);
-                cell.innerHTML = '<div style="font-size: 12px; padding: 5px;">' + activity.name + '</div>';
+                let cellContent = '<div style="font-size: 11px; padding: 5px;">';
+                cellContent += '<strong>' + activity.name + '</strong><br>';
+                cellContent += '<small style="color: #666;">📌 ' + (activity.frequency || 'No especificada') + '</small><br>';
+                cellContent += '<small style="color: #666;">🔧 ' + (activity.materials || 'Ninguno') + '</small>';
+                cellContent += '</div>';
+                cell.innerHTML = cellContent;
                 currentRoutineData.activities[cellId] = {
                     id: actId,
                     name: activity.name,
@@ -800,7 +805,12 @@
             const activity = window_allActivitiesFlat[0];
             if (activity) {
                 const cell = document.getElementById(cellId);
-                cell.innerHTML = '<div style="font-size: 12px; padding: 5px;">' + activity.name + '</div>';
+                let cellContent = '<div style="font-size: 11px; padding: 5px;">';
+                cellContent += '<strong>' + activity.name + '</strong><br>';
+                cellContent += '<small style="color: #666;">📌 ' + (activity.frequency || 'No especificada') + '</small><br>';
+                cellContent += '<small style="color: #666;">🔧 ' + (activity.materials || 'Ninguno') + '</small>';
+                cellContent += '</div>';
+                cell.innerHTML = cellContent;
                 currentRoutineData.activities[cellId] = {
                     id: activity.id,
                     name: activity.name,
@@ -815,7 +825,12 @@
                 const activity = currentRoutineData.activities[cellId];
                 const cell = document.getElementById(cellId);
                 if (cell) {
-                    cell.innerHTML = '<div style="font-size: 12px; padding: 5px;">' + activity.name + '</div>';
+                    let cellContent = '<div style="font-size: 11px; padding: 5px;">';
+                    cellContent += '<strong>' + activity.name + '</strong><br>';
+                    cellContent += '<small style="color: #666;">📌 ' + (activity.frequency || 'No especificada') + '</small><br>';
+                    cellContent += '<small style="color: #666;">🔧 ' + (activity.materials || 'Ninguno') + '</small>';
+                    cellContent += '</div>';
+                    cell.innerHTML = cellContent;
                 }
             });
         }

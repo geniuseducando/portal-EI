@@ -1,5 +1,5 @@
 {
-  "0–3 meses": {
+  "0-3 meses": {
     "Motricidad gruesa": [
       {
         "id": "03M-MG-01",
@@ -286,7 +286,7 @@
       }
     ]
   },
-  "3–6 meses": {
+  "3-6 meses": {
     "Motricidad gruesa": [
       {
         "id": "36-MG-01",
@@ -573,7 +573,7 @@
       }
     ]
   },
-  "6–9 meses": {
+  "6-9 meses": {
     "Motricidad gruesa": [
       {
         "id": "69-MG-01",
@@ -860,7 +860,7 @@
       }
     ]
   },
-  "9–12 meses": {
+  "9-12 meses": {
     "Motricidad gruesa": [
       {
         "id": "912-MG-01",
@@ -1147,7 +1147,7 @@
       }
     ]
   },
-  "13–18 meses": {
+  "13-18 meses": {
     "Motricidad gruesa": [
       {
         "id": "1318-MG-01",
@@ -1434,7 +1434,7 @@
       }
     ]
   },
-  "19–24 meses": {
+  "19-24 meses": {
     "Motricidad gruesa": [
       {
         "id": "1924-MG-01",
@@ -1721,7 +1721,7 @@
       }
     ]
   },
-  "25–36 meses": {
+  "25-36 meses": {
     "Motricidad gruesa": [
       {
         "id": "2536-MG-01",
@@ -2065,7 +2065,7 @@
       }
     ]
   },
-  "37–48 meses": {
+  "37-48 meses": {
     "Motricidad gruesa": [
       {
         "id": "3748-MG-01",
@@ -2409,7 +2409,7 @@
       }
     ]
   },
-  "49–60 meses": {
+  "49-60 meses": {
     "Motricidad gruesa": [
       {
         "id": "4960-MG-01",
@@ -2753,7 +2753,7 @@
       }
     ]
   },
-  "61–72 meses": {
+  "61-72 meses": {
     "Motricidad gruesa": [
       {
         "id": "6172-MG-01",
