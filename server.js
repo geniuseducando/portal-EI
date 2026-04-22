@@ -211,11 +211,11 @@ app.post('/api/routines', authenticateToken, async (req, res) => {
     );
 
     console.log('✅ Rutina insertada exitosamente');
-    // Registrar en historial
-    await db.run(
-      'INSERT INTO routine_history (id, routine_id, user_id, action) VALUES (?, ?, ?, ?)',
-      [uuidv4(), routineId, userId, 'created']
-    );
+    // Registrar en historial (comentado por ahora)
+    // await db.run(
+    //   'INSERT INTO routine_history (id, routine_id, user_id, action) VALUES (?, ?, ?, ?)',
+    //   [uuidv4(), routineId, userId, 'created']
+    // );
 
     console.log('📄 Respuesta enviada:', { message: 'Rutina creada exitosamente', routineId });
     res.json({ message: 'Rutina creada exitosamente', routineId });
