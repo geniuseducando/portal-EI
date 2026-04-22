@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Genius Educa - Portal de Niñeras</title>
         <!-- Timestamp: 2026-04-21T15:00:00Z -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -607,7 +607,7 @@
             }
         }
 
-        let window.currentRoutines = [];
+        window.currentRoutines = [];
 
         async function loadRoutines() {
             const list = document.getElementById('routinesList');
