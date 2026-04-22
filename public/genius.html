@@ -1032,6 +1032,22 @@
             });
             
             htmlContent += '</table>';
+            
+            // Agregar actividades diarias si existen
+            if (routineData.dailyActivities && Object.keys(routineData.dailyActivities).length > 0) {
+                htmlContent += '<h2 style="color: #333; margin-top: 30px;">ACTIVIDADES DIARIAS</h2>';
+                htmlContent += '<div style="margin-top: 15px;">';
+                Object.keys(routineData.dailyActivities).forEach(dailyId => {
+                    const activity = routineData.dailyActivities[dailyId];
+                    htmlContent += '<div style="background: #f9f9f9; padding: 12px; margin-bottom: 10px; border-left: 4px solid #05b6a8; border-radius: 3px;">';
+                    htmlContent += '<strong style="font-size: 12px;">' + (activity.name || 'Sin nombre') + '</strong><br>';
+                    htmlContent += '<small style="color: #666;">Frecuencia: ' + (activity.frequency || 'No especificada') + '</small><br>';
+                    htmlContent += '<small style="color: #666;">Materiales: ' + (activity.materials || 'Ninguno') + '</small>';
+                    htmlContent += '</div>';
+                });
+                htmlContent += '</div>';
+            }
+            
             htmlContent += '<div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #666;">';
             htmlContent += '<p>Generado por Genius Educa - Portal de Niñeras</p>';
             htmlContent += '<p>Fecha: ' + new Date().toLocaleDateString('es-ES') + '</p>';
