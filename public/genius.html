@@ -49,6 +49,8 @@
         .btn-secondary:hover { background: #777; }
         .btn-danger { background: #ff6b6b; }
         .btn-danger:hover { background: #ff5252; }
+        .btn-small { padding: 4px 8px; font-size: 10px; }
+        .btn-delete-cell { background: #ff6b6b !important; color: white !important; border: none !important; border-radius: 3px !important; padding: 2px 6px !important; font-size: 10px !important; cursor: pointer !important; flex-shrink: 0 !important; margin-top: 2px !important; }
         .routine-item { 
             background: #f9f9f9; 
             padding: 20px; 
@@ -583,7 +585,7 @@
                 cellContent += '<small style="color: #666;">Frec: ' + (activity.frequency || 'No especificada') + '</small><br>';
                 cellContent += '<small style="color: #666;">Mat: ' + (activity.materials || 'Ninguno') + '</small>';
                 cellContent += '</div>';
-                cellContent += '<button onclick="clearActivityFromCell(\'' + cellId + '\')" style="background: #ff6b6b; color: white; border: none; border-radius: 3px; padding: 2px 6px; font-size: 10px; cursor: pointer; flex-shrink: 0; margin-top: 2px;">X</button>';
+                cellContent += '<button class="btn-delete-cell" onclick="clearActivityFromCell(\'' + cellId + '\')" type="button">X</button>';
                 cellContent += '</div>';
                 cellContent += '</div>';
                 cell.innerHTML = cellContent;
@@ -659,7 +661,7 @@
                 html += '<small style="color: #666;">📌 ' + (activity.frequency || 'No especificada') + '</small><br>';
                 html += '<small style="color: #666;">🔧 ' + (activity.materials || 'Ninguno') + '</small>';
                 html += '</div>';
-                html += '<button class="btn btn-small btn-danger" onclick="removeDailyActivity(\'' + dailyId + '\')" style="margin: 0;">✕</button>';
+                html += '<button class="btn-delete-cell" onclick="removeDailyActivity(\'' + dailyId + '\')" type="button">X</button>';
                 html += '</div>';
             });
             
@@ -684,7 +686,7 @@
                     cellContent += '<small style="color: #666;">Frec: ' + (activity.frequency || 'No especificada') + '</small><br>';
                     cellContent += '<small style="color: #666;">Mat: ' + (activity.materials || 'Ninguno') + '</small>';
                     cellContent += '</div>';
-                    cellContent += '<button onclick="clearActivityFromCell(\'' + cellId + '\')" style="background: #ff6b6b; color: white; border: none; border-radius: 3px; padding: 2px 6px; font-size: 10px; cursor: pointer; flex-shrink: 0; margin-top: 2px;">X</button>';
+                    cellContent += '<button class="btn-delete-cell" onclick="clearActivityFromCell(\'' + cellId + '\')" type="button">X</button>';
                     cellContent += '</div>';
                     cellContent += '</div>';
                     cell.innerHTML = cellContent;
