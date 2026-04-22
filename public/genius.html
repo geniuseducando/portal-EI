@@ -874,6 +874,8 @@
             }
 
             const routineData = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data) : routine.routine_data;
+            const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+            const times = ['Mañana', 'Tarde', 'Noche'];
             
             // Crear HTML para el PDF
             let htmlContent = '<div style="font-family: Arial, sans-serif; padding: 20px;">';
@@ -885,20 +887,29 @@
             htmlContent += '<p><strong>Semana:</strong> ' + routine.week_number + '</p>';
             htmlContent += '<p><strong>Modelo:</strong> ' + (routine.model_type === 'home' ? 'Casa' : 'Escuela') + '</p>';
             htmlContent += '</div>';
-            htmlContent += '<h2 style="color: #333; margin-top: 30px;">ACTIVIDADES PROGRAMADAS</h2>';
-            htmlContent += '<table style="width: 100%; border-collapse: collapse; margin-top: 15px;">';
+            htmlContent += '<h2 style="color: #333; margin-top: 30px;">CALENDARIO DE ACTIVIDADES</h2>';
+            htmlContent += '<table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 11px;">';
+            
+            // Encabezado de la tabla
             htmlContent += '<tr style="background-color: #05b6a8; color: white;">';
-            htmlContent += '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Actividad</th>';
-            htmlContent += '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Frecuencia</th>';
-            htmlContent += '<th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Materiales</th>';
+            htmlContent += '<th style="padding: 8px; text-align: center; border: 1px solid #ddd; width: 12%;">Hora</th>';
+            days.forEach(day => {
+                htmlContent += '<th style="padding: 8px; text-align: center; border: 1px solid #ddd; width: 12.5%;">' + day + '</th>';
+            });
             htmlContent += '</tr>';
             
-            Object.keys(routineData || {}).forEach(key => {
-                const activity = routineData[key];
+            // Filas por horario
+            times.forEach(time => {
                 htmlContent += '<tr>';
-                htmlContent += '<td style="padding: 10px; border: 1px solid #ddd;">' + (activity.name || 'Sin nombre') + '</td>';
-                htmlContent += '<td style="padding: 10px; border: 1px solid #ddd;">' + (activity.frequency || 'No especificada') + '</td>';
-                htmlContent += '<td style="padding: 10px; border: 1px solid #ddd;">' + (activity.materials || 'Ninguno') + '</td>';
+                htmlContent += '<td style="padding: 8px; text-align: center; border: 1px solid #ddd; background-color: #f0f0f0; font-weight: bold;">' + time + '</td>';
+                
+                days.forEach((day, dayIndex) => {
+                    const cellId = 'cell_' + dayIndex + '_' + times.indexOf(time);
+                    const activity = routineData[cellId];
+                    const cellContent = activity ? (activity.name || 'Sin nombre') : '';
+                    htmlContent += '<td style="padding: 8px; border: 1px solid #ddd; text-align: left; vertical-align: top;">' + cellContent + '</td>';
+                });
+                
                 htmlContent += '</tr>';
             });
             
@@ -918,7 +929,7 @@
                 filename: 'rutina-' + routine.child_name + '.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
-                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                jsPDF: { orientation: 'landscape', unit: 'mm', format: 'a4' }
             };
             
             html2pdf().set(opt).from(element).save();
