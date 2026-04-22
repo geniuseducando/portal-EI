@@ -326,7 +326,21 @@
                 </div>
             </div>
             
-            <button class="btn" onclick="saveRoutineActivities()" style="width: 100%; margin-bottom: 10px;">Guardar Rutina</button>
+            <!-- Sección de Actividades Diarias -->
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #05b6a8;">
+                <h3 style="margin-bottom: 15px; font-size: 14px; color: #05b6a8;">Actividades Diarias (sin horario específico)</h3>
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <select id="dailyActivitySelect" style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Selecciona una actividad diaria...</option>
+                    </select>
+                    <button class="btn" onclick="addDailyActivity()" style="padding: 10px 20px;">Agregar</button>
+                </div>
+                <div id="dailyActivitiesContainer" style="border: 1px solid #ddd; padding: 10px; border-radius: 5px; background: #f9f9f9; min-height: 60px;">
+                    <div style="color: #999; font-size: 12px;">No hay actividades diarias agregadas</div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="saveRoutineActivities()" style="width: 100%; margin-bottom: 10px; margin-top: 20px;">Guardar Rutina</button>
             <button class="btn btn-secondary" onclick="closeEditRoutineModal()" style="width: 100%;">Cancelar</button>
             <div id="editRoutineError"></div>
         </div>
@@ -668,12 +682,19 @@
             
             console.log('Rutina encontrada:', routine);
             const activities = typeof routine.routine_data === 'string' ? JSON.parse(routine.routine_data || '{}') : (routine.routine_data || {});
+            
+            // Separar actividades diarias del resto
+            const dailyActivities = activities.dailyActivities || {};
+            const weeklyActivities = { ...activities };
+            delete weeklyActivities.dailyActivities;
+            
             currentRoutineData = {
                 childName: routine.child_name,
                 ageRange: routine.age_range,
                 weekNumber: routine.week_number,
                 modelType: routine.model_type,
-                activities: activities
+                activities: weeklyActivities,
+                dailyActivities: dailyActivities
             };
 
             document.getElementById('editRoutineId').value = id;
@@ -717,6 +738,7 @@
             const areas = allActivities[ageRange];
             let activitiesHtml = '';
             window_allActivitiesFlat = [];
+            let dailyActivityOptions = '<option value="">Selecciona una actividad diaria...</option>';
 
             Object.keys(areas).forEach(area => {
                 activitiesHtml += '<div style="margin-bottom: 15px;"><strong style="font-size: 12px; color: #05b6a8;">' + area + '</strong>';
@@ -731,14 +753,17 @@
                             frequency: act.frequency || 'No especificada',
                             materials: act.materials || 'Ninguno'
                         });
-                        activitiesHtml += '<div class="activity-item" draggable="true" ondragstart="dragActivity(event, \'' + actId + '\')">' + (act.activity || 'Sin nombre') + '</div>';
+                        activitiesHtml += '<div class="activity-item" draggable="true" ondragstart="dragActivity(event, \'' + actId + '\')">'+  (act.activity || 'Sin nombre') + '</div>';
+                        dailyActivityOptions += '<option value="' + actId + '">' + (act.activity || 'Sin nombre') + '</option>';
                     });
                 }
                 activitiesHtml += '</div>';
             });
 
             document.getElementById('availableActivitiesContainer').innerHTML = activitiesHtml;
+            document.getElementById('dailyActivitySelect').innerHTML = dailyActivityOptions;
             createScheduleTable();
+            loadSavedDailyActivities();
         }
 
         function createScheduleTable() {
@@ -820,6 +845,72 @@
             }
         }
 
+        function addDailyActivity() {
+            const select = document.getElementById('dailyActivitySelect');
+            const actId = select.value;
+            
+            if (!actId) {
+                alert('Por favor selecciona una actividad');
+                return;
+            }
+            
+            const activity = window_allActivitiesFlat.find(a => a.id === actId);
+            if (!activity) return;
+            
+            // Agregar a actividades diarias
+            if (!currentRoutineData.dailyActivities) {
+                currentRoutineData.dailyActivities = {};
+            }
+            
+            const dailyId = 'daily_' + Date.now();
+            currentRoutineData.dailyActivities[dailyId] = {
+                id: actId,
+                name: activity.name,
+                frequency: activity.frequency,
+                materials: activity.materials
+            };
+            
+            renderDailyActivities();
+            select.value = '';
+        }
+        
+        function removeDailyActivity(dailyId) {
+            if (currentRoutineData.dailyActivities && currentRoutineData.dailyActivities[dailyId]) {
+                delete currentRoutineData.dailyActivities[dailyId];
+                renderDailyActivities();
+            }
+        }
+        
+        function renderDailyActivities() {
+            const container = document.getElementById('dailyActivitiesContainer');
+            
+            if (!currentRoutineData.dailyActivities || Object.keys(currentRoutineData.dailyActivities).length === 0) {
+                container.innerHTML = '<div style="color: #999; font-size: 12px;">No hay actividades diarias agregadas</div>';
+                return;
+            }
+            
+            let html = '';
+            Object.keys(currentRoutineData.dailyActivities).forEach(dailyId => {
+                const activity = currentRoutineData.dailyActivities[dailyId];
+                html += '<div style="background: white; padding: 10px; margin-bottom: 8px; border-left: 4px solid #05b6a8; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">';
+                html += '<div>';
+                html += '<strong style="font-size: 12px;">' + activity.name + '</strong><br>';
+                html += '<small style="color: #666;">📌 ' + (activity.frequency || 'No especificada') + '</small><br>';
+                html += '<small style="color: #666;">🔧 ' + (activity.materials || 'Ninguno') + '</small>';
+                html += '</div>';
+                html += '<button class="btn btn-small btn-danger" onclick="removeDailyActivity(\'' + dailyId + '\')" style="margin: 0;">✕</button>';
+                html += '</div>';
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function loadSavedDailyActivities() {
+            if (currentRoutineData.dailyActivities) {
+                renderDailyActivities();
+            }
+        }
+
         function loadSavedSchedule() {
             Object.keys(currentRoutineData.activities).forEach(cellId => {
                 const activity = currentRoutineData.activities[cellId];
@@ -861,7 +952,10 @@
                         'Authorization': 'Bearer ' + token
                     },
                     body: JSON.stringify({
-                        routineData: currentRoutineData.activities
+                        routineData: {
+                            ...currentRoutineData.activities,
+                            dailyActivities: currentRoutineData.dailyActivities || {}
+                        }
                     })
                 });
 
