@@ -761,7 +761,16 @@
             });
 
             document.getElementById('availableActivitiesContainer').innerHTML = activitiesHtml;
-            document.getElementById('dailyActivitySelect').innerHTML = dailyActivityOptions;
+            
+            // Filtrar solo actividades con frecuencia "Diario" para el dropdown
+            let dailyActivityFilteredOptions = '<option value="">Selecciona una actividad diaria...</option>';
+            window_allActivitiesFlat.forEach(activity => {
+                if (activity.frequency && activity.frequency.toLowerCase().includes('diario')) {
+                    dailyActivityFilteredOptions += '<option value="' + activity.id + '">' + activity.name + '</option>';
+                }
+            });
+            document.getElementById('dailyActivitySelect').innerHTML = dailyActivityFilteredOptions;
+            
             createScheduleTable();
             loadSavedDailyActivities();
         }
