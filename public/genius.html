@@ -822,9 +822,10 @@
             const element = document.createElement('div');
             element.innerHTML = htmlContent;
             
+            const ageRangeClean = routine.age_range.replace(/[–-]/g, '').replace(/\s+/g, '');
             const opt = {
                 margin: 10,
-                filename: 'rutina-' + routine.child_name + '.pdf',
+                filename: 'rutina-' + routine.child_name + '-' + ageRangeClean + '-semana' + routine.week_number + '.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { orientation: 'landscape', unit: 'mm', format: 'a4' }
