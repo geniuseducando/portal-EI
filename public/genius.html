@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Genius Educa - Portal de Niñeras</title>
+        <title>Genius Educa - Portal de Estimulación Integral</title>
         <!-- Timestamp: 2026-04-21T15:00:00Z -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous"></script>
     <style>
@@ -376,10 +376,15 @@
                         const activities = areas[area];
                         if (Array.isArray(activities)) {
                             activities.forEach(act => {
-                                fichasHtml += '<div style="background: #f9f9f9; padding: 12px; margin-bottom: 10px; border-left: 3px solid #05b6a8; border-radius: 4px;">';
-                                fichasHtml += '<strong>' + (act.activity || 'Sin nombre') + '</strong><br>';
-                                fichasHtml += '<small style="color: #666;">Frecuencia: ' + (act.frequency || 'No especificada') + '</small><br>';
-                                fichasHtml += '<small style="color: #666;">Materiales: ' + (act.materials || 'Ninguno') + '</small>';
+                                fichasHtml += '<div style="background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-left: 4px solid #05b6a8; border-radius: 4px;">';
+                                fichasHtml += '<h5 style="margin: 0 0 10px 0; color: #05b6a8;">' + (act.activity || 'Sin nombre') + '</h5>';
+                                fichasHtml += '<div style="font-size: 13px; line-height: 1.6;">';
+                                if (act.objective) fichasHtml += '<p style="margin: 5px 0;"><strong>Objetivo:</strong> ' + act.objective + '</p>';
+                                if (act.logro) fichasHtml += '<p style="margin: 5px 0;"><strong>Hito Clave / Indicador de Logro:</strong> ' + act.logro + '</p>';
+                                if (act.materials) fichasHtml += '<p style="margin: 5px 0;"><strong>📦 Materiales:</strong> ' + act.materials + '</p>';
+                                if (act.frequency) fichasHtml += '<p style="margin: 5px 0;"><strong>⏰ Frecuencia:</strong> ' + act.frequency + '</p>';
+                                if (act.alert) fichasHtml += '<p style="margin: 5px 0; color: #d9534f;"><strong>⚠️ Señal de Alerta:</strong> ' + act.alert + '</p>';
+                                fichasHtml += '</div>';
                                 fichasHtml += '</div>';
                             });
                         }
