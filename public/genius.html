@@ -931,71 +931,102 @@
                     return;
                 }
                 
-                let htmlContent = '<div style="font-family: Arial, sans-serif; padding: 20px;">';
-                htmlContent += '<h1 style="color: #05b6a8; text-align: center; margin-bottom: 30px;">FICHAS PEDAGOGICAS - ESTIMULACION INTEGRAL</h1>';
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                let yPosition = 20;
+                const pageHeight = pdf.internal.pageSize.getHeight();
+                const pageWidth = pdf.internal.pageSize.getWidth();
+                const margin = 15;
+                const maxWidth = pageWidth - (margin * 2);
+                
+                // Título
+                pdf.setFontSize(18);
+                pdf.setTextColor(5, 182, 168);
+                pdf.text('FICHAS PEDAGOGICAS - ESTIMULACION INTEGRAL', pageWidth / 2, yPosition, { align: 'center' });
+                yPosition += 15;
+                
+                pdf.setFontSize(10);
+                pdf.setTextColor(0, 0, 0);
                 
                 Object.keys(allActivities).forEach(ageRange => {
-                    htmlContent += '<div style="page-break-inside: avoid; margin-bottom: 30px;">';
-                    htmlContent += '<h2 style="color: #05b6a8; border-bottom: 2px solid #05b6a8; padding-bottom: 10px; margin-bottom: 20px;">' + ageRange + '</h2>';
+                    // Verificar si necesita nueva página
+                    if (yPosition > pageHeight - 30) {
+                        pdf.addPage();
+                        yPosition = 20;
+                    }
+                    
+                    // Rango de edad
+                    pdf.setFontSize(12);
+                    pdf.setTextColor(5, 182, 168);
+                    pdf.text(ageRange, margin, yPosition);
+                    yPosition += 8;
                     
                     const areas = allActivities[ageRange];
                     Object.keys(areas).forEach(area => {
-                        htmlContent += '<h3 style="color: #333; margin-top: 15px; margin-bottom: 10px;">' + area + '</h3>';
-                        const activities = areas[area];
+                        if (yPosition > pageHeight - 30) {
+                            pdf.addPage();
+                            yPosition = 20;
+                        }
                         
+                        // Área
+                        pdf.setFontSize(11);
+                        pdf.setTextColor(51, 51, 51);
+                        pdf.text(area, margin + 5, yPosition);
+                        yPosition += 7;
+                        
+                        const activities = areas[area];
                         if (Array.isArray(activities)) {
                             activities.forEach(act => {
-                                htmlContent += '<div style="background: #f9f9f9; padding: 12px; margin-bottom: 12px; border-left: 3px solid #05b6a8; border-radius: 4px; font-size: 12px;">';
-                                htmlContent += '<h4 style="margin: 0 0 8px 0; color: #05b6a8;">' + (act.activity || 'Sin nombre') + '</h4>';
-                                htmlContent += '<div style="line-height: 1.5;">';
-                                if (act.objective) htmlContent += '<p style="margin: 3px 0;"><strong>Objetivo:</strong> ' + act.objective + '</p>';
-                                if (act.logro) htmlContent += '<p style="margin: 3px 0;"><strong>Indicador de Logro:</strong> ' + act.logro + '</p>';
-                                if (act.materials) htmlContent += '<p style="margin: 3px 0;"><strong>Materiales:</strong> ' + act.materials + '</p>';
-                                if (act.frequency) htmlContent += '<p style="margin: 3px 0;"><strong>Frecuencia:</strong> ' + act.frequency + '</p>';
-                                if (act.alert) htmlContent += '<p style="margin: 3px 0; color: #d9534f;"><strong>Senal de Alerta:</strong> ' + act.alert + '</p>';
-                                htmlContent += '</div>';
-                                htmlContent += '</div>';
+                                if (yPosition > pageHeight - 25) {
+                                    pdf.addPage();
+                                    yPosition = 20;
+                                }
+                                
+                                // Actividad
+                                pdf.setFontSize(10);
+                                pdf.setTextColor(5, 182, 168);
+                                const activityText = act.activity || 'Sin nombre';
+                                const splitActivity = pdf.splitTextToSize(activityText, maxWidth - 10);
+                                pdf.text(splitActivity, margin + 10, yPosition);
+                                yPosition += (splitActivity.length * 5) + 2;
+                                
+                                // Detalles
+                                pdf.setFontSize(9);
+                                pdf.setTextColor(80, 80, 80);
+                                
+                                if (act.objective) {
+                                    const objText = pdf.splitTextToSize('Objetivo: ' + act.objective, maxWidth - 15);
+                                    pdf.text(objText, margin + 15, yPosition);
+                                    yPosition += (objText.length * 4);
+                                }
+                                if (act.logro) {
+                                    const logText = pdf.splitTextToSize('Indicador: ' + act.logro, maxWidth - 15);
+                                    pdf.text(logText, margin + 15, yPosition);
+                                    yPosition += (logText.length * 4);
+                                }
+                                if (act.materials) {
+                                    const matText = pdf.splitTextToSize('Materiales: ' + act.materials, maxWidth - 15);
+                                    pdf.text(matText, margin + 15, yPosition);
+                                    yPosition += (matText.length * 4);
+                                }
+                                if (act.frequency) {
+                                    const freqText = pdf.splitTextToSize('Frecuencia: ' + act.frequency, maxWidth - 15);
+                                    pdf.text(freqText, margin + 15, yPosition);
+                                    yPosition += (freqText.length * 4);
+                                }
+                                if (act.alert) {
+                                    pdf.setTextColor(217, 83, 79);
+                                    const alertText = pdf.splitTextToSize('Alerta: ' + act.alert, maxWidth - 15);
+                                    pdf.text(alertText, margin + 15, yPosition);
+                                    yPosition += (alertText.length * 4);
+                                    pdf.setTextColor(80, 80, 80);
+                                }
+                                
+                                yPosition += 5;
                             });
                         }
                     });
-                    htmlContent += '</div>';
                 });
-                
-                htmlContent += '</div>';
-                
-                const element = document.createElement('div');
-                element.innerHTML = htmlContent;
-                
-                const opt = {
-                    margin: 10,
-                    filename: 'fichas-pedagogicas-estimulacion-integral.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-                };
-                
-                // Usar html2canvas para convertir a imagen
-                const canvas = await html2canvas(element, { scale: 2, useCORS: true });
-                
-                // Crear PDF con jsPDF
-                const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF('p', 'mm', 'a4');
-                const imgData = canvas.toDataURL('image/png');
-                const imgWidth = 210;
-                const pageHeight = 297;
-                const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                let heightLeft = imgHeight;
-                let position = 0;
-                
-                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
-                
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    pdf.addPage();
-                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
                 
                 pdf.save('fichas-pedagogicas-estimulacion-integral.pdf');
             } catch (error) {
