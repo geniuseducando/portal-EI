@@ -917,6 +917,18 @@
 
         async function downloadAllPDF() {
             try {
+                // Cargar actividades si no están disponibles
+                if (!allActivities || Object.keys(allActivities).length === 0) {
+                    const response = await fetch(API_URL + '/activities');
+                    const data = await response.json();
+                    allActivities = data.data || {};
+                }
+                
+                if (Object.keys(allActivities).length === 0) {
+                    alert('No hay actividades disponibles para descargar');
+                    return;
+                }
+                
                 let htmlContent = '<div style="font-family: Arial, sans-serif; padding: 20px;">';
                 htmlContent += '<h1 style="color: #05b6a8; text-align: center; margin-bottom: 30px;">FICHAS PEDAGOGICAS - ESTIMULACION INTEGRAL</h1>';
                 
