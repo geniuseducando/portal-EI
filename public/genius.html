@@ -6,6 +6,8 @@
         <title>Genius Educa - Portal de Estimulación Integral</title>
         <!-- Timestamp: 2026-04-21T15:00:00Z -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -972,7 +974,30 @@
                     jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
                 };
                 
-                html2pdf().set(opt).from(element).save();
+                // Usar html2canvas para convertir a imagen
+                const canvas = await html2canvas(element, { scale: 2, useCORS: true });
+                
+                // Crear PDF con jsPDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 210;
+                const pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                pdf.save('fichas-pedagogicas-estimulacion-integral.pdf');
             } catch (error) {
                 console.error('Error al descargar fichas:', error);
                 alert('Error al descargar las fichas: ' + error.message);
